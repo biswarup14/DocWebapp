@@ -24,10 +24,12 @@
 }
 
 .title {
-  font-size: 1.125rem;
-  font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
   margin: 20px 24px 8px;
   color: var(--color-text);
+  letter-spacing: -0.01em;
 }
 
 .description {

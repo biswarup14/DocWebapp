@@ -10,14 +10,23 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  font-family: var(--font-family);
+  font-family: var(--font-body);
   background-color: var(--color-bg);
   color: var(--color-text);
-  line-height: 1.6;
+  line-height: 1.65;
+  letter-spacing: -0.01em;
   transition: background-color var(--transition), color var(--transition);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
 }
 
 a {
@@ -55,25 +64,28 @@ input, textarea, select {
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
 }
 
 .section {
-  padding: 80px 0;
+  padding: 96px 0;
 }
 
 .section-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 16px;
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 12px;
   color: var(--color-text);
+  letter-spacing: -0.03em;
 }
 
 .section-subtitle {
-  font-size: 1.125rem;
+  font-size: 1.1rem;
   color: var(--color-text-secondary);
   margin-bottom: 48px;
-  max-width: 600px;
+  max-width: 560px;
+  line-height: 1.7;
 }
 
 .btn {
@@ -81,21 +93,25 @@ input, textarea, select {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 12px 24px;
+  padding: 12px 28px;
   border-radius: var(--radius);
+  font-family: var(--font-heading);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.925rem;
+  letter-spacing: -0.01em;
   transition: all var(--transition);
+  border: none;
+  cursor: pointer;
 }
 
 .btn-primary {
   background-color: var(--color-primary);
-  color: white;
+  color: #ffffff;
 }
 
 .btn-primary:hover {
   background-color: var(--color-primary-dark);
-  color: white;
+  color: #ffffff;
   transform: translateY(-1px);
   box-shadow: var(--shadow-lg);
 }
@@ -103,22 +119,22 @@ input, textarea, select {
 .btn-secondary {
   background-color: transparent;
   color: var(--color-primary);
-  border: 2px solid var(--color-primary);
+  border: 1.5px solid var(--color-primary);
 }
 
 .btn-secondary:hover {
   background-color: var(--color-primary);
-  color: white;
+  color: #ffffff;
 }
 
 .btn-accent {
   background-color: var(--color-accent);
-  color: #1e293b;
+  color: #1a1a1a;
 }
 
 .btn-accent:hover {
-  background-color: #d97706;
-  color: white;
+  background-color: #d49520;
+  color: #ffffff;
 }
 
 .grid {
@@ -135,9 +151,9 @@ input, textarea, select {
     grid-template-columns: 1fr;
   }
   .section {
-    padding: 48px 0;
+    padding: 64px 0;
   }
   .section-title {
-    font-size: 1.5rem;
+    font-size: 1.625rem;
   }
 }

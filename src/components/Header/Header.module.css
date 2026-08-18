@@ -28,9 +28,11 @@
 }
 
 .logoText {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 800;
   color: var(--color-primary);
+  letter-spacing: -0.03em;
 }
 
 .nav {
@@ -42,8 +44,9 @@
 .navLink {
   padding: 8px 12px;
   border-radius: var(--radius);
+  font-family: var(--font-heading);
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   color: var(--color-text-secondary);
   transition: all var(--transition);
 }

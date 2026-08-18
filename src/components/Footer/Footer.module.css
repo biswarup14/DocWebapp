@@ -15,11 +15,13 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 800;
   color: var(--color-primary);
   text-decoration: none;
   margin-bottom: 16px;
+  letter-spacing: -0.03em;
 }
 
 .footerDesc {
@@ -30,10 +32,13 @@
 }
 
 .footerHeading {
-  font-size: 1rem;
-  font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
   margin-bottom: 16px;
   color: var(--color-text);
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
 }
 
 .footerLinks {
