@@ -1,0 +1,115 @@
+.pageHeader {
+  background: linear-gradient(135deg, var(--color-bg-secondary), var(--color-bg));
+  padding: 64px 0;
+  text-align: center;
+}
+
+.pageTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.pageSubtitle {
+  font-size: 1.15rem;
+  color: var(--color-text-secondary);
+}
+
+.insuranceGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.insuranceCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-weight: 500;
+  transition: all var(--transition);
+}
+
+.checkmark {
+  color: var(--color-success);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.note {
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+}
+
+.pricingSection {
+  background-color: var(--color-bg-secondary);
+}
+
+.pricingTable {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pricingHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 2px solid var(--color-border);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pricingRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.serviceName {
+  font-weight: 500;
+  color: var(--color-text);
+  display: block;
+}
+
+.serviceNote {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.price {
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+
+.financingNote {
+  max-width: 800px;
+  margin: 24px auto 0;
+  padding: 20px;
+  background-color: var(--color-bg);
+  border-radius: var(--radius);
+  border-left: 4px solid var(--color-accent);
+}
+
+.financingNote p {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .insuranceGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
