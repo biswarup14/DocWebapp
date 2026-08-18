@@ -2,28 +2,17 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import SEO from '../../components/SEO/SEO';
-import ServiceCard from '../../components/ServiceCard/ServiceCard';
 import TestimonialCard from '../../components/TestimonialCard/TestimonialCard';
 import AddTestimonial from '../../components/AddTestimonial/AddTestimonial';
 import { TestimonialContext } from '../../context/TestimonialContext';
 import styles from './Home.module.css';
 
-const services = [
-  {
-    image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&h=400&fit=crop',
-    title: 'General Dentistry',
-    description: 'Comprehensive checkups, cleanings, and preventive care to keep your smile healthy.',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&h=400&fit=crop',
-    title: 'Teeth Whitening',
-    description: 'Professional whitening treatments to brighten your smile by several shades.',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&h=400&fit=crop',
-    title: 'Dental Implants',
-    description: 'Permanent tooth replacement solutions that look and feel natural.',
-  },
+const specializations = [
+  { icon: '&#128737;', title: 'Preventive Dentistry', desc: 'Sealants, fluoride treatments & cavity prevention for children.' },
+  { icon: '&#129463;', title: 'Pediatric Endodontics', desc: 'Pulp therapy & root canals for primary and young permanent teeth.' },
+  { icon: '&#128165;', title: 'Dental Trauma Management', desc: 'Expert emergency care for broken, knocked-out or displaced teeth.' },
+  { icon: '&#127793;', title: 'Space Maintenance & Growth Modification', desc: 'Appliances to guide proper alignment of developing teeth.' },
+  { icon: '&#128156;', title: 'Pediatric Periodontics', desc: 'Diagnosis and treatment of gum conditions in children.' },
 ];
 
 export default function Home() {
@@ -32,7 +21,7 @@ export default function Home() {
 
   return (
     <>
-      <SEO title="Home" description="Professional dental care for the whole family. Book your appointment today for a healthier, brighter smile." url="/" />
+      <SEO title="Home" description="Professional pediatric dental care for the whole family. Book your appointment today for a healthier, brighter smile." url="/" />
 
       <section className={styles.hero}>
         <div className={`container ${styles.heroInner}`}>
@@ -46,12 +35,12 @@ export default function Home() {
               Your Smile Is Our <span className={styles.highlight}>Priority</span>
             </h1>
             <p className={styles.heroSubtitle}>
-              Experience exceptional dental care in a comfortable, modern environment. From routine cleanings to complete smile makeovers.
+              Specialist pediatric dental care in a comfortable, modern environment. Expert treatment for children of all ages.
             </p>
             <p className={styles.doctorName}>Led by <strong>Dr. Deepankar Bhattacharya</strong></p>
             <div className={styles.heroActions}>
               <Link to="/appointment" className="btn btn-primary">Book Appointment</Link>
-              <Link to="/services" className="btn btn-secondary">Our Services</Link>
+              <Link to="/services" className="btn btn-secondary">Our Specializations</Link>
             </div>
             <div className={styles.heroStats}>
               <div className={styles.stat}>
@@ -71,17 +60,28 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
+      <section className={`section ${styles.specsSection}`}>
         <div className="container">
-          <h2 className="section-title">Our Services</h2>
-          <p className="section-subtitle">Comprehensive dental care tailored to your needs.</p>
-          <div className="grid grid-3">
-            {services.map((s, i) => (
-              <ServiceCard key={i} {...s} />
+          <h2 className="section-title">Our Specializations</h2>
+          <p className="section-subtitle">Expert pediatric dental care led by Dr. Deepankar Bhattacharya.</p>
+          <div className={styles.specsGrid}>
+            {specializations.map((s, i) => (
+              <motion.div
+                key={i}
+                className={styles.specCard}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+              >
+                <span className={styles.specIcon} dangerouslySetInnerHTML={{ __html: s.icon }} />
+                <h3 className={styles.specTitle}>{s.title}</h3>
+                <p className={styles.specDesc}>{s.desc}</p>
+              </motion.div>
             ))}
           </div>
-          <div className={styles.servicesMore}>
-            <Link to="/services" className="btn btn-secondary">More Services &#8594;</Link>
+          <div className={styles.specsMore}>
+            <Link to="/services" className="btn btn-secondary">Learn More &#8594;</Link>
           </div>
         </div>
       </section>

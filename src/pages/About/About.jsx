@@ -8,6 +8,13 @@ const team = [
     role: 'Associate Professor — Pediatric & Preventive Dentistry',
     qualifications: 'B.D.S., M.D.S. (Pediatric Dentistry)',
     bio: 'Dr. Deepankar Bhattacharya is an Associate Professor in the Department of Pediatric and Preventive Dentistry at Mithila Minority Dental College. He has published several research articles and brings deep expertise in pediatric dental procedures, including treatment for patients with special health care needs.',
+    specializations: [
+      'Preventive Dentistry',
+      'Pediatric Endodontics',
+      'Dental Trauma Management',
+      'Space Maintenance & Growth Modification',
+      'Pediatric Periodontics',
+    ],
     languages: ['Hindi', 'English', 'Bengali'],
     interests: ['Reading', 'Music', 'Sports'],
   },
@@ -78,6 +85,16 @@ export default function About() {
                 <p className={styles.teamRole}>{member.role}</p>
                 {member.qualifications && <p className={styles.teamQual}>{member.qualifications}</p>}
                 <p className={styles.teamBio}>{member.bio}</p>
+                {member.specializations && (
+                  <div className={styles.teamSpecs}>
+                    <span className={styles.teamSpecLabel}>Specializations</span>
+                    <ul className={styles.teamSpecList}>
+                      {member.specializations.map((spec) => (
+                        <li key={spec} className={styles.teamSpecItem}>{spec}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
                 {member.languages && (
                   <div className={styles.teamTags}>
                     <span className={styles.teamTagLabel}>Languages:</span>

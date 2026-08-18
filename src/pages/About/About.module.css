@@ -129,6 +129,45 @@
   margin-bottom: 16px;
 }
 
+.teamSpecs {
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.teamSpecLabel {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+.teamSpecList {
+  list-style: none;
+  padding: 0;
+}
+
+.teamSpecItem {
+  position: relative;
+  padding-left: 16px;
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+.teamSpecItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+}
+
 .teamTags {
   display: flex;
   flex-wrap: wrap;
