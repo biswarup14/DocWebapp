@@ -38,7 +38,7 @@
 .field textarea:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1);
+  box-shadow: 0 0 0 3px var(--color-primary-bg);
 }
 
 .field textarea {

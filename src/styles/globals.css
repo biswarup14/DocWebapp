@@ -143,7 +143,7 @@ input, textarea, select {
 
 .btn-accent:hover {
   background-color: var(--color-accent-dark, #d49520);
-  color: var(--color-btn-accent-hover-text, #ffffff);
+  color: var(--color-btn-accent-text, #1a1a1a);
 }
 
 .grid {
@@ -241,6 +241,12 @@ input, textarea, select {
   background-color: white;
   color: var(--color-primary);
   font-weight: 700;
+  transition: all var(--transition);
+}
+
+.btnReview:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
 }
 
 .sectionCentered {

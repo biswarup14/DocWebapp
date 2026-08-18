@@ -57,11 +57,12 @@
 
 .footerLinks a {
   color: var(--color-text-secondary);
-  transition: color var(--transition);
+  transition: color var(--transition), padding-left var(--transition);
 }
 
 .footerLinks a:hover {
   color: var(--color-primary);
+  padding-left: 4px;
 }
 
 .footerBottom {
@@ -95,7 +96,7 @@
 
 @media (max-width: 768px) {
   .footerGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 32px;
   }
 

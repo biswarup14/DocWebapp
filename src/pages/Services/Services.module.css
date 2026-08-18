@@ -72,9 +72,8 @@
   font-family: var(--font-heading);
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--color-primary);
-  background-color: var(--color-bg-secondary);
-  border: 1px solid var(--color-border);
+  color: white;
+  background-color: var(--color-primary);
   border-radius: 999px;
   padding: 4px 12px;
   margin-bottom: 16px;

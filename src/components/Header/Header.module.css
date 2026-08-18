@@ -84,7 +84,7 @@
   background-color: var(--emergency-bg);
   border: 2px solid var(--color-danger);
   transition: all var(--transition);
-  animation: pulse-emergency 2s ease-in-out infinite;
+  animation: pulse-emergency 2s ease-in-out 3;
   text-decoration: none;
   margin-left: 8px;
 }
@@ -102,7 +102,7 @@
 
 .emergencyIcon {
   font-size: 1rem;
-  animation: flash 1s ease-in-out infinite;
+  animation: flash 1s ease-in-out 3;
 }
 
 @keyframes pulse-emergency {
@@ -229,6 +229,17 @@
     transform: translateY(0);
     opacity: 1;
     pointer-events: all;
+  }
+
+  .navOpen::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1;
   }
 
   .navLink {

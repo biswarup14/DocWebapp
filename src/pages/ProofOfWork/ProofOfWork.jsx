@@ -1,3 +1,4 @@
+import { useState, useCallback, useEffect } from 'react';
 import SEO from '../../components/SEO/SEO';
 import styles from './ProofOfWork.module.css';
 
@@ -11,6 +12,25 @@ const workItems = [
 ];
 
 export default function ProofOfWork() {
+  const [selectedIndex, setSelectedIndex] = useState(null);
+
+  const close = useCallback(() => setSelectedIndex(null), []);
+
+  useEffect(() => {
+    if (selectedIndex === null) return;
+    const handleKey = (e) => {
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowRight') setSelectedIndex((i) => (i + 1) % workItems.length);
+      if (e.key === 'ArrowLeft') setSelectedIndex((i) => (i - 1 + workItems.length) % workItems.length);
+    };
+    document.addEventListener('keydown', handleKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', handleKey);
+      document.body.style.overflow = '';
+    };
+  }, [selectedIndex, close]);
+
   return (
     <>
       <SEO title="Proof of Work" description="See the results of our dental care — real work, real smiles." url="/proof-of-work" />
@@ -26,15 +46,29 @@ export default function ProofOfWork() {
         <div className="container">
           <div className={styles.grid}>
             {workItems.map((item, i) => (
-              <div key={i} className={styles.card}>
+              <button key={i} className={styles.card} onClick={() => setSelectedIndex(i)}>
                 <div className={styles.imageWrap}>
                   <img src={item.src} alt={item.alt} loading="lazy" />
                 </div>
-              </div>
+              </button>
             ))}
           </div>
         </div>
       </section>
+
+      {selectedIndex !== null && (
+        <div className={styles.lightbox} onClick={close} role="dialog" aria-label="Image lightbox">
+          <button className={styles.lightboxClose} onClick={close} aria-label="Close">&times;</button>
+          <button className={styles.lightboxPrev} onClick={(e) => { e.stopPropagation(); setSelectedIndex((selectedIndex - 1 + workItems.length) % workItems.length); }} aria-label="Previous image">&#8249;</button>
+          <img
+            className={styles.lightboxImg}
+            src={workItems[selectedIndex].src}
+            alt={workItems[selectedIndex].alt}
+            onClick={(e) => e.stopPropagation()}
+          />
+          <button className={styles.lightboxNext} onClick={(e) => { e.stopPropagation(); setSelectedIndex((selectedIndex + 1) % workItems.length); }} aria-label="Next image">&#8250;</button>
+        </div>
+      )}
     </>
   );
 }

@@ -170,7 +170,7 @@
   font-weight: 700;
   font-size: 0.8rem;
   color: var(--color-primary);
-  background-color: rgba(12, 110, 138, 0.1);
+  background-color: var(--color-primary-bg);
   padding: 6px 12px;
   border-radius: 999px;
   white-space: nowrap;
