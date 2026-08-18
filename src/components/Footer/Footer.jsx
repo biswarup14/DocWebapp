@@ -43,8 +43,6 @@ export default function Footer() {
             <li>Behind Reliance Digital, Deshbandhu Road, Badulia, Bardhaman-713101, West Bengal</li>
             <li><a href="tel:+917050576335">(+91) 7050576335</a></li>
             <li><a href="mailto:dr.deepankarbhattacharya@gmail.com">dr.deepankarbhattacharya@gmail.com</a></li>
-            <li>Mon-Fri: 8am - 6pm</li>
-            <li>Saturday: 9am - 2pm</li>
           </ul>
         </div>
       </div>
