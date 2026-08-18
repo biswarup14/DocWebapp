@@ -1,8 +1,11 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import SEO from '../../components/SEO/SEO';
 import ServiceCard from '../../components/ServiceCard/ServiceCard';
 import TestimonialCard from '../../components/TestimonialCard/TestimonialCard';
+import AddTestimonial from '../../components/AddTestimonial/AddTestimonial';
+import { TestimonialContext } from '../../context/TestimonialContext';
 import styles from './Home.module.css';
 
 const services = [
@@ -23,13 +26,10 @@ const services = [
   },
 ];
 
-const testimonials = [
-  { name: 'Emily Rodriguez', rating: 5, text: 'Best dental experience ever! The staff is incredibly friendly and the office is spotless. Dr. Bhattacharya made my teeth whitening results amazing.', date: 'Feb 2025' },
-  { name: 'Michael Chen', rating: 5, text: 'I was terrified of dentists until I came here. They made me feel completely at ease during my implant procedure. Highly recommend!', date: 'Jan 2025' },
-  { name: 'Sarah Johnson', rating: 5, text: 'My kids actually look forward to their dental visits now. The pediatric care here is outstanding. Thank you, Dr. Parker!', date: 'Mar 2025' },
-];
-
 export default function Home() {
+  const { testimonials } = useContext(TestimonialContext);
+  const topTestimonials = testimonials.slice(0, 3);
+
   return (
     <>
       <SEO title="Home" description="Professional dental care for the whole family. Book your appointment today for a healthier, brighter smile." url="/" />
@@ -108,11 +108,16 @@ export default function Home() {
 
       <section className="section">
         <div className="container">
-          <h2 className="section-title">What Our Patients Say</h2>
-          <p className="section-subtitle">Real reviews from real patients.</p>
+          <div className={styles.testimonialsHeader}>
+            <div>
+              <h2 className="section-title">What Our Patients Say</h2>
+              <p className="section-subtitle">Real reviews from real patients.</p>
+            </div>
+            <AddTestimonial />
+          </div>
           <div className="grid grid-3">
-            {testimonials.map((t, i) => (
-              <TestimonialCard key={i} {...t} />
+            {topTestimonials.map((t, i) => (
+              <TestimonialCard key={t.id || i} {...t} />
             ))}
           </div>
         </div>

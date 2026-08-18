@@ -16,6 +16,14 @@
   margin-bottom: 20px;
 }
 
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
 .ratingBadge {
   display: inline-flex;
   align-items: center;
@@ -39,13 +47,12 @@
   gap: 24px;
 }
 
-.shareRow {
-  margin-top: 12px;
-  padding-left: 4px;
-}
-
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .headerRow {
+    flex-direction: column;
   }
 }

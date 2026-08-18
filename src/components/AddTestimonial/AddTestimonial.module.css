@@ -1,0 +1,165 @@
+.triggerBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background-color: var(--color-bg);
+  border: 2px solid var(--color-primary);
+  transition: all var(--transition);
+}
+
+.triggerBtn:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal {
+  background-color: var(--color-bg);
+  border-radius: var(--radius-xl);
+  padding: 36px;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 1.2rem;
+  padding: 4px 8px;
+  border-radius: var(--radius);
+  color: var(--color-text-muted);
+}
+
+.closeBtn:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+.modalTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.modalSubtitle {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 24px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.field input,
+.field textarea {
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-size: 0.9rem;
+  font-family: var(--font-family);
+  transition: border-color var(--transition);
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1);
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+.ratingPicker {
+  display: flex;
+  gap: 4px;
+}
+
+.star {
+  font-size: 1.75rem;
+  color: var(--color-border);
+  transition: color var(--transition), transform 0.15s ease;
+  padding: 0;
+}
+
+.star:hover {
+  transform: scale(1.15);
+}
+
+.starActive {
+  color: var(--color-accent);
+}
+
+.wordCount {
+  text-align: right;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.wordCountOver {
+  color: var(--color-danger);
+  font-weight: 600;
+}
+
+.error {
+  font-size: 0.8rem;
+  color: var(--color-danger);
+}
+
+.success {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.successIcon {
+  font-size: 3rem;
+  color: var(--color-success);
+  display: block;
+  margin-bottom: 16px;
+}
+
+.success h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.success p {
+  color: var(--color-text-secondary);
+  margin-bottom: 24px;
+}

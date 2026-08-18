@@ -78,6 +78,14 @@
   color: white;
 }
 
+.testimonialsHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 48px;
+  gap: 16px;
+}
+
 .ctaSection {
   padding: 0;
 }
