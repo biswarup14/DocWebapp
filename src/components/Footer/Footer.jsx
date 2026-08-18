@@ -51,7 +51,7 @@ export default function Footer() {
       </div>
 
       <div className={`container ${styles.footerBottom}`}>
-        <p>&copy; {new Date().getFullYear()} Incapremo Dental Care. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Incapremo Dental Care. All rights reserved. Made by <a href="https://www.linkedin.com/in/biswarup-bhattacharjee-2a836019a/" target="_blank" rel="noopener noreferrer" className={styles.madeBy}>Biswarup</a></p>
         <div className={styles.footerBottomLinks}>
           <Link to="/emergency">Emergency Contact</Link>
         </div>

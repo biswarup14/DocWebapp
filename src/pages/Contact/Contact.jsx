@@ -48,9 +48,17 @@ export default function Contact() {
 
               <div className={styles.mapContainer}>
                 <h3>Find Us</h3>
-                <div className={styles.mapPlaceholder}>
-                  <span>&#128506;</span>
-                  <p>Google Maps - Behind Reliance Digital, Deshbandhu Road, Badulia, Bardhaman-713101, West Bengal</p>
+                <div className={styles.mapFrame}>
+                  <iframe
+                    title="Incapremo Dental Care Location"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.1234567890123!2d87.88!3d23.25!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDE1JzAwLjAiTiA4N8KwNTInNDguMCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin&q=Behind+Reliance+Digital,+Deshbandhu+Road,+Badulia,+Bardhaman,+West+Bengal+713101"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
                 </div>
               </div>
             </div>

@@ -80,6 +80,16 @@
   color: var(--color-primary);
 }
 
+.madeBy {
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  transition: color var(--transition);
+}
+
+.madeBy:hover {
+  color: var(--color-primary);
+}
+
 @media (max-width: 768px) {
   .footerGrid {
     grid-template-columns: 1fr;

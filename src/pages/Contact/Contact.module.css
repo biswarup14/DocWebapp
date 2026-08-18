@@ -77,26 +77,16 @@ a.infoValue:hover {
   margin-bottom: 12px;
 }
 
-.mapPlaceholder {
+.mapFrame {
   width: 100%;
-  height: 200px;
-  background-color: var(--color-bg-secondary);
-  border: 1px solid var(--color-border);
+  height: 280px;
   border-radius: var(--radius);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  color: var(--color-text-muted);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
 }
 
-.mapPlaceholder span {
-  font-size: 2rem;
-}
-
-.mapPlaceholder p {
-  font-size: 0.85rem;
+.mapFrame iframe {
+  display: block;
 }
 
 @media (max-width: 768px) {
