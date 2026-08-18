@@ -11,7 +11,7 @@ export default function SEO({
   image,
 }) {
   const pageTitle = title ? `${title} | ${SITE_NAME}` : SITE_NAME;
-  const pageUrl = url ? `https://brightsmiledental.com${url}` : 'https://brightsmiledental.com';
+  const pageUrl = url ? `https://incapremodental.com${url}` : 'https://incapremodental.com';
 
   return (
     <Helmet>
@@ -46,7 +46,7 @@ export default function SEO({
             postalCode: '713101',
           },
           telephone: '(+91) 7050576335',
-          openingHours: ['Mo-Fr 08:00-18:00', 'Sa 09:00-14:00'],
+          openingHours: ['Mo-Sa 10:00-14:00', 'Mo-Sa 17:00-20:00'],
         })}
       </script>
     </Helmet>

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import SEO from '../../components/SEO/SEO';
 import styles from './Emergency.module.css';
@@ -17,14 +18,16 @@ export default function Emergency() {
     <>
       <SEO title="Emergency Dental Care" description="24/7 emergency dental care at Incapremo Dental Care. Same-day appointments for dental emergencies. Call us now!" url="/emergency" />
 
-      <script type="application/ld+json">
-        {JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'EmergencyService',
-          name: 'Incapremo Dental Care Emergency',
-          telephone: '(+91) 7050576335',
-        })}
-      </script>
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'EmergencyService',
+            name: 'Incapremo Dental Care Emergency',
+            telephone: '(+91) 7050576335',
+          })}
+        </script>
+      </Helmet>
 
       <section className={styles.pageHeader}>
         <div className="container">

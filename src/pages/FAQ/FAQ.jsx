@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import SEO from '../../components/SEO/SEO';
 import FAQItem from '../../components/FAQItem/FAQItem';
 import styles from './FAQ.module.css';
@@ -34,9 +35,11 @@ export default function FAQ() {
     <>
       <SEO title="FAQ" description="Frequently asked questions about dental services, insurance, pricing, and patient care at Incapremo Dental Care." url="/faq" />
 
-      <script type="application/ld+json">
-        {JSON.stringify(structuredData)}
-      </script>
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      </Helmet>
 
       <section className={styles.pageHeader}>
         <div className="container">

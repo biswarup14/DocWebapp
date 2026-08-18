@@ -9,10 +9,7 @@ const Contact = lazy(() => import('./pages/Contact/Contact'));
 const FAQ = lazy(() => import('./pages/FAQ/FAQ'));
 const Insurance = lazy(() => import('./pages/Insurance/Insurance'));
 const Emergency = lazy(() => import('./pages/Emergency/Emergency'));
-const Gallery = lazy(() => import('./pages/Gallery/Gallery'));
-const Blog = lazy(() => import('./pages/Blog/Blog'));
-const BlogPost = lazy(() => import('./pages/BlogPost/BlogPost'));
-const Admin = lazy(() => import('./pages/Admin/Admin'));
+const ProofOfWork = lazy(() => import('./pages/ProofOfWork/ProofOfWork'));
 
 function Loader() {
   return (
@@ -42,10 +39,7 @@ export default function App() {
           <Route path="/faq" element={<FAQ />} />
           <Route path="/insurance" element={<Insurance />} />
           <Route path="/emergency" element={<Emergency />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:id" element={<BlogPost />} />
-          <Route path="/admin" element={<Admin />} />
+          <Route path="/proof-of-work" element={<ProofOfWork />} />
         </Routes>
       </Suspense>
     </Layout>

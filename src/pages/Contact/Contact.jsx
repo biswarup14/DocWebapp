@@ -6,7 +6,7 @@ const contactInfo = [
   { icon: '&#128205;', label: 'Address', value: 'Behind Reliance Digital, Deshbandhu Road, Badulia, Bardhaman-713101, West Bengal' },
   { icon: '&#128222;', label: 'Phone', value: '(+91) 7050576335', href: 'tel:+917050576335' },
   { icon: '&#128231;', label: 'Email', value: 'dr.deepankarbhattacharya@gmail.com', href: 'mailto:dr.deepankarbhattacharya@gmail.com' },
-  { icon: '&#128336;', label: 'Hours', value: 'Mon-Fri: 8am-6pm | Sat: 9am-2pm' },
+  { icon: '&#128336;', label: 'Hours', value: 'Mon–Sat: 10AM–2PM, 5PM–8PM' },
 ];
 
 export default function Contact() {

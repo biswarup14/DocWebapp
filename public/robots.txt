@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://brightsmiledental.com/sitemap.xml
+Sitemap: https://incapremodental.com/sitemap.xml

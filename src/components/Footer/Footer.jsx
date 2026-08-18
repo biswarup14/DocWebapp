@@ -11,7 +11,7 @@ export default function Footer() {
             <span>&#129463;</span> Incapremo Dental Care
           </Link>
           <p className={styles.footerDesc}>
-            Professional dental care for the whole family. <div className=""></div>Creating brighter smiles.
+            Professional dental care for the whole family. Creating brighter smiles.
           </p>
           <SocialLinks />
         </div>
@@ -21,7 +21,7 @@ export default function Footer() {
           <ul className={styles.footerLinks}>
             <li><Link to="/services">Services</Link></li>
             <li><Link to="/about">About Us</Link></li>
-            <li><Link to="/blog">Blog</Link></li>
+            <li><Link to="/proof-of-work">Proof of Work</Link></li>
             <li><Link to="/faq">FAQ</Link></li>
           </ul>
         </div>
