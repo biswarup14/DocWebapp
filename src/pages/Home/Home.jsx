@@ -117,8 +117,7 @@ export default function Home() {
               href="https://maps.app.goo.gl/p3BLPCVnkG4gG2HB6"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn"
-              style={{ backgroundColor: 'white', color: 'var(--color-primary)', fontWeight: 700 }}
+              className="btn btnReview"
             >
               Leave Us a Google Review &#9733;
             </a>

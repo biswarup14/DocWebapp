@@ -18,7 +18,7 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className={styles.success}>
+      <div className={styles.success} role="status" aria-live="polite">
         <span className={styles.successIcon}>&#10003;</span>
         <h3>Message Sent!</h3>
         <p>Thank you for contacting us. We'll get back to you within 24 hours.</p>

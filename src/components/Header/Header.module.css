@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: var(--header-bg);
   border-bottom: 1px solid var(--color-border);
   height: var(--header-height);
   backdrop-filter: blur(12px);
@@ -81,7 +81,7 @@
   font-weight: 700;
   font-size: 0.875rem;
   color: var(--color-danger);
-  background-color: #fef2f2;
+  background-color: var(--emergency-bg);
   border: 2px solid var(--color-danger);
   transition: all var(--transition);
   animation: pulse-emergency 2s ease-in-out infinite;
@@ -174,12 +174,7 @@
   opacity: 0;
 }
 
-[data-theme="dark"] .header {
-  background-color: rgba(11, 17, 33, 0.85);
-}
-
 [data-theme="dark"] .emergencyLink {
-  background-color: rgba(220, 38, 38, 0.15);
   border-color: var(--color-danger);
 }
 

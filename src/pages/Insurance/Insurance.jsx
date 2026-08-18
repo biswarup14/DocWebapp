@@ -85,9 +85,9 @@ export default function Insurance() {
       </section>
 
       <section className="section">
-        <div className="container" style={{ textAlign: 'center' }}>
+        <div className="container sectionCentered">
           <h2 className="section-title">Questions About Coverage?</h2>
-          <p className="section-subtitle" style={{ margin: '0 auto 24px' }}>Our team will help you understand your benefits and maximize your insurance.</p>
+          <p className="section-subtitle">Our team will help you understand your benefits and maximize your insurance.</p>
           <Link to="/contact" className="btn btn-primary">Contact Us</Link>
         </div>
       </section>

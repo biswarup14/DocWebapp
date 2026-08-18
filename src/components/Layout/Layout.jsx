@@ -33,7 +33,7 @@ export default function Layout({ children }) {
           animate="animate"
           exit="exit"
           transition={{ duration: 0.3 }}
-          style={{ minHeight: `calc(100vh - var(--header-height))` }}
+          className="mainContent"
         >
           {children}
         </motion.main>

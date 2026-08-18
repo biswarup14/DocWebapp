@@ -9,6 +9,7 @@ export default function SEO({
   url,
   type = 'website',
   image,
+  schema = true,
 }) {
   const pageTitle = title ? `${title} | ${SITE_NAME}` : SITE_NAME;
   const pageUrl = url ? `https://incapremodental.com${url}` : 'https://incapremodental.com';
@@ -31,24 +32,26 @@ export default function SEO({
       <meta name="twitter:description" content={description} />
       {image && <meta name="twitter:image" content={image} />}
 
-      <script type="application/ld+json">
-        {JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'Dentist',
-          name: SITE_NAME,
-          url: pageUrl,
-          description,
-          address: {
-            '@type': 'PostalAddress',
-            streetAddress: 'Behind Reliance Digital, Deshbandhu Road, Badulia',
-            addressLocality: 'Bardhaman',
-            addressRegion: 'West Bengal',
-            postalCode: '713101',
-          },
-          telephone: '(+91) 7050576335',
-          openingHours: ['Mo-Sa 10:00-14:00', 'Mo-Sa 17:00-20:00'],
-        })}
-      </script>
+      {schema && (
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Dentist',
+            name: SITE_NAME,
+            url: pageUrl,
+            description,
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: 'Behind Reliance Digital, Deshbandhu Road, Badulia',
+              addressLocality: 'Bardhaman',
+              addressRegion: 'West Bengal',
+              postalCode: '713101',
+            },
+            telephone: '(+91) 7050576335',
+            openingHours: ['Mo-Sa 10:00-14:00', 'Mo-Sa 17:00-20:00'],
+          })}
+        </script>
+      )}
     </Helmet>
   );
 }

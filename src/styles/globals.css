@@ -232,3 +232,32 @@ input, textarea, select {
   color: var(--color-text-secondary);
   margin-bottom: 32px;
 }
+
+.mainContent {
+  min-height: calc(100vh - var(--header-height));
+}
+
+.btnReview {
+  background-color: white;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.sectionCentered {
+  text-align: center;
+}
+
+.sectionCentered .section-subtitle {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Layout from './components/Layout/Layout';
 
 const Home = lazy(() => import('./pages/Home/Home'));
@@ -21,11 +22,16 @@ function Loader() {
 
 function NotFound() {
   return (
-    <div className="notFound">
-      <h1>404</h1>
-      <p>The page you're looking for doesn't exist.</p>
-      <a href="/" className="btn btn-primary">Go Home</a>
-    </div>
+    <>
+      <Helmet>
+        <title>Page Not Found | Incapremo Dental Care</title>
+      </Helmet>
+      <div className="notFound">
+        <h1>404</h1>
+        <p>The page you're looking for doesn't exist.</p>
+        <a href="/" className="btn btn-primary">Go Home</a>
+      </div>
+    </>
   );
 }
 

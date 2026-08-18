@@ -33,7 +33,7 @@ const structuredData = {
 export default function FAQ() {
   return (
     <>
-      <SEO title="FAQ" description="Frequently asked questions about dental services, insurance, pricing, and patient care at Incapremo Dental Care." url="/faq" />
+      <SEO title="FAQ" description="Frequently asked questions about dental services, insurance, pricing, and patient care at Incapremo Dental Care." url="/faq" schema={false} />
 
       <Helmet>
         <script type="application/ld+json">
