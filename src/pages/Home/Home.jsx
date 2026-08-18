@@ -8,11 +8,11 @@ import { TestimonialContext } from '../../context/TestimonialContext';
 import styles from './Home.module.css';
 
 const specializations = [
-  { icon: '&#128737;', title: 'Preventive Dentistry', desc: 'Sealants, fluoride treatments & cavity prevention for children.' },
-  { icon: '&#129463;', title: 'Pediatric Endodontics', desc: 'Pulp therapy & root canals for primary and young permanent teeth.' },
-  { icon: '&#128165;', title: 'Dental Trauma Management', desc: 'Expert emergency care for broken, knocked-out or displaced teeth.' },
-  { icon: '&#127793;', title: 'Space Maintenance & Growth Modification', desc: 'Appliances to guide proper alignment of developing teeth.' },
-  { icon: '&#128156;', title: 'Pediatric Periodontics', desc: 'Diagnosis and treatment of gum conditions in children.' },
+  { image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&h=300&fit=crop', title: 'Preventive Dentistry', desc: 'Sealants, fluoride treatments & cavity prevention for children.' },
+  { image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400&h=300&fit=crop', title: 'Pediatric Endodontics', desc: 'Pulp therapy & root canals for primary and young permanent teeth.' },
+  { image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&h=300&fit=crop', title: 'Dental Trauma Management', desc: 'Expert emergency care for broken, knocked-out or displaced teeth.' },
+  { image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=300&fit=crop', title: 'Space Maintenance & Growth Modification', desc: 'Appliances to guide proper alignment of developing teeth.' },
+  { image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&h=300&fit=crop', title: 'Pediatric Periodontics', desc: 'Diagnosis and treatment of gum conditions in children.' },
 ];
 
 export default function Home() {
@@ -74,7 +74,9 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
               >
-                <span className={styles.specIcon} dangerouslySetInnerHTML={{ __html: s.icon }} />
+                <div className={styles.specImage}>
+                  <img src={s.image} alt={s.title} loading="lazy" />
+                </div>
                 <h3 className={styles.specTitle}>{s.title}</h3>
                 <p className={styles.specDesc}>{s.desc}</p>
               </motion.div>

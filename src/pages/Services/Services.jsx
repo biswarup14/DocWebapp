@@ -5,7 +5,7 @@ import styles from './Services.module.css';
 
 const specializations = [
   {
-    icon: '&#128737;',
+    image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=700&h=500&fit=crop',
     title: 'Preventive Dentistry',
     tagline: 'Keeping little smiles cavity-free.',
     description:
@@ -13,7 +13,7 @@ const specializations = [
     highlights: ['Dental Sealants', 'Fluoride Varnish', 'Oral Hygiene Education', 'Diet & Cavity Counseling'],
   },
   {
-    icon: '&#129463;',
+    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=700&h=500&fit=crop',
     title: 'Pediatric Endodontics',
     tagline: 'Gentle pulp therapy for young teeth.',
     description:
@@ -21,7 +21,7 @@ const specializations = [
     highlights: ['Pulpotomy', 'Pulpectomy', 'Root Canal (Permanent Teeth)', 'Apexogenesis'],
   },
   {
-    icon: '&#128165;',
+    image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=700&h=500&fit=crop',
     title: 'Dental Trauma Management',
     tagline: 'Expert emergency care for accidents.',
     description:
@@ -29,7 +29,7 @@ const specializations = [
     highlights: ['Tooth Re-Implantation', 'Splinting & Stabilisation', 'Fracture Repair', 'Long-Term Monitoring'],
   },
   {
-    icon: '&#127793;',
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700&h=500&fit=crop',
     title: 'Space Maintenance & Growth Modification',
     tagline: 'Guiding smiles as they grow.',
     description:
@@ -37,7 +37,7 @@ const specializations = [
     highlights: ['Custom Space Maintainers', 'Growth-Guiding Appliances', 'Habit Breaking Appliances', 'Interceptive Orthodontics'],
   },
   {
-    icon: '&#128156;',
+    image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=700&h=500&fit=crop',
     title: 'Pediatric Periodontics',
     tagline: 'Healthy gums for a healthy smile.',
     description:
@@ -66,30 +66,34 @@ export default function Services() {
 
       <section className="section">
         <div className="container">
-          {specializations.map((s, i) => (
-            <motion.div
-              key={i}
-              className={styles.specBlock}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.06 }}
-            >
-              <div className={styles.specHeader}>
-                <span className={styles.specIcon} dangerouslySetInnerHTML={{ __html: s.icon }} />
-                <div>
+          {specializations.map((s, i) => {
+            const isEven = i % 2 === 0;
+            return (
+              <motion.div
+                key={i}
+                className={`${styles.specBlock} ${isEven ? styles.specRow : styles.specRowReverse}`}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.06 }}
+              >
+                <div className={styles.specImage}>
+                  <img src={s.image} alt={s.title} loading="lazy" />
+                </div>
+                <div className={styles.specContent}>
+                  <span className={styles.specNumber}>0{i + 1}</span>
                   <h2 className={styles.specTitle}>{s.title}</h2>
                   <p className={styles.specTagline}>{s.tagline}</p>
+                  <p className={styles.specDesc}>{s.description}</p>
+                  <div className={styles.specHighlights}>
+                    {s.highlights.map((h) => (
+                      <span key={h} className={styles.specHighlight}>{h}</span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <p className={styles.specDesc}>{s.description}</p>
-              <div className={styles.specHighlights}>
-                {s.highlights.map((h) => (
-                  <span key={h} className={styles.specHighlight}>{h}</span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </section>
 

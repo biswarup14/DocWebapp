@@ -18,28 +18,63 @@
 }
 
 .specBlock {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: 40px;
-  margin-bottom: 24px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
   background-color: var(--color-bg);
-  transition: box-shadow 0.2s ease;
+  margin-bottom: 32px;
+  transition: box-shadow 0.25s ease;
 }
 
 .specBlock:hover {
   box-shadow: var(--shadow-lg);
 }
 
-.specHeader {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 20px;
+.specRowReverse {
+  direction: rtl;
 }
 
-.specIcon {
-  font-size: 2.5rem;
-  flex-shrink: 0;
+.specRowReverse > * {
+  direction: ltr;
+}
+
+.specImage {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+}
+
+.specImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.specContent {
+  padding: 40px 40px 40px 0;
+}
+
+.specRowReverse .specContent {
+  padding: 40px 0 40px 40px;
+}
+
+.specNumber {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 4px 12px;
+  margin-bottom: 16px;
+  letter-spacing: 0.04em;
 }
 
 .specTitle {
@@ -48,17 +83,18 @@
   font-weight: 800;
   color: var(--color-text);
   letter-spacing: -0.02em;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
 }
 
 .specTagline {
   font-size: 0.9rem;
   color: var(--color-primary);
   font-weight: 500;
+  margin-bottom: 16px;
 }
 
 .specDesc {
-  font-size: 0.95rem;
+  font-size: 0.925rem;
   color: var(--color-text-secondary);
   line-height: 1.8;
   margin-bottom: 24px;
@@ -76,7 +112,7 @@
   border-radius: 999px;
   background-color: var(--color-bg-secondary);
   border: 1px solid var(--color-border);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 500;
   color: var(--color-text-secondary);
 }
@@ -108,16 +144,23 @@
 }
 
 @media (max-width: 768px) {
-  .specBlock {
-    padding: 28px 20px;
+  .specBlock,
+  .specRowReverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
   }
 
-  .specIcon {
-    font-size: 2rem;
+  .specImage {
+    min-height: 220px;
+  }
+
+  .specContent,
+  .specRowReverse .specContent {
+    padding: 28px 24px;
   }
 
   .specTitle {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
   }
 
   .ctaBox {
