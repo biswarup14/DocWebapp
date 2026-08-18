@@ -81,7 +81,7 @@ export default function Emergency() {
         <div className="container" style={{ textAlign: 'center' }}>
           <h2 className="section-title">Need to Book a Regular Visit?</h2>
           <p className="section-subtitle" style={{ margin: '0 auto 24px' }}>For non-emergency appointments, schedule online.</p>
-          <Link to="/appointment" className="btn btn-primary">Book Appointment</Link>
+          <Link to="/contact" className="btn btn-primary">Book Appointment</Link>
         </div>
       </section>
     </>

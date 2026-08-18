@@ -49,13 +49,6 @@ export default function Header() {
             <span className={styles.emergencyIcon}>&#9889;</span>
             {emergencyLink.label}
           </NavLink>
-          <Link
-            to="/appointment"
-            className={`btn btn-primary ${styles.navCta}`}
-            onClick={() => setMenuOpen(false)}
-          >
-            Book Now
-          </Link>
         </nav>
 
         <div className={styles.actions}>

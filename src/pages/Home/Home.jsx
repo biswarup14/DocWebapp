@@ -54,7 +54,7 @@ export default function Home() {
             </p>
             <p className={styles.doctorName}>Led by <strong>Dr. Deepankar Bhattacharya</strong></p>
             <div className={styles.heroActions}>
-              <Link to="/appointment" className="btn btn-primary">Book Appointment</Link>
+              <Link to="/contact" className="btn btn-primary">Book Appointment</Link>
               <Link to="/services" className="btn btn-secondary">Our Specializations</Link>
             </div>
             <div className={styles.heroStats}>

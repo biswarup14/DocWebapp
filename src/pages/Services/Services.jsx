@@ -102,7 +102,7 @@ export default function Services() {
           <div className={styles.ctaBox}>
             <h2>Book a Consultation</h2>
             <p>Give your child the specialist care they deserve. Schedule an appointment today.</p>
-            <Link to="/appointment" className="btn btn-accent">Book Now</Link>
+            <Link to="/contact" className="btn btn-accent">Book Now</Link>
           </div>
         </div>
       </section>
