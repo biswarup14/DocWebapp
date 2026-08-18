@@ -35,7 +35,7 @@ export default function Home() {
               Your Smile Is Our <span className={styles.highlight}>Priority</span>
             </h1>
             <p className={styles.heroSubtitle}>
-              Specialist pediatric dental care in a comfortable, modern environment. Expert treatment for children of all ages.
+              Specialist pediatric dental care in a comfortable, modern environment. Expert treatment for children and adults of all ages.
             </p>
             <p className={styles.doctorName}>Led by <strong>Dr. Deepankar Bhattacharya</strong></p>
             <div className={styles.heroActions}>
@@ -48,7 +48,7 @@ export default function Home() {
                 <span>Years Experience</span>
               </div>
               <div className={styles.stat}>
-                <strong>10K+</strong>
+                <strong>5K+</strong>
                 <span>Happy Patients</span>
               </div>
               <div className={styles.stat}>
