@@ -88,12 +88,20 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={`section ${styles.ctaSection}`}>
+      <section className={`section ${styles.timingsSection}`}>
         <div className="container">
-          <div className={styles.ctaBox}>
-            <h2>Ready for a Brighter Smile?</h2>
-            <p>Schedule your appointment today and experience the difference.</p>
-            <Link to="/appointment" className="btn btn-accent">Book Now</Link>
+          <h2 className="section-title">Appointment Timings</h2>
+          <p className="section-subtitle">We are available 6 days a week. Book a slot that works for you.</p>
+          <div className={styles.timingsCard}>
+            <div className={styles.timingsRow}>
+              <span className={styles.timingsDays}>Monday &ndash; Saturday</span>
+              <span className={styles.timingsDot}></span>
+              <span className={styles.timingsSlots}>
+                <strong>Morning:</strong> 10:00 AM &ndash; 2:00 PM &nbsp;&bull;&nbsp; <strong>Evening:</strong> 5:00 PM &ndash; 8:00 PM
+              </span>
+            </div>
+            <p className={styles.timingsNote}>Closed on Sundays &amp; Public Holidays</p>
+            <Link to="/appointment" className="btn btn-primary">Book an Appointment</Link>
           </div>
         </div>
       </section>

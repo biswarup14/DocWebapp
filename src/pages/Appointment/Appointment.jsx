@@ -6,7 +6,7 @@ import styles from './Appointment.module.css';
 const highlights = [
   { icon: '&#9989;', text: 'Same-day appointments available' },
   { icon: '&#128176;', text: 'Transparent pricing, no hidden fees' },
-  { icon: '&#128222;', text: 'Call us: (555) 123-4567' },
+  { icon: '&#128222;', text: 'Call us: (+91) 7050576335' },
   { icon: '&#127775;', text: 'New patients receive a free consultation' },
 ];
 

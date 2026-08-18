@@ -5,7 +5,7 @@ import styles from './About.module.css';
 
 const stats = [
   { value: '15+', label: 'Years Experience' },
-  { value: '10K+', label: 'Patients Treated' },
+  { value: '5K+', label: 'Patients Treated' },
   { value: '5', label: 'Specializations' },
   { value: '3', label: 'Languages Spoken' },
 ];
@@ -43,13 +43,14 @@ export default function About() {
               <span className={styles.profileBadge}>Meet Your Dentist</span>
               <h2 className={styles.profileName}>Dr. Deepankar Bhattacharya</h2>
               <p className={styles.profileRole}>Associate Professor — Pediatric & Preventive Dentistry</p>
-              <p className={styles.profileQual}>B.D.S., M.D.S. (Pediatric Dentistry)</p>
+              <p className={styles.profileQual}>B.D.S., M.D.S. (Pediatric Dentistry & Preventive Dentistry)</p>
               <p className={styles.profileBio}>
                 Dr. Deepankar Bhattacharya is the founder and lead clinician at Incapremo Dental Care. An Associate Professor in the Department of Pediatric and Preventive Dentistry at Mithila Minority Dental College, he brings a rare combination of academic rigour and hands-on clinical expertise to the practice.
               </p>
               <p className={styles.profileBio}>
                 With B.D.S. and M.D.S. qualifications in Pediatric Dentistry, he has published several research articles andspecialises in treating children with complex dental needs, including patients with special health care requirements. His mission is simple: make every visit comfortable, informed, and effective.
               </p>
+            
               <p className={styles.profileBio}>
                 Fluent in Hindi, English, and Bengali, he connects with families across diverse communities.
               </p>

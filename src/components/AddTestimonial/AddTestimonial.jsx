@@ -112,7 +112,7 @@ export default function AddTestimonial() {
                         id="t-phone"
                         name="phone"
                         type="tel"
-                        placeholder="(555) 123-4567"
+                        placeholder="(+91) 7050576335"
                         value={form.phone}
                         onChange={handleChange}
                       />

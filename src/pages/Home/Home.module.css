@@ -17,10 +17,15 @@
   line-height: 1.1;
   margin-bottom: 20px;
   letter-spacing: -0.04em;
+  color: var(--color-text);
 }
 
 .highlight {
   color: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .heroSubtitle {
@@ -83,7 +88,7 @@
 }
 
 .specCard {
-  background-color: var(--color-bg);
+  background-color: var(--color-bg-card, var(--color-bg));
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -144,14 +149,85 @@
   gap: 16px;
 }
 
+.timingsSection {
+  background-color: var(--color-bg-secondary);
+}
+
+.timingsCard {
+  background-color: var(--color-bg-card, var(--color-bg));
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 40px 48px;
+  max-width: 800px;
+}
+
+.timingsRow {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.timingsDays {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-text);
+}
+
+.timingsDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--color-text-muted);
+  flex-shrink: 0;
+  margin-bottom: 2px;
+}
+
+.timingsSlots {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+}
+
+.timingsSlots strong {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.timingsNote {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  .timingsCard {
+    padding: 28px 24px;
+  }
+
+  .timingsRow {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .timingsDot {
+    display: none;
+  }
+
+  .timingsSlots {
+    font-size: 0.95rem;
+  }
+}
+
 .ctaSection {
-  padding: 0;
+  padding: 32px 24px;
 }
 
 .ctaBox {
   background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
   border-radius: var(--radius-xl);
-  padding: 64px;
+  padding: 64px 48px;
   text-align: center;
   color: white;
 }
@@ -207,8 +283,12 @@
     font-size: 1.375rem;
   }
 
+  .ctaSection {
+    padding: 24px 16px;
+  }
+
   .ctaBox {
-    padding: 40px 24px;
+    padding: 40px 20px;
   }
 
   .ctaBox h2 {

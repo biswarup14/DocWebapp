@@ -40,12 +40,12 @@ export default function SEO({
           description,
           address: {
             '@type': 'PostalAddress',
-            streetAddress: '123 Dental Ave',
-            addressLocality: 'Smileville',
-            addressRegion: 'CA',
-            postalCode: '90210',
+            streetAddress: 'Behind Reliance Digital, Deshbandhu Road, Badulia',
+            addressLocality: 'Bardhaman',
+            addressRegion: 'West Bengal',
+            postalCode: '713101',
           },
-          telephone: '(555) 123-4567',
+          telephone: '(+91) 7050576335',
           openingHours: ['Mo-Fr 08:00-18:00', 'Sa 09:00-14:00'],
         })}
       </script>

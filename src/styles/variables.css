@@ -9,6 +9,7 @@
   --color-bg: #ffffff;
   --color-bg-secondary: #f8fafc;
   --color-bg-tertiary: #eef2f6;
+  --color-bg-card: #ffffff;
   --color-text: #0f172a;
   --color-text-secondary: #475569;
   --color-text-muted: #94a3b8;
@@ -33,10 +34,11 @@
   --color-bg: #0b1121;
   --color-bg-secondary: #131c2e;
   --color-bg-tertiary: #1e293b;
+  --color-bg-card: #162032;
   --color-text: #f1f5f9;
   --color-text-secondary: #cbd5e1;
-  --color-text-muted: #64748b;
-  --color-border: #1e293b;
-  --color-shadow: rgba(0, 0, 0, 0.25);
+  --color-text-muted: #8b9ab5;
+  --color-border: #1e2f45;
+  --color-shadow: rgba(0, 0, 0, 0.45);
   --color-btn-accent-text: #1a1a1a;
 }

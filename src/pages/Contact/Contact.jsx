@@ -3,8 +3,8 @@ import ContactForm from '../../components/ContactForm/ContactForm';
 import styles from './Contact.module.css';
 
 const contactInfo = [
-  { icon: '&#128205;', label: 'Address', value: '123 Dental Ave, Smileville, CA 90210' },
-  { icon: '&#128222;', label: 'Phone', value: '(555) 123-4567', href: 'tel:+15551234567' },
+  { icon: '&#128205;', label: 'Address', value: 'Behind Reliance Digital, Deshbandhu Road, Badulia, Bardhaman-713101, West Bengal' },
+  { icon: '&#128222;', label: 'Phone', value: '(+91) 7050576335', href: 'tel:+917050576335' },
   { icon: '&#128231;', label: 'Email', value: 'info@brightsmiledental.com', href: 'mailto:info@brightsmiledental.com' },
   { icon: '&#128336;', label: 'Hours', value: 'Mon-Fri: 8am-6pm | Sat: 9am-2pm' },
 ];
@@ -50,7 +50,7 @@ export default function Contact() {
                 <h3>Find Us</h3>
                 <div className={styles.mapPlaceholder}>
                   <span>&#128506;</span>
-                  <p>Google Maps - 123 Dental Ave, Smileville, CA 90210</p>
+                  <p>Google Maps - Behind Reliance Digital, Deshbandhu Road, Badulia, Bardhaman-713101, West Bengal</p>
                 </div>
               </div>
             </div>

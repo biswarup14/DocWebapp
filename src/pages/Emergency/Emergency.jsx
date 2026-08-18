@@ -22,7 +22,7 @@ export default function Emergency() {
           '@context': 'https://schema.org',
           '@type': 'EmergencyService',
           name: 'Incapremo Dental Care Emergency',
-          telephone: '(555) 123-4567',
+          telephone: '(+91) 7050576335',
         })}
       </script>
 
@@ -31,8 +31,8 @@ export default function Emergency() {
           <div className={styles.emergencyBadge}>&#128680; Emergency</div>
           <h1 className={styles.pageTitle}>Dental Emergency?</h1>
           <p className={styles.pageSubtitle}>We provide same-day emergency dental care. Don't wait — call us now.</p>
-          <a href="tel:+15551234567" className={`btn btn-accent ${styles.btnLg}`}>
-            &#128222; Call (555) 123-4567
+          <a href="tel:+917050576335" className={`btn btn-accent ${styles.btnLg}`}>
+            &#128222; Call (+91) 7050576335
           </a>
         </div>
       </section>
@@ -69,9 +69,8 @@ export default function Emergency() {
             <div className={styles.afterHoursContent}>
               <p>For emergencies outside of regular office hours:</p>
               <ul>
-                <li><strong>Call our main line:</strong> (555) 123-4567</li>
-                <li><strong>After-hours answering service:</strong> You'll be connected to an on-call dentist</li>
-                <li><strong>Nearest ER:</strong> Smileville General Hospital — 456 Health Blvd</li>
+                <li><strong>Call our main line:</strong> (+91) 7050576335</li>
+                <li><strong>Alternate Contact</strong> (+91) 9334335872</li>
               </ul>
             </div>
           </div>

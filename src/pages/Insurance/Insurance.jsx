@@ -54,7 +54,7 @@ export default function Insurance() {
             ))}
           </div>
           <div className={styles.note}>
-            <p>Don't see your insurance? <a href="tel:+15551234567">Call us</a> — we'll help verify your coverage.</p>
+            <p>Don't see your insurance? <a href="tel:+917050576335">Call us</a> — we'll help verify your coverage.</p>
           </div>
         </div>
       </section>

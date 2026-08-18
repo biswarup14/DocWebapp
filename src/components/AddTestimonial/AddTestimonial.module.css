@@ -7,7 +7,7 @@
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--color-primary);
-  background-color: var(--color-bg);
+  background-color: var(--color-bg-card, var(--color-bg));
   border: 2px solid var(--color-primary);
   transition: all var(--transition);
 }
@@ -29,7 +29,8 @@
 }
 
 .modal {
-  background-color: var(--color-bg);
+  background-color: var(--color-bg-card, var(--color-bg));
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
   padding: 36px;
   width: 100%;
@@ -47,10 +48,12 @@
   padding: 4px 8px;
   border-radius: var(--radius);
   color: var(--color-text-muted);
+  transition: background-color var(--transition);
 }
 
 .closeBtn:hover {
   background-color: var(--color-bg-secondary);
+  color: var(--color-text);
 }
 
 .modalTitle {
@@ -99,7 +102,7 @@
 .field textarea:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1);
+  box-shadow: 0 0 0 3px rgba(12, 110, 138, 0.2);
 }
 
 .field textarea {
