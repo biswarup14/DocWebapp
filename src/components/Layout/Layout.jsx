@@ -22,9 +22,11 @@ export default function Layout({ children }) {
 
   return (
     <>
+      <a href="#main-content" className="skip-link">Skip to content</a>
       <Header />
       <AnimatePresence mode="wait">
         <motion.main
+          id="main-content"
           key={pathname}
           variants={pageVariants}
           initial="initial"

@@ -5,7 +5,7 @@ import styles from './Services.module.css';
 
 const specializations = [
   {
-    image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=700&h=500&fit=crop',
+    image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=700&h=500&fit=crop&q=80&fm=webp',
     title: 'Preventive Dentistry',
     tagline: 'Keeping little smiles cavity-free.',
     description:
@@ -21,7 +21,7 @@ const specializations = [
     highlights: ['Pulpotomy', 'Pulpectomy', 'Root Canal (Permanent Teeth)', 'Apexogenesis'],
   },
   {
-    image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=700&h=500&fit=crop',
+    image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=700&h=500&fit=crop&q=80&fm=webp',
     title: 'Dental Trauma Management',
     tagline: 'Expert emergency care for accidents.',
     description:
@@ -29,7 +29,7 @@ const specializations = [
     highlights: ['Tooth Re-Implantation', 'Splinting & Stabilisation', 'Fracture Repair', 'Long-Term Monitoring'],
   },
   {
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700&h=500&fit=crop',
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700&h=500&fit=crop&q=80&fm=webp',
     title: 'Space Maintenance & Growth Modification',
     tagline: 'Guiding smiles as they grow.',
     description:
@@ -37,7 +37,7 @@ const specializations = [
     highlights: ['Custom Space Maintainers', 'Growth-Guiding Appliances', 'Habit Breaking Appliances', 'Interceptive Orthodontics'],
   },
   {
-    image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=700&h=500&fit=crop',
+    image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=700&h=500&fit=crop&q=80&fm=webp',
     title: 'Pediatric Periodontics',
     tagline: 'Healthy gums for a healthy smile.',
     description:

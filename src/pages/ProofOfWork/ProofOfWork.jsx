@@ -28,7 +28,7 @@ export default function ProofOfWork() {
             {workItems.map((src, i) => (
               <div key={i} className={styles.card}>
                 <div className={styles.imageWrap}>
-                  <img src={src} alt={`Work ${i + 1}`} />
+                  <img src={src} alt={`Work ${i + 1}`} loading="lazy" />
                 </div>
               </div>
             ))}

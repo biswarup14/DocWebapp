@@ -212,15 +212,6 @@
   gap: 20px;
 }
 
-.clock {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: var(--color-primary);
-  letter-spacing: 0.03em;
-  white-space: nowrap;
-}
-
 @media (max-width: 768px) {
   .timingsBarInner {
     justify-content: center;
@@ -237,10 +228,6 @@
   .timingsCenter {
     flex-wrap: wrap;
     justify-content: center;
-  }
-
-  .clock {
-    font-size: 1.1rem;
   }
 }
 

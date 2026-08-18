@@ -75,6 +75,7 @@ export default function Header() {
             className={styles.menuToggle}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
+            aria-expanded={menuOpen}
           >
             <span className={`${styles.bar} ${menuOpen ? styles.barOpen : ''}`} />
             <span className={`${styles.bar} ${menuOpen ? styles.barOpen : ''}`} />

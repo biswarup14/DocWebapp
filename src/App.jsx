@@ -13,16 +13,18 @@ const ProofOfWork = lazy(() => import('./pages/ProofOfWork/ProofOfWork'));
 
 function Loader() {
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '50vh' }}>
-      <div style={{
-        width: 40,
-        height: 40,
-        border: '4px solid var(--color-border)',
-        borderTopColor: 'var(--color-primary)',
-        borderRadius: '50%',
-        animation: 'spin 0.8s linear infinite',
-      }} />
-      <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+    <div className="loader">
+      <div className="loaderSpinner" />
+    </div>
+  );
+}
+
+function NotFound() {
+  return (
+    <div className="notFound">
+      <h1>404</h1>
+      <p>The page you're looking for doesn't exist.</p>
+      <a href="/" className="btn btn-primary">Go Home</a>
     </div>
   );
 }
@@ -40,6 +42,7 @@ export default function App() {
           <Route path="/insurance" element={<Insurance />} />
           <Route path="/emergency" element={<Emergency />} />
           <Route path="/proof-of-work" element={<ProofOfWork />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
     </Layout>

@@ -29,10 +29,10 @@ export default function Footer() {
         <div className={styles.footerCol}>
           <h4 className={styles.footerHeading}>Services</h4>
           <ul className={styles.footerLinks}>
-            <li><Link to="/services">General Dentistry</Link></li>
-            <li><Link to="/services">Teeth Whitening</Link></li>
-            <li><Link to="/services">Dental Implants</Link></li>
-            <li><Link to="/services">Orthodontics</Link></li>
+            <li><Link to="/services">Preventive Dentistry</Link></li>
+            <li><Link to="/services">Pediatric Endodontics</Link></li>
+            <li><Link to="/services">Dental Trauma</Link></li>
+            <li><Link to="/services">Space Maintenance</Link></li>
             <li><Link to="/insurance">Insurance & Pricing</Link></li>
           </ul>
         </div>
