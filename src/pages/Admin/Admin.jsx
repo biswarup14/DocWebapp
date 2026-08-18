@@ -8,7 +8,7 @@ const defaultForm = {
   title: '',
   excerpt: '',
   content: '',
-  author: 'Dr. Sarah Mitchell',
+  author: 'Dr. Deepankar Bhattacharya',
   category: 'Oral Hygiene',
   readTime: '4 min read',
 };

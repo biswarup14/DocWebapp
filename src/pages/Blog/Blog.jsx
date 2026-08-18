@@ -2,7 +2,7 @@ import { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import SEO from '../../components/SEO/SEO';
 import BlogCard from '../../components/BlogCard/BlogCard';
-import { BlogContext, isAdminLoggedIn } from '../../context/BlogContext';
+import { BlogContext, isAdminLoggedIn, adminLogin } from '../../context/BlogContext';
 import styles from './Blog.module.css';
 
 function AdminLoginModal({ onClose }) {
@@ -12,7 +12,6 @@ function AdminLoginModal({ onClose }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { adminLogin } = require('../../context/BlogContext');
     if (adminLogin(password)) {
       onClose();
       navigate('/admin');

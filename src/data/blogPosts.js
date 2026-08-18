@@ -22,7 +22,7 @@ Hold your toothbrush at a 45-degree angle to the gumline. Use short, gentle back
 - Using a hard-bristled brush
 - Neglecting the inner surfaces of teeth
 - Rushing through the process`,
-    author: 'Dr. Sarah Mitchell',
+    author: 'Dr. Deepankar Bhattacharya',
     date: '2025-03-15',
     category: 'Oral Hygiene',
     readTime: '4 min read',
@@ -47,7 +47,7 @@ Almonds provide calcium and protein while being low in sugar.
 
 **Fish**
 Salmon is rich in vitamin D, which helps the body absorb calcium.`,
-    author: 'Dr. James Parker',
+    author: 'Dr. Deepankar Bhattacharya',
     date: '2025-03-01',
     category: 'Nutrition',
     readTime: '3 min read',
@@ -69,7 +69,7 @@ Deep breathing, meditation, and progressive muscle relaxation can help calm nerv
 
 **Consider Sedation Options**
 For severe anxiety, ask about nitrous oxide or oral sedation options.`,
-    author: 'Dr. Sarah Mitchell',
+    author: 'Dr. Deepankar Bhattacharya',
     date: '2025-02-15',
     category: 'Patient Care',
     readTime: '5 min read',
@@ -91,7 +91,7 @@ Use colorful toothbrushes, flavored toothpaste, and songs to make brushing an en
 
 **Sealants**
 Ask your dentist about dental sealants — a protective coating applied to the chewing surfaces of back teeth.`,
-    author: 'Dr. James Parker',
+    author: 'Dr. Deepankar Bhattacharya',
     date: '2025-02-01',
     category: 'Pediatric Dentistry',
     readTime: '4 min read',

@@ -24,7 +24,7 @@ const services = [
 ];
 
 const testimonials = [
-  { name: 'Emily Rodriguez', rating: 5, text: 'Best dental experience ever! The staff is incredibly friendly and the office is spotless. Dr. Mitchell made my teeth whitening results amazing.', date: 'Feb 2025' },
+  { name: 'Emily Rodriguez', rating: 5, text: 'Best dental experience ever! The staff is incredibly friendly and the office is spotless. Dr. Bhattacharya made my teeth whitening results amazing.', date: 'Feb 2025' },
   { name: 'Michael Chen', rating: 5, text: 'I was terrified of dentists until I came here. They made me feel completely at ease during my implant procedure. Highly recommend!', date: 'Jan 2025' },
   { name: 'Sarah Johnson', rating: 5, text: 'My kids actually look forward to their dental visits now. The pediatric care here is outstanding. Thank you, Dr. Parker!', date: 'Mar 2025' },
 ];
@@ -48,6 +48,7 @@ export default function Home() {
             <p className={styles.heroSubtitle}>
               Experience exceptional dental care in a comfortable, modern environment. From routine cleanings to complete smile makeovers.
             </p>
+            <p className={styles.doctorName}>Led by <strong>Dr. Deepankar Bhattacharya</strong></p>
             <div className={styles.heroActions}>
               <Link to="/appointment" className="btn btn-primary">Book Appointment</Link>
               <Link to="/services" className="btn btn-secondary">Our Services</Link>

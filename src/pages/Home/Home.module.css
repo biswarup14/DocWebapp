@@ -29,6 +29,16 @@
   max-width: 520px;
 }
 
+.doctorName {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 24px;
+}
+
+.doctorName strong {
+  color: var(--color-primary);
+}
+
 .heroActions {
   display: flex;
   gap: 16px;

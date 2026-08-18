@@ -3,10 +3,7 @@ import SEO from '../../components/SEO/SEO';
 import styles from './About.module.css';
 
 const team = [
-  { name: 'Dr. Sarah Mitchell', role: 'Lead Dentist & Founder', bio: 'Over 15 years of experience in general and cosmetic dentistry. DDS from UCLA.' },
-  { name: 'Dr. James Parker', role: 'Pediatric Dentist', bio: 'Specializes in children\'s dentistry with a gentle approach. Board-certified pediatric dentist.' },
-  { name: 'Dr. Lisa Wong', role: 'Orthodontist', bio: 'Expert in braces and Invisalign treatments. 10+ years of orthodontic experience.' },
-  { name: 'Maria Santos', role: 'Dental Hygienist', bio: 'Certified dental hygienist passionate about preventive care and patient education.' },
+  { name: 'Dr. Deepankar Bhattacharya', role: 'Lead Dentist & Founder', bio: 'Over 15 years of experience in general and cosmetic dentistry. DDS from UCLA.' },
 ];
 
 const values = [
@@ -33,7 +30,7 @@ export default function About() {
           <div className={styles.story}>
             <div className={styles.storyContent}>
               <h2>Our Story</h2>
-              <p>Bright Smile Dental was founded in 2005 by Dr. Sarah Mitchell with a simple mission: provide exceptional dental care in a warm, welcoming environment.</p>
+              <p>Bright Smile Dental was founded in 2005 by Dr. Deepankar Bhattacharya with a simple mission: provide exceptional dental care in a warm, welcoming environment.</p>
               <p>What started as a small practice has grown into a full-service dental clinic serving thousands of happy patients. We invest in the latest dental technology and continuously train our team to deliver the best outcomes.</p>
               <p>Today, we're proud to be one of the most trusted dental practices in the Smileville community.</p>
             </div>

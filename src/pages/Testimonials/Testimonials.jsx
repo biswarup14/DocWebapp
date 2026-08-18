@@ -5,10 +5,10 @@ import ShareButtons from '../../components/ShareButtons/ShareButtons';
 import styles from './Testimonials.module.css';
 
 const testimonials = [
-  { name: 'Emily Rodriguez', rating: 5, text: 'Best dental experience ever! The staff is incredibly friendly and the office is spotless. Dr. Mitchell made my teeth whitening results amazing.', date: 'February 2025' },
+  { name: 'Emily Rodriguez', rating: 5, text: 'Best dental experience ever! The staff is incredibly friendly and the office is spotless. Dr. Bhattacharya made my teeth whitening results amazing.', date: 'February 2025' },
   { name: 'Michael Chen', rating: 5, text: 'I was terrified of dentists until I came here. They made me feel completely at ease during my implant procedure. Highly recommend!', date: 'January 2025' },
   { name: 'Sarah Johnson', rating: 5, text: 'My kids actually look forward to their dental visits now. The pediatric care here is outstanding. Thank you, Dr. Parker!', date: 'March 2025' },
-  { name: 'David Kim', rating: 5, text: 'The Invisalign treatment was seamless. Dr. Wong monitored every step and the results exceeded my expectations. My teeth are perfectly aligned now.', date: 'December 2024' },
+  { name: 'David Kim', rating: 5, text: 'The Invisalign treatment was seamless. Dr. Bhattacharya monitored every step and the results exceeded my expectations. My teeth are perfectly aligned now.', date: 'December 2024' },
   { name: 'Jennifer Lopez', rating: 4, text: 'Great experience with my crown restoration. The whole process was explained clearly and the final result looks completely natural.', date: 'November 2024' },
   { name: 'Robert Wilson', rating: 5, text: 'Had a dental emergency on a Saturday. They got me in immediately and took care of the problem. Lifesavers!', date: 'October 2024' },
   { name: 'Amanda Foster', rating: 5, text: 'The veneers transformed my smile completely. I finally feel confident in photos. The team here is truly exceptional.', date: 'September 2024' },
