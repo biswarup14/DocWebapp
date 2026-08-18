@@ -12,6 +12,8 @@ const navLinks = [
   { to: '/contact', label: 'Contact' },
 ];
 
+const emergencyLink = { to: '/emergency', label: 'Emergency' };
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
@@ -37,6 +39,16 @@ export default function Header() {
               {link.label}
             </NavLink>
           ))}
+          <NavLink
+            to={emergencyLink.to}
+            className={({ isActive }) =>
+              `${styles.emergencyLink} ${isActive ? styles.emergencyLinkActive : ''}`
+            }
+            onClick={() => setMenuOpen(false)}
+          >
+            <span className={styles.emergencyIcon}>&#9889;</span>
+            {emergencyLink.label}
+          </NavLink>
           <Link
             to="/appointment"
             className={`btn btn-primary ${styles.navCta}`}

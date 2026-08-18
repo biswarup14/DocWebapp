@@ -67,6 +67,58 @@
   font-size: 0.9rem;
 }
 
+.emergencyLink {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--color-danger);
+  background-color: #fef2f2;
+  border: 2px solid var(--color-danger);
+  transition: all var(--transition);
+  animation: pulse-emergency 2s ease-in-out infinite;
+  text-decoration: none;
+  margin-left: 8px;
+}
+
+.emergencyLink:hover {
+  background-color: var(--color-danger);
+  color: white;
+  transform: scale(1.05);
+}
+
+.emergencyLinkActive {
+  background-color: var(--color-danger) !important;
+  color: white !important;
+}
+
+.emergencyIcon {
+  font-size: 1rem;
+  animation: flash 1s ease-in-out infinite;
+}
+
+@keyframes pulse-emergency {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(220, 38, 38, 0);
+  }
+}
+
+@keyframes flash {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
 .actions {
   display: flex;
   align-items: center;
@@ -180,5 +232,14 @@
     margin-left: 0;
     margin-top: 8px;
     width: 100%;
+  }
+
+  .emergencyLink {
+    margin-left: 0;
+    margin-top: 8px;
+    width: 100%;
+    justify-content: center;
+    padding: 14px 16px;
+    font-size: 1rem;
   }
 }
