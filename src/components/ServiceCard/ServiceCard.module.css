@@ -2,19 +2,31 @@
   background-color: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: 32px;
+  overflow: hidden;
   transition: all var(--transition);
 }
 
-.icon {
-  font-size: 2.5rem;
-  margin-bottom: 16px;
+.imageWrapper {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.05);
 }
 
 .title {
   font-size: 1.125rem;
   font-weight: 600;
-  margin-bottom: 8px;
+  margin: 20px 24px 8px;
   color: var(--color-text);
 }
 
@@ -22,4 +34,5 @@
   font-size: 0.9rem;
   color: var(--color-text-secondary);
   line-height: 1.7;
+  padding: 0 24px 24px;
 }

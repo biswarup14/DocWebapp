@@ -6,12 +6,21 @@ import TestimonialCard from '../../components/TestimonialCard/TestimonialCard';
 import styles from './Home.module.css';
 
 const services = [
-  { icon: '&#129463;', title: 'General Dentistry', description: 'Comprehensive checkups, cleanings, and preventive care to keep your smile healthy.' },
-  { icon: '&#9728;', title: 'Teeth Whitening', description: 'Professional whitening treatments to brighten your smile by several shades.' },
-  { icon: '&#128296;', title: 'Dental Implants', description: 'Permanent tooth replacement solutions that look and feel natural.' },
-  { icon: '&#128171;', title: 'Orthodontics', description: 'Braces and Invisalign treatments to straighten teeth and correct bite issues.' },
-  { icon: '&#10024;', title: 'Cosmetic Dentistry', description: 'Veneers, bonding, and smile makeovers for a picture-perfect smile.' },
-  { icon: '&#128680;', title: 'Emergency Care', description: 'Same-day emergency dental services when you need them most.' },
+  {
+    image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&h=400&fit=crop',
+    title: 'General Dentistry',
+    description: 'Comprehensive checkups, cleanings, and preventive care to keep your smile healthy.',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&h=400&fit=crop',
+    title: 'Teeth Whitening',
+    description: 'Professional whitening treatments to brighten your smile by several shades.',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&h=400&fit=crop',
+    title: 'Dental Implants',
+    description: 'Permanent tooth replacement solutions that look and feel natural.',
+  },
 ];
 
 const testimonials = [
@@ -79,6 +88,9 @@ export default function Home() {
             {services.map((s, i) => (
               <ServiceCard key={i} {...s} />
             ))}
+          </div>
+          <div className={styles.servicesMore}>
+            <Link to="/services" className="btn btn-secondary">More Services &#8594;</Link>
           </div>
         </div>
       </section>

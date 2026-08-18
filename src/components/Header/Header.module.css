@@ -77,12 +77,42 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
   transition: background-color var(--transition);
+  position: relative;
 }
 
 .themeToggle:hover {
   background-color: var(--color-bg-secondary);
+}
+
+.sunIcon,
+.moonIcon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+}
+
+.lightTheme .sunIcon {
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+  color: var(--color-accent);
+}
+
+.lightTheme .moonIcon {
+  transform: rotate(90deg) scale(0.5);
+  opacity: 0;
+}
+
+.darkTheme .moonIcon {
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+  color: #fbbf24;
+}
+
+.darkTheme .sunIcon {
+  transform: rotate(-90deg) scale(0.5);
+  opacity: 0;
 }
 
 .menuToggle {

@@ -4,15 +4,119 @@
   text-align: center;
 }
 
+.headerInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .pageTitle {
   font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 12px;
+  text-align: left;
 }
 
 .pageSubtitle {
   font-size: 1.15rem;
   color: var(--color-text-secondary);
+  text-align: left;
+}
+
+.adminBtn {
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.adminBtn:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal {
+  background-color: var(--color-bg);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  width: 100%;
+  max-width: 380px;
+  position: relative;
+}
+
+.modalClose {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 1.1rem;
+  padding: 4px 8px;
+  border-radius: var(--radius);
+  color: var(--color-text-muted);
+}
+
+.modalClose:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+.modal h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.modal > p {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 20px;
+}
+
+.modalError {
+  color: var(--color-danger) !important;
+  font-size: 0.85rem !important;
+  margin-bottom: 12px !important;
+  padding: 8px 12px;
+  background-color: #fef2f2;
+  border-radius: var(--radius);
+}
+
+[data-theme="dark"] .modalError {
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+.modalField {
+  margin-bottom: 16px;
+}
+
+.modalField input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+
+.modalField input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1);
 }
 
 .blogGrid {
@@ -21,7 +125,32 @@
   gap: 24px;
 }
 
+.empty {
+  text-align: center;
+  padding: 64px 24px;
+  color: var(--color-text-muted);
+  background-color: var(--color-bg);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.empty p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
 @media (max-width: 768px) {
+  .headerInner {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .pageTitle,
+  .pageSubtitle {
+    text-align: center;
+  }
+
   .blogGrid {
     grid-template-columns: 1fr;
   }

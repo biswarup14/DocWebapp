@@ -91,6 +91,11 @@
   margin-bottom: 24px;
 }
 
+.servicesMore {
+  text-align: center;
+  margin-top: 40px;
+}
+
 @media (max-width: 768px) {
   .heroInner {
     grid-template-columns: 1fr;

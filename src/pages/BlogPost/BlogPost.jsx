@@ -1,13 +1,14 @@
+import { useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import SEO from '../../components/SEO/SEO';
 import ShareButtons from '../../components/ShareButtons/ShareButtons';
-import { blogPosts } from '../../data/blogPosts';
+import { BlogContext } from '../../context/BlogContext';
 import styles from './BlogPost.module.css';
 
 export default function BlogPost() {
   const { id } = useParams();
-  const post = blogPosts.find((p) => p.id === id);
+  const { getPost } = useContext(BlogContext);
+  const post = getPost(id);
 
   if (!post) {
     return (

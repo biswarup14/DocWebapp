@@ -54,6 +54,7 @@ export default function Footer() {
         <p>&copy; {new Date().getFullYear()} Bright Smile Dental. All rights reserved.</p>
         <div className={styles.footerBottomLinks}>
           <Link to="/emergency">Emergency Contact</Link>
+          <Link to="/admin" className={styles.adminLink}>Admin</Link>
         </div>
       </div>
     </footer>

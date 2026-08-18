@@ -14,6 +14,7 @@ const Emergency = lazy(() => import('./pages/Emergency/Emergency'));
 const Gallery = lazy(() => import('./pages/Gallery/Gallery'));
 const Blog = lazy(() => import('./pages/Blog/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost/BlogPost'));
+const Admin = lazy(() => import('./pages/Admin/Admin'));
 
 function Loader() {
   return (
@@ -48,6 +49,7 @@ export default function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogPost />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </Suspense>
     </Layout>
