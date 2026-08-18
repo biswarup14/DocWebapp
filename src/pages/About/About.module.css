@@ -19,8 +19,8 @@
 
 .profileBlock {
   display: grid;
-  grid-template-columns: 5fr 7fr;
-  gap: 56px;
+  grid-template-columns: 4fr 8fr;
+  gap: 48px;
   align-items: start;
 }
 
@@ -29,7 +29,9 @@
   top: 100px;
   border-radius: var(--radius-xl);
   overflow: hidden;
-  aspect-ratio: 4/5;
+  aspect-ratio: 3/4;
+  border: 2px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
 }
 
 .profileImage img {

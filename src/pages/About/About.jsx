@@ -34,7 +34,7 @@ export default function About() {
           <div className={styles.profileBlock}>
             <div className={styles.profileImage}>
               <img
-                src="https://cdn-icons-png.flaticon.com/512/3774/3774555.png"
+                src="/oie_Xo2NfYNrbzXd.png"
                 alt="Dr. Deepankar Bhattacharya"
                 loading="lazy"
               />

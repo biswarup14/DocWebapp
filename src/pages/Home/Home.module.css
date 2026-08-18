@@ -152,68 +152,103 @@
 .timingsBar {
   background-color: var(--color-bg-secondary);
   border-bottom: 1px solid var(--color-border);
-  padding: 14px 0;
+  padding: 20px 0;
 }
 
 .timingsBarInner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 24px;
   flex-wrap: wrap;
 }
 
 .timingsLeft {
   display: flex;
   align-items: center;
-  gap: 12px;
 }
 
-.timingsLabel {
+.timingsDays {
+  display: flex;
+  gap: 6px;
+}
+
+.dayBadge {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--color-primary);
   background-color: rgba(12, 110, 138, 0.1);
-  padding: 4px 12px;
+  padding: 6px 12px;
   border-radius: 999px;
   white-space: nowrap;
+  letter-spacing: 0.01em;
 }
 
-.timingsTime {
-  font-size: 0.9rem;
-  color: var(--color-text-secondary);
-}
-
-.timingsRight {
+.timingsCenter {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-.clock {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: var(--color-text);
-  letter-spacing: 0.02em;
-  white-space: nowrap;
+.timingsSlot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.timingsBtn {
-  padding: 6px 18px;
-  font-size: 0.8rem;
+.slotIcon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.slotTime {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-text);
+}
+
+.timingsDivider {
+  font-size: 1.2rem;
+  color: var(--color-text-muted);
+}
+
+.timingsRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.clock {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
 }
 
 @media (max-width: 768px) {
   .timingsBarInner {
     justify-content: center;
     text-align: center;
+    flex-direction: column;
+    gap: 16px;
   }
 
-  .timingsLeft {
-    flex-direction: column;
-    gap: 4px;
+  .timingsDays {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .timingsCenter {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .clock {
+    font-size: 1.1rem;
   }
 }
 

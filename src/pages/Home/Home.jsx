@@ -78,12 +78,25 @@ export default function Home() {
       <section className={styles.timingsBar}>
         <div className={`container ${styles.timingsBarInner}`}>
           <div className={styles.timingsLeft}>
-            <span className={styles.timingsLabel}>Mon &ndash; Sat</span>
-            <span className={styles.timingsTime}>10 AM &ndash; 2 PM &amp; 5 PM &ndash; 8 PM</span>
+            <div className={styles.timingsDays}>
+              {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
+                <span key={day} className={styles.dayBadge}>{day}</span>
+              ))}
+            </div>
+          </div>
+          <div className={styles.timingsCenter}>
+            <div className={styles.timingsSlot}>
+              <span className={styles.slotIcon}>&#9788;</span>
+              <span className={styles.slotTime}>10 AM &ndash; 2 PM</span>
+            </div>
+            <span className={styles.timingsDivider}>&bull;</span>
+            <div className={styles.timingsSlot}>
+              <span className={styles.slotIcon}>&#9790;</span>
+              <span className={styles.slotTime}>5 PM &ndash; 8 PM</span>
+            </div>
           </div>
           <div className={styles.timingsRight}>
             <LiveClock />
-            <Link to="/appointment" className={`btn btn-primary ${styles.timingsBtn}`}>Book Now</Link>
           </div>
         </div>
       </section>
