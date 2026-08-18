@@ -65,6 +65,24 @@ export default function Contact() {
           </div>
         </div>
       </section>
+
+      <section className={styles.reviewCta}>
+        <div className="container">
+          <div className={styles.reviewCtaBox}>
+            <h2>Loved Your Visit?</h2>
+            <p>Your feedback helps us grow and helps other families find quality dental care. Share your experience on Google!</p>
+            <a
+              href="https://maps.app.goo.gl/p3BLPCVnkG4gG2HB6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn"
+              style={{ backgroundColor: 'white', color: 'var(--color-primary)', fontWeight: 700 }}
+            >
+              Leave Us a Google Review &#9733;
+            </a>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

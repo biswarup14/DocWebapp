@@ -89,6 +89,32 @@ a.infoValue:hover {
   display: block;
 }
 
+.reviewCta {
+  padding: 32px 24px;
+}
+
+.reviewCtaBox {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  border-radius: var(--radius-xl);
+  padding: 48px 32px;
+  text-align: center;
+  color: white;
+}
+
+.reviewCtaBox h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  letter-spacing: -0.03em;
+}
+
+.reviewCtaBox p {
+  font-size: 1.05rem;
+  opacity: 0.9;
+  margin-bottom: 24px;
+}
+
 @media (max-width: 768px) {
   .pageHeader {
     padding: 40px 0;
