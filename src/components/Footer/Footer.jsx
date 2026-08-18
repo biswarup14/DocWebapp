@@ -11,7 +11,7 @@ export default function Footer() {
             <span>&#129463;</span> Incapremo Dental Care
           </Link>
           <p className={styles.footerDesc}>
-            Professional dental care for the whole family. Creating brighter smiles since 2005.
+            Professional dental care for the whole family. <div className=""></div>Creating brighter smiles.
           </p>
           <SocialLinks />
         </div>
