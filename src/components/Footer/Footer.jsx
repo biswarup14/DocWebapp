@@ -8,7 +8,7 @@ export default function Footer() {
       <div className={`container ${styles.footerGrid}`}>
         <div className={styles.footerCol}>
           <Link to="/" className={styles.footerLogo}>
-            <span>&#129463;</span> Bright Smile Dental
+            <span>&#129463;</span> Incapremo Dental Care
           </Link>
           <p className={styles.footerDesc}>
             Professional dental care for the whole family. Creating brighter smiles since 2005.
@@ -51,7 +51,7 @@ export default function Footer() {
       </div>
 
       <div className={`container ${styles.footerBottom}`}>
-        <p>&copy; {new Date().getFullYear()} Bright Smile Dental. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Incapremo Dental Care. All rights reserved.</p>
         <div className={styles.footerBottomLinks}>
           <Link to="/emergency">Emergency Contact</Link>
           <Link to="/admin" className={styles.adminLink}>Admin</Link>

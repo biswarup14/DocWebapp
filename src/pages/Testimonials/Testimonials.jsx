@@ -11,7 +11,7 @@ export default function Testimonials() {
 
   return (
     <>
-      <SEO title="Testimonials" description="Read what our patients say about Bright Smile Dental. Real reviews from real patients about their dental experiences." url="/testimonials" />
+      <SEO title="Testimonials" description="Read what our patients say about Incapremo Dental Care. Real reviews from real patients about their dental experiences." url="/testimonials" />
 
       <section className={styles.pageHeader}>
         <div className="container">

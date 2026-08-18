@@ -5,7 +5,7 @@ import styles from './Gallery.module.css';
 export default function Gallery() {
   return (
     <>
-      <SEO title="Gallery" description="View before and after photos of our dental work. See the results our patients have achieved at Bright Smile Dental." url="/gallery" />
+      <SEO title="Gallery" description="View before and after photos of our dental work. See the results our patients have achieved at Incapremo Dental Care." url="/gallery" />
 
       <section className={styles.pageHeader}>
         <div className="container">

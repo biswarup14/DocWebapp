@@ -28,7 +28,7 @@ const pricing = [
 export default function Insurance() {
   return (
     <>
-      <SEO title="Insurance & Pricing" description="Accepted insurance plans and transparent pricing at Bright Smile Dental. We accept most major dental insurance providers." url="/insurance" />
+      <SEO title="Insurance & Pricing" description="Accepted insurance plans and transparent pricing at Incapremo Dental Care. We accept most major dental insurance providers." url="/insurance" />
 
       <section className={styles.pageHeader}>
         <div className="container">

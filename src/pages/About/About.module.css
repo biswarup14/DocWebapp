@@ -101,22 +101,57 @@
 }
 
 .teamName {
-  font-size: 1rem;
-  font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
   margin-bottom: 4px;
+  letter-spacing: -0.01em;
 }
 
 .teamRole {
   font-size: 0.85rem;
   color: var(--color-primary);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.teamQual {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
   font-weight: 500;
   margin-bottom: 12px;
 }
 
 .teamBio {
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.teamTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.teamTagLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.teamTag {
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+  font-weight: 500;
 }
 
 @media (max-width: 768px) {

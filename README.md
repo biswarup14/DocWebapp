@@ -1,4 +1,4 @@
-# Bright Smile Dental
+# Incapremo Dental Care
 
 A modern React website for a dental practice.
 

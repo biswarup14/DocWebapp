@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 
-const SITE_NAME = 'Bright Smile Dental';
+const SITE_NAME = 'Incapremo Dental Care';
 const DEFAULT_DESCRIPTION = 'Professional dental care services. Book your appointment today for a healthier, brighter smile.';
 
 export default function SEO({

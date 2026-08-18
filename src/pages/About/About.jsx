@@ -3,7 +3,14 @@ import SEO from '../../components/SEO/SEO';
 import styles from './About.module.css';
 
 const team = [
-  { name: 'Dr. Deepankar Bhattacharya', role: 'Lead Dentist & Founder', bio: 'Over 15 years of experience in general and cosmetic dentistry. DDS from UCLA.' },
+  {
+    name: 'Dr. Deepankar Bhattacharya',
+    role: 'Associate Professor — Pediatric & Preventive Dentistry',
+    qualifications: 'B.D.S., M.D.S. (Pediatric Dentistry)',
+    bio: 'Dr. Deepankar Bhattacharya is an Associate Professor in the Department of Pediatric and Preventive Dentistry at Mithila Minority Dental College. He has published several research articles and brings deep expertise in pediatric dental procedures, including treatment for patients with special health care needs.',
+    languages: ['Hindi', 'English', 'Bengali'],
+    interests: ['Reading', 'Music', 'Sports'],
+  },
 ];
 
 const values = [
@@ -16,7 +23,7 @@ const values = [
 export default function About() {
   return (
     <>
-      <SEO title="About Us" description="Learn about Bright Smile Dental. Meet our experienced team, discover our values, and see why patients trust us." url="/about" />
+      <SEO title="About Us" description="Learn about Incapremo Dental Care. Meet our experienced team, discover our values, and see why patients trust us." url="/about" />
 
       <section className={styles.pageHeader}>
         <div className="container">
@@ -30,9 +37,9 @@ export default function About() {
           <div className={styles.story}>
             <div className={styles.storyContent}>
               <h2>Our Story</h2>
-              <p>Bright Smile Dental was founded in 2005 by Dr. Deepankar Bhattacharya with a simple mission: provide exceptional dental care in a warm, welcoming environment.</p>
-              <p>What started as a small practice has grown into a full-service dental clinic serving thousands of happy patients. We invest in the latest dental technology and continuously train our team to deliver the best outcomes.</p>
-              <p>Today, we're proud to be one of the most trusted dental practices in the Smileville community.</p>
+              <p>Incapremo Dental Care is led by Dr. Deepankar Bhattacharya, an Associate Professor in the Department of Pediatric and Preventive Dentistry at Mithila Minority Dental College. With B.D.S. and M.D.S. qualifications in Pediatric Dentistry, he brings a strong academic and clinical foundation to the practice.</p>
+              <p>Dr. Bhattacharya has published several research articles and has deep expertise in pediatric dental procedures, including specialized treatment for patients with special health care needs. His mission is to make every visit comfortable, informed, and effective.</p>
+              <p>Fluent in Hindi, English, and Bengali, he connects with a diverse community of patients. Outside the clinic, his interests include reading, music, and sports.</p>
             </div>
             <div className={styles.storyImage}>
               <div className={styles.placeholder}>
@@ -66,10 +73,27 @@ export default function About() {
           <div className="grid grid-4">
             {team.map((member, i) => (
               <motion.div key={i} className={styles.teamCard} whileHover={{ y: -4 }}>
-                <div className={styles.teamAvatar}>{member.name.charAt(0)}</div>
+                <div className={styles.teamAvatar}>{member.name.split(' ').pop().charAt(0)}</div>
                 <h3 className={styles.teamName}>{member.name}</h3>
                 <p className={styles.teamRole}>{member.role}</p>
+                {member.qualifications && <p className={styles.teamQual}>{member.qualifications}</p>}
                 <p className={styles.teamBio}>{member.bio}</p>
+                {member.languages && (
+                  <div className={styles.teamTags}>
+                    <span className={styles.teamTagLabel}>Languages:</span>
+                    {member.languages.map((lang) => (
+                      <span key={lang} className={styles.teamTag}>{lang}</span>
+                    ))}
+                  </div>
+                )}
+                {member.interests && (
+                  <div className={styles.teamTags}>
+                    <span className={styles.teamTagLabel}>Interests:</span>
+                    {member.interests.map((item) => (
+                      <span key={item} className={styles.teamTag}>{item}</span>
+                    ))}
+                  </div>
+                )}
               </motion.div>
             ))}
           </div>

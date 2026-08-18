@@ -68,16 +68,6 @@ export default function Home() {
               </div>
             </div>
           </motion.div>
-          <motion.div
-            className={styles.heroImage}
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <div className={styles.heroPlaceholder}>
-              <span>&#129463;</span>
-            </div>
-          </motion.div>
         </div>
       </section>
 

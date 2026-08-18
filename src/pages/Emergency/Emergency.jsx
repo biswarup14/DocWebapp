@@ -15,13 +15,13 @@ const emergencies = [
 export default function Emergency() {
   return (
     <>
-      <SEO title="Emergency Dental Care" description="24/7 emergency dental care at Bright Smile Dental. Same-day appointments for dental emergencies. Call us now!" url="/emergency" />
+      <SEO title="Emergency Dental Care" description="24/7 emergency dental care at Incapremo Dental Care. Same-day appointments for dental emergencies. Call us now!" url="/emergency" />
 
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'EmergencyService',
-          name: 'Bright Smile Dental Emergency',
+          name: 'Incapremo Dental Care Emergency',
           telephone: '(555) 123-4567',
         })}
       </script>

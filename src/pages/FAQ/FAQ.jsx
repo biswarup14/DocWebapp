@@ -31,7 +31,7 @@ const structuredData = {
 export default function FAQ() {
   return (
     <>
-      <SEO title="FAQ" description="Frequently asked questions about dental services, insurance, pricing, and patient care at Bright Smile Dental." url="/faq" />
+      <SEO title="FAQ" description="Frequently asked questions about dental services, insurance, pricing, and patient care at Incapremo Dental Care." url="/faq" />
 
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}

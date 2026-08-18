@@ -53,7 +53,7 @@ export default function Blog() {
 
   return (
     <>
-      <SEO title="Blog" description="Dental tips, oral health advice, and news from Bright Smile Dental. Stay informed about the latest in dental care." url="/blog" />
+      <SEO title="Blog" description="Dental tips, oral health advice, and news from Incapremo Dental Care. Stay informed about the latest in dental care." url="/blog" />
 
       <section className={styles.pageHeader}>
         <div className={`container ${styles.headerInner}`}>

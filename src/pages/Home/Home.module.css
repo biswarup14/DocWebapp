@@ -4,10 +4,10 @@
 }
 
 .heroInner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .heroTitle {
@@ -27,8 +27,10 @@
   font-size: 1.15rem;
   color: var(--color-text-secondary);
   line-height: 1.7;
-  margin-bottom: 32px;
-  max-width: 520px;
+  margin-bottom: 24px;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .doctorName {
@@ -44,12 +46,14 @@
 .heroActions {
   display: flex;
   gap: 16px;
+  justify-content: center;
   margin-bottom: 48px;
 }
 
 .heroStats {
   display: flex;
   gap: 40px;
+  justify-content: center;
 }
 
 .stat {

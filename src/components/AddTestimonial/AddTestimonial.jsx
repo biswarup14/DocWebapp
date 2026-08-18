@@ -141,7 +141,7 @@ export default function AddTestimonial() {
                         id="t-text"
                         name="text"
                         rows="5"
-                        placeholder="Tell us about your experience at Bright Smile Dental..."
+                        placeholder="Tell us about your experience at Incapremo Dental Care..."
                         value={form.text}
                         onChange={handleChange}
                       />

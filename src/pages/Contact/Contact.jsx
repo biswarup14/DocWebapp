@@ -12,7 +12,7 @@ const contactInfo = [
 export default function Contact() {
   return (
     <>
-      <SEO title="Contact" description="Get in touch with Bright Smile Dental. Call us, email us, or fill out our contact form. We're here to help!" url="/contact" />
+      <SEO title="Contact" description="Get in touch with Incapremo Dental Care. Call us, email us, or fill out our contact form. We're here to help!" url="/contact" />
 
       <section className={styles.pageHeader}>
         <div className="container">
