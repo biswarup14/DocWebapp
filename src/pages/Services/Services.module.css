@@ -35,11 +35,15 @@
 }
 
 .specRowReverse {
-  direction: rtl;
+  grid-template-columns: 1fr 1fr;
 }
 
-.specRowReverse > * {
-  direction: ltr;
+.specRowReverse .specImage {
+  order: 2;
+}
+
+.specRowReverse .specContent {
+  order: 1;
 }
 
 .specImage {
@@ -143,11 +147,25 @@
   margin-bottom: 24px;
 }
 
+@media (max-width: 1024px) {
+  .specBlock,
+  .specRowReverse {
+    gap: 32px;
+  }
+}
+
 @media (max-width: 768px) {
+  .pageHeader {
+    padding: 40px 0;
+  }
+
+  .pageTitle {
+    font-size: 1.75rem;
+  }
+
   .specBlock,
   .specRowReverse {
     grid-template-columns: 1fr;
-    direction: ltr;
   }
 
   .specImage {

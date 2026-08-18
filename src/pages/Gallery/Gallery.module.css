@@ -16,3 +16,13 @@
   font-size: 1.15rem;
   color: var(--color-text-secondary);
 }
+
+@media (max-width: 768px) {
+  .pageHeader {
+    padding: 40px 0;
+  }
+
+  .pageTitle {
+    font-size: 1.75rem;
+  }
+}

@@ -39,6 +39,15 @@ a:hover {
   color: var(--color-primary-dark);
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -106,12 +115,12 @@ input, textarea, select {
 
 .btn-primary {
   background-color: var(--color-primary);
-  color: #ffffff;
+  color: var(--color-btn-primary-text, #ffffff);
 }
 
 .btn-primary:hover {
   background-color: var(--color-primary-dark);
-  color: #ffffff;
+  color: var(--color-btn-primary-text, #ffffff);
   transform: translateY(-1px);
   box-shadow: var(--shadow-lg);
 }
@@ -124,17 +133,17 @@ input, textarea, select {
 
 .btn-secondary:hover {
   background-color: var(--color-primary);
-  color: #ffffff;
+  color: var(--color-btn-primary-text, #ffffff);
 }
 
 .btn-accent {
   background-color: var(--color-accent);
-  color: #1a1a1a;
+  color: var(--color-btn-accent-text, #1a1a1a);
 }
 
 .btn-accent:hover {
-  background-color: #d49520;
-  color: #ffffff;
+  background-color: var(--color-accent-dark, #d49520);
+  color: var(--color-btn-accent-hover-text, #ffffff);
 }
 
 .grid {
@@ -145,6 +154,15 @@ input, textarea, select {
 .grid-2 { grid-template-columns: repeat(2, 1fr); }
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
 .grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 1024px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 @media (max-width: 768px) {
   .grid-2, .grid-3, .grid-4 {

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO/SEO';
 import FAQItem from '../../components/FAQItem/FAQItem';
 import styles from './FAQ.module.css';
@@ -53,7 +54,7 @@ export default function FAQ() {
           </div>
           <div className={styles.cta}>
             <p>Don't see your question here?</p>
-            <a href="/contact" className="btn btn-primary">Contact Us</a>
+            <Link to="/contact" className="btn btn-primary">Contact Us</Link>
           </div>
         </div>
       </section>

@@ -54,7 +54,6 @@ export default function Footer() {
         <p>&copy; {new Date().getFullYear()} Incapremo Dental Care. All rights reserved.</p>
         <div className={styles.footerBottomLinks}>
           <Link to="/emergency">Emergency Contact</Link>
-          <Link to="/admin" className={styles.adminLink}>Admin</Link>
         </div>
       </div>
     </footer>

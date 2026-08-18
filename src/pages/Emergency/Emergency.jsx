@@ -31,7 +31,7 @@ export default function Emergency() {
           <div className={styles.emergencyBadge}>&#128680; Emergency</div>
           <h1 className={styles.pageTitle}>Dental Emergency?</h1>
           <p className={styles.pageSubtitle}>We provide same-day emergency dental care. Don't wait — call us now.</p>
-          <a href="tel:+15551234567" className="btn btn-accent btn-lg">
+          <a href="tel:+15551234567" className={`btn btn-accent ${styles.btnLg}`}>
             &#128222; Call (555) 123-4567
           </a>
         </div>

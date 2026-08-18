@@ -4,6 +4,20 @@
   text-align: center;
 }
 
+[data-theme="dark"] .pageHeader {
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), var(--color-bg));
+}
+
+@media (max-width: 768px) {
+  .pageHeader {
+    padding: 40px 0;
+  }
+
+  .pageTitle {
+    font-size: 1.75rem;
+  }
+}
+
 .emergencyBadge {
   display: inline-block;
   padding: 6px 16px;
@@ -87,10 +101,21 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  list-style: none;
 }
 
 .afterHoursContent li {
   font-size: 0.95rem;
   color: var(--color-text-secondary);
   line-height: 1.6;
+  padding-left: 20px;
+  position: relative;
+}
+
+.afterHoursContent li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: 700;
 }

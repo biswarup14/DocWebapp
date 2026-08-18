@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO/SEO';
 import AppointmentForm from '../../components/AppointmentForm/AppointmentForm';
 import styles from './Appointment.module.css';
@@ -39,7 +40,7 @@ export default function Appointment() {
               </div>
               <div className={styles.emergencyNote}>
                 <h3>&#128680; Dental Emergency?</h3>
-                <p>For urgent dental issues, call us directly or visit our <a href="/emergency">emergency page</a> for after-hours contact information.</p>
+                <p>For urgent dental issues, call us directly or visit our <Link to="/emergency">emergency page</Link> for after-hours contact information.</p>
               </div>
             </div>
           </div>

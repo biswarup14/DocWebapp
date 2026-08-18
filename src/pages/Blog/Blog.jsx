@@ -50,6 +50,7 @@ function AdminLoginModal({ onClose }) {
 export default function Blog() {
   const { posts } = useContext(BlogContext);
   const [showLogin, setShowLogin] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -63,7 +64,7 @@ export default function Blog() {
           </div>
           <button
             className={styles.adminBtn}
-            onClick={() => isAdminLoggedIn() ? window.location.href = '/admin' : setShowLogin(true)}
+            onClick={() => isAdminLoggedIn() ? navigate('/admin') : setShowLogin(true)}
           >
             &#9881; Admin
           </button>

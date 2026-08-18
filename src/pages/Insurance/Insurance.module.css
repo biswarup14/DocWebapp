@@ -110,7 +110,21 @@
   line-height: 1.6;
 }
 
+@media (max-width: 1024px) {
+  .insuranceGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
+  .pageHeader {
+    padding: 40px 0;
+  }
+
+  .pageTitle {
+    font-size: 1.75rem;
+  }
+
   .insuranceGrid {
     grid-template-columns: repeat(2, 1fr);
   }

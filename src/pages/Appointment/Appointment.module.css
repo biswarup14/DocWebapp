@@ -77,6 +77,14 @@
 }
 
 @media (max-width: 768px) {
+  .pageHeader {
+    padding: 40px 0;
+  }
+
+  .pageTitle {
+    font-size: 1.75rem;
+  }
+
   .appointmentGrid {
     grid-template-columns: 1fr;
   }

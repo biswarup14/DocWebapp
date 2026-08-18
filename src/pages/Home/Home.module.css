@@ -175,21 +175,36 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .hero {
+    padding: 48px 0;
+  }
+
   .heroTitle {
     font-size: 2rem;
   }
 
   .heroSubtitle {
     margin: 0 auto 32px;
+    font-size: 1rem;
   }
 
   .heroActions {
     justify-content: center;
     flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .heroActions .btn {
+    width: 100%;
   }
 
   .heroStats {
     justify-content: center;
+    gap: 24px;
+  }
+
+  .stat strong {
+    font-size: 1.375rem;
   }
 
   .ctaBox {
@@ -198,6 +213,10 @@
 
   .ctaBox h2 {
     font-size: 1.5rem;
+  }
+
+  .testimonialsHeader {
+    flex-direction: column;
   }
 }
 

@@ -48,7 +48,6 @@ function LoginForm({ onLogin }) {
         <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>
           Login
         </button>
-        <p className={styles.hint}>Default: brightsmile2025</p>
       </form>
     </div>
   );
