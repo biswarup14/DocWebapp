@@ -1,0 +1,124 @@
+.pageHeader {
+  background: linear-gradient(135deg, var(--color-bg-secondary), var(--color-bg));
+  padding: 64px 0;
+  text-align: center;
+}
+
+.pageTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.pageSubtitle {
+  font-size: 1.15rem;
+  color: var(--color-text-secondary);
+}
+
+.story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.storyContent h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.storyContent p {
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.placeholder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  color: white;
+}
+
+.valuesSection {
+  background-color: var(--color-bg-secondary);
+}
+
+.valueCard {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  text-align: center;
+}
+
+.valueIcon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 12px;
+  color: var(--color-primary);
+}
+
+.valueCard h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.valueCard p {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.teamCard {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  text-align: center;
+}
+
+.teamAvatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 auto 16px;
+}
+
+.teamName {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.teamRole {
+  font-size: 0.85rem;
+  color: var(--color-primary);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.teamBio {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .story {
+    grid-template-columns: 1fr;
+  }
+}

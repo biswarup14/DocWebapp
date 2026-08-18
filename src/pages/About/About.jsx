@@ -1,0 +1,83 @@
+import { motion } from 'framer-motion';
+import SEO from '../../components/SEO/SEO';
+import styles from './About.module.css';
+
+const team = [
+  { name: 'Dr. Sarah Mitchell', role: 'Lead Dentist & Founder', bio: 'Over 15 years of experience in general and cosmetic dentistry. DDS from UCLA.' },
+  { name: 'Dr. James Parker', role: 'Pediatric Dentist', bio: 'Specializes in children\'s dentistry with a gentle approach. Board-certified pediatric dentist.' },
+  { name: 'Dr. Lisa Wong', role: 'Orthodontist', bio: 'Expert in braces and Invisalign treatments. 10+ years of orthodontic experience.' },
+  { name: 'Maria Santos', role: 'Dental Hygienist', bio: 'Certified dental hygienist passionate about preventive care and patient education.' },
+];
+
+const values = [
+  { icon: '&#10003;', title: 'Patient First', description: 'Your comfort and health are our top priorities in everything we do.' },
+  { icon: '&#127919;', title: 'Excellence', description: 'We use the latest technology and techniques for the best outcomes.' },
+  { icon: '&#129309;', title: 'Integrity', description: 'Transparent pricing and honest recommendations, always.' },
+  { icon: '&#128156;', title: 'Compassion', description: 'We understand dental anxiety and create a welcoming environment.' },
+];
+
+export default function About() {
+  return (
+    <>
+      <SEO title="About Us" description="Learn about Bright Smile Dental. Meet our experienced team, discover our values, and see why patients trust us." url="/about" />
+
+      <section className={styles.pageHeader}>
+        <div className="container">
+          <h1 className={styles.pageTitle}>About Us</h1>
+          <p className={styles.pageSubtitle}>Creating brighter smiles since 2005.</p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <div className={styles.story}>
+            <div className={styles.storyContent}>
+              <h2>Our Story</h2>
+              <p>Bright Smile Dental was founded in 2005 by Dr. Sarah Mitchell with a simple mission: provide exceptional dental care in a warm, welcoming environment.</p>
+              <p>What started as a small practice has grown into a full-service dental clinic serving thousands of happy patients. We invest in the latest dental technology and continuously train our team to deliver the best outcomes.</p>
+              <p>Today, we're proud to be one of the most trusted dental practices in the Smileville community.</p>
+            </div>
+            <div className={styles.storyImage}>
+              <div className={styles.placeholder}>
+                <span>&#127970;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={`section ${styles.valuesSection}`}>
+        <div className="container">
+          <h2 className="section-title">Our Values</h2>
+          <p className="section-subtitle">The principles that guide everything we do.</p>
+          <div className="grid grid-4">
+            {values.map((v, i) => (
+              <motion.div key={i} className={styles.valueCard} whileHover={{ y: -4 }}>
+                <span className={styles.valueIcon} dangerouslySetInnerHTML={{ __html: v.icon }} />
+                <h3>{v.title}</h3>
+                <p>{v.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <h2 className="section-title">Meet Our Team</h2>
+          <p className="section-subtitle">Dedicated professionals committed to your oral health.</p>
+          <div className="grid grid-4">
+            {team.map((member, i) => (
+              <motion.div key={i} className={styles.teamCard} whileHover={{ y: -4 }}>
+                <div className={styles.teamAvatar}>{member.name.charAt(0)}</div>
+                <h3 className={styles.teamName}>{member.name}</h3>
+                <p className={styles.teamRole}>{member.role}</p>
+                <p className={styles.teamBio}>{member.bio}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

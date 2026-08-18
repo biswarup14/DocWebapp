@@ -1,0 +1,104 @@
+.pageHeader {
+  background: linear-gradient(135deg, var(--color-bg-secondary), var(--color-bg));
+  padding: 64px 0;
+  text-align: center;
+}
+
+.pageTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.pageSubtitle {
+  font-size: 1.15rem;
+  color: var(--color-text-secondary);
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+}
+
+.formTitle,
+.infoTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.infoCards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.infoCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--radius);
+}
+
+.infoIcon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.infoLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.infoValue {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+a.infoValue:hover {
+  color: var(--color-primary);
+}
+
+.mapContainer h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.mapPlaceholder {
+  width: 100%;
+  height: 200px;
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--color-text-muted);
+}
+
+.mapPlaceholder span {
+  font-size: 2rem;
+}
+
+.mapPlaceholder p {
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+}
