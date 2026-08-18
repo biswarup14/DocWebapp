@@ -149,74 +149,71 @@
   gap: 16px;
 }
 
-.timingsSection {
+.timingsBar {
   background-color: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-border);
+  padding: 14px 0;
 }
 
-.timingsCard {
-  background-color: var(--color-bg-card, var(--color-bg));
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
-  padding: 40px 48px;
-  max-width: 800px;
-}
-
-.timingsRow {
+.timingsBarInner {
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  justify-content: space-between;
   gap: 16px;
   flex-wrap: wrap;
-  margin-bottom: 12px;
 }
 
-.timingsDays {
+.timingsLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.timingsLabel {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--color-text);
+  font-size: 0.85rem;
+  color: var(--color-primary);
+  background-color: rgba(12, 110, 138, 0.1);
+  padding: 4px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
 }
 
-.timingsDot {
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background-color: var(--color-text-muted);
-  flex-shrink: 0;
-  margin-bottom: 2px;
-}
-
-.timingsSlots {
-  font-size: 1rem;
+.timingsTime {
+  font-size: 0.9rem;
   color: var(--color-text-secondary);
 }
 
-.timingsSlots strong {
-  color: var(--color-primary);
-  font-weight: 600;
+.timingsRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
-.timingsNote {
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-  margin-bottom: 24px;
+.clock {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.timingsBtn {
+  padding: 6px 18px;
+  font-size: 0.8rem;
 }
 
 @media (max-width: 768px) {
-  .timingsCard {
-    padding: 28px 24px;
+  .timingsBarInner {
+    justify-content: center;
+    text-align: center;
   }
 
-  .timingsRow {
+  .timingsLeft {
     flex-direction: column;
-    gap: 6px;
-  }
-
-  .timingsDot {
-    display: none;
-  }
-
-  .timingsSlots {
-    font-size: 0.95rem;
+    gap: 4px;
   }
 }
 

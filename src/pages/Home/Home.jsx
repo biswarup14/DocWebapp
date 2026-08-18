@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import SEO from '../../components/SEO/SEO';
@@ -6,6 +6,21 @@ import TestimonialCard from '../../components/TestimonialCard/TestimonialCard';
 import AddTestimonial from '../../components/AddTestimonial/AddTestimonial';
 import { TestimonialContext } from '../../context/TestimonialContext';
 import styles from './Home.module.css';
+
+function LiveClock() {
+  const [time, setTime] = useState(() => new Date());
+
+  useEffect(() => {
+    const id = setInterval(() => setTime(new Date()), 1000);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <span className={styles.clock}>
+      {time.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true })}
+    </span>
+  );
+}
 
 const specializations = [
   { image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&h=300&fit=crop', title: 'Preventive Dentistry', desc: 'Sealants, fluoride treatments & cavity prevention for children.' },
@@ -60,6 +75,19 @@ export default function Home() {
         </div>
       </section>
 
+      <section className={styles.timingsBar}>
+        <div className={`container ${styles.timingsBarInner}`}>
+          <div className={styles.timingsLeft}>
+            <span className={styles.timingsLabel}>Mon &ndash; Sat</span>
+            <span className={styles.timingsTime}>10 AM &ndash; 2 PM &amp; 5 PM &ndash; 8 PM</span>
+          </div>
+          <div className={styles.timingsRight}>
+            <LiveClock />
+            <Link to="/appointment" className={`btn btn-primary ${styles.timingsBtn}`}>Book Now</Link>
+          </div>
+        </div>
+      </section>
+
       <section className={`section ${styles.specsSection}`}>
         <div className="container">
           <h2 className="section-title">Our Specializations</h2>
@@ -84,24 +112,6 @@ export default function Home() {
           </div>
           <div className={styles.specsMore}>
             <Link to="/services" className="btn btn-secondary">Learn More &#8594;</Link>
-          </div>
-        </div>
-      </section>
-
-      <section className={`section ${styles.timingsSection}`}>
-        <div className="container">
-          <h2 className="section-title">Appointment Timings</h2>
-          <p className="section-subtitle">We are available 6 days a week. Book a slot that works for you.</p>
-          <div className={styles.timingsCard}>
-            <div className={styles.timingsRow}>
-              <span className={styles.timingsDays}>Monday &ndash; Saturday</span>
-              <span className={styles.timingsDot}></span>
-              <span className={styles.timingsSlots}>
-                <strong>Morning:</strong> 10:00 AM &ndash; 2:00 PM &nbsp;&bull;&nbsp; <strong>Evening:</strong> 5:00 PM &ndash; 8:00 PM
-              </span>
-            </div>
-            <p className={styles.timingsNote}>Closed on Sundays &amp; Public Holidays</p>
-            <Link to="/appointment" className="btn btn-primary">Book an Appointment</Link>
           </div>
         </div>
       </section>
