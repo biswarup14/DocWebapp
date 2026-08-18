@@ -1,10 +1,7 @@
-import { useContext, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import SEO from '../../components/SEO/SEO';
-import TestimonialCard from '../../components/TestimonialCard/TestimonialCard';
-import AddTestimonial from '../../components/AddTestimonial/AddTestimonial';
-import { TestimonialContext } from '../../context/TestimonialContext';
 import styles from './Home.module.css';
 
 function LiveClock() {
@@ -24,16 +21,13 @@ function LiveClock() {
 
 const specializations = [
   { image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&h=300&fit=crop', title: 'Preventive Dentistry', desc: 'Sealants, fluoride treatments & cavity prevention for children.' },
-  { image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400&h=300&fit=crop', title: 'Pediatric Endodontics', desc: 'Pulp therapy & root canals for primary and young permanent teeth.' },
+  { image: '/images_endodontics.jpeg', title: 'Pediatric Endodontics', desc: 'Pulp therapy & root canals for primary and young permanent teeth.' },
   { image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&h=300&fit=crop', title: 'Dental Trauma Management', desc: 'Expert emergency care for broken, knocked-out or displaced teeth.' },
   { image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=300&fit=crop', title: 'Space Maintenance & Growth Modification', desc: 'Appliances to guide proper alignment of developing teeth.' },
   { image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&h=300&fit=crop', title: 'Pediatric Periodontics', desc: 'Diagnosis and treatment of gum conditions in children.' },
 ];
 
 export default function Home() {
-  const { testimonials } = useContext(TestimonialContext);
-  const topTestimonials = testimonials.slice(0, 3);
-
   return (
     <>
       <SEO title="Home" description="Professional pediatric dental care for the whole family. Book your appointment today for a healthier, brighter smile." url="/" />
@@ -125,23 +119,6 @@ export default function Home() {
           </div>
           <div className={styles.specsMore}>
             <Link to="/services" className="btn btn-secondary">Learn More &#8594;</Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container">
-          <div className={styles.testimonialsHeader}>
-            <div>
-              <h2 className="section-title">What Our Patients Say</h2>
-              <p className="section-subtitle">Real reviews from real patients.</p>
-            </div>
-            <AddTestimonial />
-          </div>
-          <div className="grid grid-3">
-            {topTestimonials.map((t, i) => (
-              <TestimonialCard key={t.id || i} {...t} />
-            ))}
           </div>
         </div>
       </section>

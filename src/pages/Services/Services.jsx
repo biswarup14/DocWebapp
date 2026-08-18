@@ -13,7 +13,7 @@ const specializations = [
     highlights: ['Dental Sealants', 'Fluoride Varnish', 'Oral Hygiene Education', 'Diet & Cavity Counseling'],
   },
   {
-    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=700&h=500&fit=crop',
+    image: '/images_endodontics.jpeg',
     title: 'Pediatric Endodontics',
     tagline: 'Gentle pulp therapy for young teeth.',
     description:

@@ -21,7 +21,6 @@ export default function Footer() {
           <ul className={styles.footerLinks}>
             <li><Link to="/services">Services</Link></li>
             <li><Link to="/about">About Us</Link></li>
-            <li><Link to="/testimonials">Testimonials</Link></li>
             <li><Link to="/blog">Blog</Link></li>
             <li><Link to="/faq">FAQ</Link></li>
           </ul>
