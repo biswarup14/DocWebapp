@@ -3,7 +3,7 @@ import ContactForm from '../../components/ContactForm/ContactForm';
 import styles from './Contact.module.css';
 
 const contactInfo = [
-  { icon: '📍', label: 'Address', value: 'Behind Reliance Digital, Deshbandhu Road, Badulia, Bardhaman-713101, West Bengal' },
+  { icon: '📍', label: 'Address', value: 'Deshbandhu Rd, behind Reliance Digital, Purulia, West Bengal 723101' },
   { icon: '📞', label: 'Phone', value: '(+91) 7050576335', href: 'tel:+917050576335' },
   { icon: '✉️', label: 'Email', value: 'dr.deepankarbhattacharya@gmail.com', href: 'mailto:dr.deepankarbhattacharya@gmail.com' },
   { icon: '🕐', label: 'Hours', value: 'Mon–Sat: 10AM–2PM, 5PM–8PM' },
@@ -51,7 +51,7 @@ export default function Contact() {
                 <div className={styles.mapFrame}>
                   <iframe
                     title="Incapremo Dental Care Location"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.1234567890123!2d87.88!3d23.25!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDE1JzAwLjAiTiA4N8KwNTInNDguMCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin&q=Behind+Reliance+Digital,+Deshbandhu+Road,+Badulia,+Bardhaman,+West+Bengal+713101"
+                    src="https://maps.google.com/maps?q=Deshbandhu+Rd,+behind+Reliance+Digital,+Purulia,+West+Bengal+723101&t=&z=17&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}

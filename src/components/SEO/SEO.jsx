@@ -42,10 +42,10 @@ export default function SEO({
             description,
             address: {
               '@type': 'PostalAddress',
-              streetAddress: 'Behind Reliance Digital, Deshbandhu Road, Badulia',
-              addressLocality: 'Bardhaman',
+              streetAddress: 'Deshbandhu Rd, behind Reliance Digital',
+              addressLocality: 'Purulia',
               addressRegion: 'West Bengal',
-              postalCode: '713101',
+              postalCode: '723101',
             },
             telephone: '(+91) 7050576335',
             openingHours: ['Mo-Sa 10:00-14:00', 'Mo-Sa 17:00-20:00'],

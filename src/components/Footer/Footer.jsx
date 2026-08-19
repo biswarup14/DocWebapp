@@ -40,7 +40,7 @@ export default function Footer() {
         <div className={styles.footerCol}>
           <h4 className={styles.footerHeading}>Contact</h4>
           <ul className={styles.footerLinks}>
-            <li>Behind Reliance Digital, Deshbandhu Road, Badulia, Bardhaman-713101, West Bengal</li>
+            <li>Deshbandhu Rd, behind Reliance Digital, Purulia, West Bengal 723101</li>
             <li><a href="tel:+917050576335">(+91) 7050576335</a></li>
             <li><a href="mailto:dr.deepankarbhattacharya@gmail.com">dr.deepankarbhattacharya@gmail.com</a></li>
           </ul>
