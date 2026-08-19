@@ -1,0 +1,48 @@
+.errorPage {
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  text-align: center;
+}
+
+.code {
+  font-family: var(--font-heading);
+  font-size: 8rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+.message {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 32px;
+}
+
+@media (max-width: 768px) {
+  .code {
+    font-size: 5rem;
+  }
+
+  .title {
+    font-size: 1.375rem;
+  }
+}

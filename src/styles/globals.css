@@ -213,26 +213,6 @@ input, textarea, select {
   top: 16px;
 }
 
-.notFound {
-  text-align: center;
-  padding: 120px 24px;
-}
-
-.notFound h1 {
-  font-family: var(--font-heading);
-  font-size: 6rem;
-  font-weight: 800;
-  color: var(--color-primary);
-  letter-spacing: -0.04em;
-  margin-bottom: 8px;
-}
-
-.notFound p {
-  font-size: 1.15rem;
-  color: var(--color-text-secondary);
-  margin-bottom: 32px;
-}
-
 .mainContent {
   min-height: calc(100vh - var(--header-height));
 }
