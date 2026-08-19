@@ -21,8 +21,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className={`container ${styles.headerInner}`}>
         <Link to="/" className={styles.logo}>
-          <span className={styles.logoIcon}>&#129463;</span>
-          <span className={styles.logoText}>Incapremo</span>
+          <img src="/logo.png" alt="Incapremo Dental Care" className={styles.logoIcon} />
         </Link>
 
         <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ''}`}>

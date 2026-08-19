@@ -8,7 +8,7 @@ export default function Footer() {
       <div className={`container ${styles.footerGrid}`}>
         <div className={styles.footerCol}>
           <Link to="/" className={styles.footerLogo}>
-            <span>&#129463;</span> Incapremo Dental Care
+            <img src="/logo.png" alt="Incapremo Dental Care" className={styles.footerLogoIcon} />
           </Link>
           <p className={styles.footerDesc}>
             Professional dental care for the whole family. Creating brighter smiles.
@@ -48,6 +48,8 @@ export default function Footer() {
       <div className={`container ${styles.footerBottom}`}>
         <p>&copy; {new Date().getFullYear()} Incapremo Dental Care. All rights reserved. Made by <a href="https://www.linkedin.com/in/biswarup-bhattacharjee-2a836019a/" target="_blank" rel="noopener noreferrer" className={styles.madeBy}>Biswarup</a></p>
         <div className={styles.footerBottomLinks}>
+          <Link to="/privacy-policy">Privacy Policy</Link>
+          <Link to="/terms-and-conditions">Terms & Conditions</Link>
           <Link to="/emergency">Emergency Contact</Link>
         </div>
       </div>

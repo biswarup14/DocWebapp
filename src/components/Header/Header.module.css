@@ -25,18 +25,8 @@
 }
 
 .logoIcon {
-  font-size: 2rem;
-}
-
-.logoText {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 900;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: -0.03em;
+  height: 48px;
+  width: auto;
 }
 
 .nav {

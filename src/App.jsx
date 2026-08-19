@@ -9,6 +9,8 @@ const About = lazy(() => import('./pages/About/About'));
 const Contact = lazy(() => import('./pages/Contact/Contact'));
 const Emergency = lazy(() => import('./pages/Emergency/Emergency'));
 const ProofOfWork = lazy(() => import('./pages/ProofOfWork/ProofOfWork'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy/PrivacyPolicy'));
+const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions/TermsAndConditions'));
 
 function Loader() {
   return (
@@ -45,6 +47,8 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/emergency" element={<Emergency />} />
           <Route path="/proof-of-work" element={<ProofOfWork />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
