@@ -61,7 +61,7 @@ export default function ContactForm() {
             id="phone"
             name="phone"
             type="tel"
-            placeholder="(555) 000-0000"
+            placeholder="+91 XXXXX XXXXX"
             value={form.phone}
             onChange={handleChange}
           />

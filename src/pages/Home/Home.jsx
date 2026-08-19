@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import SEO from '../../components/SEO/SEO';
 import LiveClock from '../../components/LiveClock/LiveClock';
 import FAQ, { faqSchema } from '../../components/FAQ/FAQ';
+import SkeletonImage from '../../components/Skeleton/SkeletonImage';
+import useCountUp from '../../hooks/useCountUp';
 import styles from './Home.module.css';
 
 const specializations = [
@@ -19,6 +21,24 @@ const reasons = [
   { icon: '⚡', title: 'Emergency Care', desc: 'Same-day appointments for dental emergencies when you need them most.' },
   { icon: '🏆', title: '5,000+ Happy Patients', desc: 'Trusted by thousands of families across Purulia and beyond.' },
 ];
+
+const statsData = [
+  { end: 15, suffix: '+', label: 'Years Experience' },
+  { end: 5, suffix: 'K+', label: 'Happy Patients' },
+  { end: 4.9, suffix: '', label: 'Star Rating' },
+  { end: 5, suffix: '', label: 'Specializations' },
+];
+
+function StatItem({ end, suffix, label }) {
+  const { ref, count } = useCountUp(end, 2000);
+  const display = end % 1 !== 0 ? count.toFixed(1) : Math.round(count);
+  return (
+    <div className={styles.statItem} ref={ref}>
+      <strong>{display}{suffix}</strong>
+      <span>{label}</span>
+    </div>
+  );
+}
 
 export default function Home() {
   return (
@@ -57,25 +77,13 @@ export default function Home() {
 
       <section className={styles.statsBar}>
         <div className={`container ${styles.statsBarInner}`}>
-          <div className={styles.statItem}>
-            <strong>15+</strong>
-            <span>Years Experience</span>
-          </div>
-          <div className={styles.statDivider} />
-          <div className={styles.statItem}>
-            <strong>5K+</strong>
-            <span>Happy Patients</span>
-          </div>
-          <div className={styles.statDivider} />
-          <div className={styles.statItem}>
-            <strong>4.9</strong>
-            <span>Star Rating</span>
-          </div>
-          <div className={styles.statDivider} />
-          <div className={styles.statItem}>
-            <strong>5</strong>
-            <span>Specializations</span>
-          </div>
+          {statsData.map((s, i) => (
+            <StatItem key={i} {...s} />
+          )).reduce((acc, item, i) => {
+            if (i > 0) acc.push(<div key={`div-${i}`} className={styles.statDivider} />);
+            acc.push(item);
+            return acc;
+          }, [])}
         </div>
       </section>
 
@@ -121,7 +129,7 @@ export default function Home() {
                 transition={{ duration: 0.4, delay: i * 0.08 }}
               >
                 <div className={styles.specImage}>
-                  <img src={s.image} alt={s.title} loading="lazy" />
+                  <SkeletonImage src={s.image} alt={s.title} />
                 </div>
                 <h3 className={styles.specTitle}>{s.title}</h3>
                 <p className={styles.specDesc}>{s.desc}</p>
@@ -173,7 +181,13 @@ export default function Home() {
 
       <section className={styles.ctaSection}>
         <div className="container">
-          <div className={styles.ctaBox}>
+          <motion.div
+            className={styles.ctaBox}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <h2>Loved Your Visit?</h2>
             <p>Your feedback helps us grow and helps other families find quality dental care. Share your experience on Google!</p>
             <a
@@ -184,7 +198,7 @@ export default function Home() {
             >
               Leave Us a Google Review &#9733;
             </a>
-          </div>
+          </motion.div>
         </div>
       </section>
 

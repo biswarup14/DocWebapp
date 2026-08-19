@@ -43,6 +43,7 @@
   justify-content: space-between;
   gap: 12px;
   padding: 12px 0;
+  min-height: 44px;
   background: none;
   border: none;
   cursor: pointer;
@@ -79,7 +80,7 @@
 
 .faqAnswer p {
   padding: 0 0 12px;
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   color: var(--color-text-secondary);
   line-height: 1.7;
 }
@@ -100,6 +101,6 @@
   }
 
   .faqAnswer p {
-    font-size: 0.78rem;
+    font-size: 0.875rem;
   }
 }

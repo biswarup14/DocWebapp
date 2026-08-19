@@ -103,6 +103,7 @@ input, textarea, select {
   justify-content: center;
   gap: 8px;
   padding: 12px 28px;
+  min-height: 44px;
   border-radius: var(--radius);
   font-family: var(--font-heading);
   font-weight: 600;

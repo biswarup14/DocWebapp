@@ -7,6 +7,11 @@
   height: var(--header-height);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.3s ease;
+}
+
+.headerHidden {
+  transform: translateY(-100%);
 }
 
 .headerInner {
@@ -53,12 +58,6 @@
 .navLinkActive {
   color: var(--color-primary) !important;
   background-color: var(--color-bg-secondary);
-}
-
-.navCta {
-  margin-left: 8px;
-  padding: 8px 20px;
-  font-size: 0.9rem;
 }
 
 .emergencyLink {
@@ -235,12 +234,6 @@
   .navLink {
     width: 100%;
     padding: 12px 16px;
-  }
-
-  .navCta {
-    margin-left: 0;
-    margin-top: 8px;
-    width: 100%;
   }
 
   .emergencyLink {

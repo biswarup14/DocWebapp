@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import SEO from '../../components/SEO/SEO';
+import PageHeader from '../../components/PageHeader/PageHeader';
 import styles from './About.module.css';
 
 const stats = [
@@ -25,12 +26,10 @@ export default function About() {
         description="Learn about Incapremo Dental Care — specialist pediatric dental practice led by Dr. Deepankar Bhattacharya, a Purulia dentist with 15+ years of experience."
         url="/about"
       />
-      <section className={styles.pageHeader}>
-        <div className="container">
-          <h1 className={styles.pageTitle}>About Us</h1>
-          <p className={styles.pageSubtitle}>Expert pediatric dental care for your child.</p>
-        </div>
-      </section>
+      <PageHeader
+        title="About Us"
+        subtitle="Expert pediatric dental care for your child."
+      />
 
       <section className="section">
         <div className="container">
@@ -51,7 +50,7 @@ export default function About() {
                 Dr. Deepankar Bhattacharya is the founder and lead clinician at Incapremo Dental Care. An Associate Professor in the Department of Pediatric and Preventive Dentistry at Mithila Minority Dental College, he brings a rare combination of academic rigour and hands-on clinical expertise to the practice.
               </p>
               <p className={styles.profileBio}>
-                With B.D.S. and M.D.S. qualifications in Pediatric Dentistry, he has published several research articles andspecialises in treating children with complex dental needs, including patients with special health care requirements. His mission is simple: make every visit comfortable, informed, and effective.
+                With B.D.S. and M.D.S. qualifications in Pediatric Dentistry, he has published several research articles and specialises in treating children with complex dental needs, including patients with special health care requirements. His mission is simple: make every visit comfortable, informed, and effective.
               </p>
             
               <p className={styles.profileBio}>
@@ -129,11 +128,17 @@ export default function About() {
 
       <section className="section">
         <div className="container">
-          <div className={styles.ctaBox}>
+          <motion.div
+            className={styles.ctaBox}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <h2>Book a Consultation</h2>
             <p>Give your child the specialist care they deserve. Schedule an appointment today.</p>
             <Link to="/contact" className="btn btn-accent">Book Now</Link>
-          </div>
+          </motion.div>
         </div>
       </section>
     </>

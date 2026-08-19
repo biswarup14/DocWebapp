@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import SEO from '../../components/SEO/SEO';
+import PageHeader from '../../components/PageHeader/PageHeader';
+import SkeletonImage from '../../components/Skeleton/SkeletonImage';
 import styles from './Services.module.css';
 
 const specializations = [
@@ -54,14 +56,10 @@ export default function Services() {
         description="Expert pediatric dental specializations at Incapremo Dental Care — Preventive Dentistry, Pediatric Endodontics, Dental Trauma Management, Space Maintenance, and Pediatric Periodontics by Dr. Deepankar Bhattacharya."
         url="/services"
       />
-      <section className={styles.pageHeader}>
-        <div className="container">
-          <h1 className={styles.pageTitle}>Our Specializations</h1>
-          <p className={styles.pageSubtitle}>
-            Specialist pediatric dental care led by Dr. Deepankar Bhattacharya.
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        title="Our Specializations"
+        subtitle="Specialist pediatric dental care led by Dr. Deepankar Bhattacharya."
+      />
 
       <section className="section">
         <div className="container">
@@ -77,7 +75,7 @@ export default function Services() {
                 transition={{ duration: 0.5, delay: i * 0.06 }}
               >
                 <div className={styles.specImage}>
-                  <img src={s.image} alt={s.title} loading="lazy" />
+                  <SkeletonImage src={s.image} alt={s.title} />
                 </div>
                 <div className={styles.specContent}>
                   <span className={styles.specNumber}>0{i + 1}</span>
@@ -98,11 +96,17 @@ export default function Services() {
 
       <section className={`section ${styles.ctaSection}`}>
         <div className="container">
-          <div className={styles.ctaBox}>
+          <motion.div
+            className={styles.ctaBox}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <h2>Book a Consultation</h2>
             <p>Give your child the specialist care they deserve. Schedule an appointment today.</p>
             <Link to="/contact" className="btn btn-accent">Book Now</Link>
-          </div>
+          </motion.div>
         </div>
       </section>
     </>

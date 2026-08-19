@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useTheme } from '../../hooks/useTheme';
 import styles from './Header.module.css';
@@ -15,10 +15,27 @@ const emergencyLink = { to: '/emergency', label: 'Emergency' };
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      if (currentY > 100 && currentY > lastScrollY.current) {
+        setHidden(true);
+      } else {
+        setHidden(false);
+      }
+      lastScrollY.current = currentY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${hidden ? styles.headerHidden : ''}`}>
       <div className={`container ${styles.headerInner}`}>
         <Link to="/" className={styles.logo}>
           <img src="/logo.png" alt="Incapremo Dental Care" className={styles.logoIcon} />

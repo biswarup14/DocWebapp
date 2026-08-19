@@ -3,6 +3,7 @@ import styles from './SocialLinks.module.css';
 const links = [
   {
     label: 'Facebook',
+    platform: 'facebook',
     href: 'https://www.facebook.com/people/Incapremo-Dental-Care/61568445414620/',
     icon: (
       <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
@@ -12,6 +13,7 @@ const links = [
   },
   {
     label: 'Instagram',
+    platform: 'instagram',
     href: 'https://www.instagram.com/incapremodental/',
     icon: (
       <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
@@ -21,6 +23,7 @@ const links = [
   },
   {
     label: 'Google',
+    platform: 'google',
     href: 'https://maps.app.goo.gl/p3BLPCVnkG4gG2HB6',
     icon: (
       <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
@@ -42,7 +45,7 @@ export default function SocialLinks() {
           href={link.href}
           target="_blank"
           rel="noopener noreferrer"
-          className={styles.socialLink}
+          className={`${styles.socialLink} ${styles[link.platform]}`}
           aria-label={`Follow us on ${link.label}`}
         >
           {link.icon}

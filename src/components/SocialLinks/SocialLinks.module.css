@@ -19,8 +19,19 @@
 }
 
 .socialLink:hover {
-  background-color: #1877f2;
   color: white;
+}
+
+.socialLink.facebook:hover {
+  background-color: #1877f2;
+}
+
+.socialLink.instagram:hover {
+  background-color: #E4405F;
+}
+
+.socialLink.google:hover {
+  background-color: #EA4335;
 }
 
 .socialLabel {

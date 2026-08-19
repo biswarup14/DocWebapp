@@ -1,22 +1,3 @@
-.pageHeader {
-  background: linear-gradient(135deg, var(--color-bg-secondary), var(--color-bg));
-  padding: 64px 0;
-  text-align: center;
-}
-
-.pageTitle {
-  font-family: var(--font-heading);
-  letter-spacing: -0.03em;
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 12px;
-}
-
-.pageSubtitle {
-  font-size: 1.15rem;
-  color: var(--color-text-secondary);
-}
-
 .specBlock {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -32,10 +13,6 @@
 
 .specBlock:hover {
   box-shadow: var(--shadow-lg);
-}
-
-.specRowReverse {
-  grid-template-columns: 1fr 1fr;
 }
 
 .specRowReverse .specImage {
@@ -121,15 +98,16 @@
 }
 
 .ctaSection {
-  padding: 0;
+  padding: 24px 0;
 }
 
 .ctaBox {
   background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
   border-radius: var(--radius-xl);
-  padding: 64px;
+  padding: 64px 48px;
   text-align: center;
   color: white;
+  box-shadow: var(--shadow-xl);
 }
 
 .ctaBox h2 {
@@ -154,14 +132,6 @@
 }
 
 @media (max-width: 768px) {
-  .pageHeader {
-    padding: 40px 0;
-  }
-
-  .pageTitle {
-    font-size: 1.75rem;
-  }
-
   .specBlock,
   .specRowReverse {
     grid-template-columns: 1fr;
@@ -186,5 +156,9 @@
 
   .ctaBox h2 {
     font-size: 1.4rem;
+  }
+
+  .ctaBox p {
+    font-size: 0.95rem;
   }
 }

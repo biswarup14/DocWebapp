@@ -1,4 +1,6 @@
+import { motion } from 'framer-motion';
 import SEO from '../../components/SEO/SEO';
+import PageHeader from '../../components/PageHeader/PageHeader';
 import ContactForm from '../../components/ContactForm/ContactForm';
 import styles from './Contact.module.css';
 
@@ -17,12 +19,10 @@ export default function Contact() {
         description="Get in touch with Incapremo Dental Care — your trusted dentist near me in Purulia. Call (+91) 7050576335 or fill out our contact form."
         url="/contact"
       />
-      <section className={styles.pageHeader}>
-        <div className="container">
-          <h1 className={styles.pageTitle}>Contact Us</h1>
-          <p className={styles.pageSubtitle}>We'd love to hear from you.</p>
-        </div>
-      </section>
+      <PageHeader
+        title="Contact Us"
+        subtitle="We'd love to hear from you."
+      />
 
       <section className="section">
         <div className="container">
@@ -71,7 +71,13 @@ export default function Contact() {
 
       <section className={styles.reviewCta}>
         <div className="container">
-          <div className={styles.reviewCtaBox}>
+          <motion.div
+            className={styles.reviewCtaBox}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <h2>Loved Your Visit?</h2>
             <p>Your feedback helps us grow and helps other families find quality dental care. Share your experience on Google!</p>
             <a
@@ -82,7 +88,7 @@ export default function Contact() {
             >
               Leave Us a Google Review &#9733;
             </a>
-          </div>
+          </motion.div>
         </div>
       </section>
     </>
