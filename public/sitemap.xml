@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://incapremodentalcare.com/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://incapremodentalcare.com/services</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://incapremodentalcare.com/about</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://incapremodentalcare.com/contact</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://incapremodentalcare.com/emergency</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://incapremodentalcare.com/proof-of-work</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://incapremodentalcare.com/gall1.webp</image:loc>
+      <image:title>Restored smile after dental treatment</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://incapremodentalcare.com/gall2.webp</image:loc>
+      <image:title>Pediatric dental care in progress</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://incapremodentalcare.com/gall3.webp</image:loc>
+      <image:title>Preventive dental treatment result</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://incapremodentalcare.com/gall4.jpeg</image:loc>
+      <image:title>Modern dental clinical setup</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://incapremodentalcare.com/gall5.jpeg</image:loc>
+      <image:title>Advanced dental equipment and tools</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://incapremodentalcare.com/gall6.jpeg</image:loc>
+      <image:title>Happy patient after dental procedure</image:title>
+    </image:image>
+  </url>
+
+</urlset>

@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 
 const SITE_NAME = 'Incapremo Dental Care';
-const SITE_URL = 'https://incapremodental.com';
+const SITE_URL = 'https://incapremodentalcare.com';
 const DEFAULT_DESCRIPTION = 'Incapremo Dental Care — best dentist near me in Purulia. Dr. Deepankar Bhattacharya offers pediatric dental care, emergency dentist services, and more. Book your appointment today.';
 
 const defaultSchema = {
