@@ -18,7 +18,7 @@
   display: inline-block;
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--color-primary);
@@ -30,9 +30,9 @@
 
 .heroTitle {
   font-family: var(--font-heading);
-  font-size: 3.5rem;
+  font-size: 3.25rem;
   font-weight: 800;
-  line-height: 1.08;
+  line-height: 1.1;
   margin-bottom: 20px;
   letter-spacing: -0.04em;
   color: var(--color-text);
@@ -47,7 +47,7 @@
 }
 
 .heroSubtitle {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: var(--color-text-secondary);
   line-height: 1.7;
   margin-bottom: 16px;
@@ -57,7 +57,7 @@
 }
 
 .doctorName {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--color-text-muted);
   margin-bottom: 32px;
 }
@@ -77,7 +77,7 @@
   background-color: var(--color-bg);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
-  padding: 28px 0;
+  padding: 24px 0;
 }
 
 .statsBarInner {
@@ -95,28 +95,28 @@
 
 .statItem strong {
   font-family: var(--font-heading);
-  font-size: 1.75rem;
+  font-size: 1.625rem;
   font-weight: 800;
   color: var(--color-primary);
   line-height: 1.1;
 }
 
 .statItem span {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--color-text-muted);
   margin-top: 4px;
 }
 
 .statDivider {
   width: 1px;
-  height: 36px;
+  height: 32px;
   background-color: var(--color-border);
 }
 
 .timingsBar {
   background-color: var(--color-bg-secondary);
   border-bottom: 1px solid var(--color-border);
-  padding: 20px 0;
+  padding: 16px 0;
 }
 
 .timingsBarInner {
@@ -129,7 +129,7 @@
 
 .timingsTitle {
   font-family: var(--font-heading);
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: var(--color-text);
   white-space: nowrap;
@@ -148,10 +148,10 @@
 .dayBadge {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--color-primary);
   background-color: var(--color-primary-bg);
-  padding: 6px 12px;
+  padding: 5px 10px;
   border-radius: 999px;
   white-space: nowrap;
   letter-spacing: 0.01em;
@@ -166,23 +166,23 @@
 .timingsSlot {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .slotIcon {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1;
 }
 
 .slotTime {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   color: var(--color-text);
 }
 
 .timingsDivider {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--color-text-muted);
 }
 
@@ -198,7 +198,7 @@
 
 .specsGrid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
@@ -218,7 +218,7 @@
 
 .specImage {
   width: 100%;
-  height: 160px;
+  height: 180px;
   overflow: hidden;
 }
 
@@ -236,7 +236,7 @@
 
 .specTitle {
   font-family: var(--font-heading);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 700;
   margin: 16px 16px 8px;
   color: var(--color-text);
@@ -245,7 +245,7 @@
 }
 
 .specDesc {
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   color: var(--color-text-secondary);
   line-height: 1.6;
   margin: 0 16px 20px;
@@ -304,7 +304,7 @@
 
 .emergencyBanner {
   background-color: var(--color-emergency-bg, #fef2f2);
-  padding: 40px 0;
+  padding: 32px 0;
 }
 
 .emergencyBox {
@@ -322,43 +322,47 @@
   display: inline-block;
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--color-danger);
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .emergencyText p {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--color-text-secondary);
 }
 
 .ctaSection {
-  padding: 32px 24px;
+  padding: 24px;
 }
 
 .ctaBox {
   background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
   border-radius: var(--radius-xl);
-  padding: 64px 48px;
+  padding: 56px 48px;
   text-align: center;
   color: white;
 }
 
 .ctaBox h2 {
   font-family: var(--font-heading);
-  font-size: 2.25rem;
+  font-size: 2rem;
   font-weight: 800;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   letter-spacing: -0.03em;
 }
 
 .ctaBox p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   opacity: 0.9;
   margin-bottom: 24px;
 }
 
 @media (max-width: 1024px) {
+  .specsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .reasonsGrid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -400,11 +404,11 @@
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
   }
 
   .timingsTitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .timingsDays {
@@ -431,11 +435,11 @@
   }
 
   .ctaSection {
-    padding: 24px 16px;
+    padding: 16px;
   }
 
   .ctaBox {
-    padding: 40px 20px;
+    padding: 40px 24px;
   }
 
   .ctaBox h2 {

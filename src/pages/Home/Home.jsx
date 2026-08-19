@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import SEO from '../../components/SEO/SEO';
 import LiveClock from '../../components/LiveClock/LiveClock';
+import FAQ, { faqSchema } from '../../components/FAQ/FAQ';
 import styles from './Home.module.css';
 
 const specializations = [
@@ -26,6 +27,7 @@ export default function Home() {
         title="Home"
         description="Incapremo Dental Care — best dentist near me in Purulia. Dr. Deepankar Bhattacharya offers pediatric dental care, emergency dentist services, and more. Book your appointment today."
         url="/"
+        extraSchemas={[faqSchema]}
       />
 
       <section className={styles.hero}>
@@ -185,6 +187,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <FAQ />
     </>
   );
 }

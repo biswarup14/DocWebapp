@@ -45,6 +45,7 @@ export default function SEO({
   type = 'website',
   image,
   schema,
+  extraSchemas = [],
   noindex = false,
 }) {
   const pageTitle = title ? `${title} | ${SITE_NAME}` : SITE_NAME;
@@ -82,6 +83,11 @@ export default function SEO({
           {JSON.stringify(jsonLd)}
         </script>
       )}
+      {extraSchemas.map((s, i) => (
+        <script key={i} type="application/ld+json">
+          {JSON.stringify(s)}
+        </script>
+      ))}
     </Helmet>
   );
 }
