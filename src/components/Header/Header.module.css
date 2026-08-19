@@ -34,6 +34,21 @@
   width: auto;
 }
 
+.logoText {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .logoText {
+    font-size: 0.95rem;
+  }
+}
+
 .nav {
   display: flex;
   align-items: center;
