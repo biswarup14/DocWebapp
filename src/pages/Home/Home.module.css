@@ -448,11 +448,23 @@
 }
 
 @media (max-width: 480px) {
+  .hero {
+    padding: 40px 0 32px;
+  }
+
   .heroTitle {
     font-size: 1.85rem;
   }
 
   .specsGrid {
     grid-template-columns: 1fr;
+  }
+
+  .statsBarInner {
+    gap: 16px;
+  }
+
+  .ctaBox {
+    padding: 32px 20px;
   }
 }

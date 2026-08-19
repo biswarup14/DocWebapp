@@ -104,3 +104,10 @@
     text-align: center;
   }
 }
+
+@media (max-width: 480px) {
+  .footerGrid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}

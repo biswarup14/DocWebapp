@@ -109,4 +109,16 @@ a.infoValue:hover {
   .mapFrame {
     height: 260px;
   }
+
+  .reviewCtaBox {
+    padding: 40px 24px;
+  }
+
+  .reviewCtaBox h2 {
+    font-size: 1.5rem;
+  }
+
+  .reviewCtaBox p {
+    font-size: 0.95rem;
+  }
 }

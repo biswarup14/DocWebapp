@@ -29,7 +29,7 @@
 .profileBadge {
   display: inline-block;
   font-family: var(--font-heading);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 700;
   color: var(--color-primary);
   background-color: var(--color-bg-secondary);
@@ -81,7 +81,7 @@
 .profileSpecLabel {
   display: block;
   font-family: var(--font-heading);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 700;
   color: var(--color-text-muted);
   text-transform: uppercase;
@@ -118,7 +118,7 @@
 }
 
 .profileMetaLabel {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 700;
   color: var(--color-text-muted);
   text-transform: uppercase;
@@ -197,7 +197,7 @@
 .valueNum {
   display: inline-block;
   font-family: var(--font-heading);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 700;
   color: var(--color-primary);
   background-color: var(--color-bg-secondary);

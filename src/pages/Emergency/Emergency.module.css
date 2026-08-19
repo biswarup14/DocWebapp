@@ -16,6 +16,15 @@
   .pageTitle {
     font-size: 1.75rem;
   }
+
+  .emergencyCard {
+    padding: 20px;
+  }
+
+  .btn-lg {
+    padding: 14px 24px;
+    font-size: 1rem;
+  }
 }
 
 .emergencyBadge {

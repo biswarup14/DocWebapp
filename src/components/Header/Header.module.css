@@ -119,8 +119,8 @@
 }
 
 .themeToggle {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -171,7 +171,7 @@
   display: none;
   flex-direction: column;
   gap: 5px;
-  padding: 8px;
+  padding: 10px;
 }
 
 .bar {
