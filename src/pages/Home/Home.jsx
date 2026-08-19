@@ -56,6 +56,7 @@ export default function Home() {
 
       <section className={styles.timingsBar}>
         <div className={`container ${styles.timingsBarInner}`}>
+          <h2 className={styles.timingsTitle}>Available Dates</h2>
           <div className={styles.timingsLeft}>
             <div className={styles.timingsDays}>
               {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
