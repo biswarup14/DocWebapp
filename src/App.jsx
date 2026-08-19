@@ -23,6 +23,7 @@ function NotFound() {
     <>
       <Helmet>
         <title>Page Not Found | Incapremo Dental Care</title>
+        <meta name="robots" content="noindex" />
       </Helmet>
       <div className="notFound">
         <h1>404</h1>

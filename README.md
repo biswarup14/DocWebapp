@@ -10,7 +10,6 @@ A modern React website for a dental practice.
 - Framer Motion
 - React Helmet Async (SEO)
 - React GA4 (Analytics)
-- react-share (Social sharing)
 
 ## Setup
 
@@ -46,7 +45,6 @@ src/
 ├── pages/         # Route page components
 ├── context/       # React Context providers
 ├── hooks/         # Custom hooks
-├── data/          # Static data files
 ├── utils/         # Utility functions
 ├── styles/        # Global styles & CSS variables
 ├── App.jsx        # Routes & app shell
