@@ -3,7 +3,6 @@ import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import TawkToWidget from './TawkToWidget';
 import { trackPageView } from '../../utils/analytics';
 
 const pageVariants = {
@@ -39,7 +38,6 @@ export default function Layout({ children }) {
         </motion.main>
       </AnimatePresence>
       <Footer />
-      <TawkToWidget />
     </>
   );
 }

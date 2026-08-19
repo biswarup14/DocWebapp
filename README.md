@@ -11,7 +11,6 @@ A modern React website for a dental practice.
 - React Helmet Async (SEO)
 - React GA4 (Analytics)
 - react-share (Social sharing)
-- Tawk.to (Live chat)
 
 ## Setup
 
@@ -37,7 +36,6 @@ Create a `.env` file:
 
 ```
 VITE_GA_TRACKING_ID=G-XXXXXXXXXX
-VITE_TAWK_TO_ID=your-tawk-to-id
 ```
 
 ## Project Structure
