@@ -22,7 +22,6 @@ export default function Footer() {
             <li><Link to="/services">Services</Link></li>
             <li><Link to="/about">About Us</Link></li>
             <li><Link to="/proof-of-work">Proof of Work</Link></li>
-            <li><Link to="/faq">FAQ</Link></li>
           </ul>
         </div>
 
@@ -33,7 +32,6 @@ export default function Footer() {
             <li><Link to="/services">Pediatric Endodontics</Link></li>
             <li><Link to="/services">Dental Trauma</Link></li>
             <li><Link to="/services">Space Maintenance</Link></li>
-            <li><Link to="/insurance">Insurance & Pricing</Link></li>
           </ul>
         </div>
 

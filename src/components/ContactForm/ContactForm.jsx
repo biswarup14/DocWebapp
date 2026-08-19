@@ -72,7 +72,6 @@ export default function ContactForm() {
             <option value="">Select a subject</option>
             <option value="general">General Inquiry</option>
             <option value="appointment">Appointment Question</option>
-            <option value="insurance">Insurance Question</option>
             <option value="emergency">Emergency</option>
           </select>
         </div>
