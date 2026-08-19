@@ -23,11 +23,11 @@ function NotFound() {
     <>
       <Helmet>
         <title>Page Not Found | Incapremo Dental Care</title>
-        <meta name="robots" content="noindex" />
+        <meta name="robots" content="noindex, nofollow" />
       </Helmet>
       <div className="notFound">
         <h1>404</h1>
-        <p>The page you're looking for doesn't exist.</p>
+        <p>The page you&apos;re looking for doesn&apos;t exist.</p>
         <a href="/" className="btn btn-primary">Go Home</a>
       </div>
     </>

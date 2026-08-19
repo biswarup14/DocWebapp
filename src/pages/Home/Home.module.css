@@ -247,6 +247,41 @@
   padding: 32px 24px;
 }
 
+.aboutSeoSection {
+  background-color: var(--color-bg);
+}
+
+.aboutSeoContent {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.aboutSeoContent h2 {
+  margin-bottom: 20px;
+}
+
+.aboutSeoContent h3 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-top: 32px;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.aboutSeoContent p {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.aboutSeoContent strong {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
 .ctaBox {
   background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
   border-radius: var(--radius-xl);

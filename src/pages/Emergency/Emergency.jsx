@@ -16,8 +16,8 @@ export default function Emergency() {
   return (
     <>
       <SEO
-        title="Emergency Dental Care"
-        description="24/7 emergency dental care at Incapremo Dental Care. Same-day appointments for dental emergencies. Call us now!"
+        title="Emergency Dentist Near Me"
+        description="24/7 emergency dentist near me in Purulia. Same-day emergency dental care at Incapremo Dental Care. Call Dr. Deepankar Bhattacharya now!"
         url="/emergency"
         schema={{
           '@type': 'EmergencyService',
@@ -25,7 +25,6 @@ export default function Emergency() {
           telephone: '(+91) 7050576335',
         }}
       />
-
       <section className={styles.pageHeader}>
         <div className="container">
           <div className={styles.emergencyBadge}>&#128680; Emergency</div>

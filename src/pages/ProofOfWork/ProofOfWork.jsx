@@ -33,8 +33,11 @@ export default function ProofOfWork() {
 
   return (
     <>
-      <SEO title="Proof of Work" description="See the results of our dental care — real work, real smiles." url="/proof-of-work" />
-
+      <SEO
+        title="Proof of Work"
+        description="See the results of our dental care — real work, real smiles. Incapremo Dental Care portfolio by Dr. Deepankar Bhattacharya."
+        url="/proof-of-work"
+      />
       <section className={styles.pageHeader}>
         <div className="container">
           <h1 className={styles.pageTitle}>Proof of Work</h1>

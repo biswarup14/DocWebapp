@@ -15,7 +15,11 @@ const specializations = [
 export default function Home() {
   return (
     <>
-      <SEO title="Home" description="Professional pediatric dental care for the whole family. Book your appointment today for a healthier, brighter smile." url="/" />
+      <SEO
+        title="Home"
+        description="Incapremo Dental Care — best dentist near me in Purulia. Dr. Deepankar Bhattacharya offers pediatric dental care, emergency dentist services, and more. Book your appointment today."
+        url="/"
+      />
 
       <section className={styles.hero}>
         <div className={`container ${styles.heroInner}`}>
@@ -105,6 +109,43 @@ export default function Home() {
           </div>
           <div className={styles.specsMore}>
             <Link to="/services" className="btn btn-secondary">Learn More &#8594;</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className={`section ${styles.aboutSeoSection}`}>
+        <div className="container">
+          <div className={styles.aboutSeoContent}>
+            <h2 className="section-title">Incapremo Dental Care — Your Trusted Dentist Near Me in Purulia</h2>
+
+            <p>
+              When searching for a <strong>dentist near me</strong> or the <strong>best dentist near me</strong> in Purulia, West Bengal, families consistently turn to <strong>Incapremo Dental Care</strong> led by <strong>Dr. Deepankar Bhattacharya</strong>. With over 15 years of experience, 5,000+ happy patients, and a 4.9-star rating, Incapremo Dental Care has established itself as the leading <strong>pediatric dentist near me</strong> and family dental practice in the Purulia region. Whether you need a routine check-up, advanced pediatric treatment, or an <strong>emergency dentist near me</strong>, our clinic is here to serve you with compassion, expertise, and modern technology.
+            </p>
+
+            <h3>Why Families Choose Dr. Deepankar Bhattacharya as Their Child Dentist Near Me</h3>
+            <p>
+              Dr. Deepankar Bhattacharya is not just any <strong>purulia dentist doctor</strong> — he is a specialist in Pediatric and Preventive Dentistry with B.D.S. and M.D.S. qualifications. As an Associate Professor in the Department of Pediatric and Preventive Dentistry at Mithila Minority Dental College, he combines academic rigour with hands-on clinical expertise that few <strong>kolkata dentist</strong> professionals can match. Parents searching for a <strong>good dentist near me</strong> or a <strong>child dentist near me</strong> will find that Dr. Bhattacharya brings a rare combination of advanced training, published research, and genuine compassion for young patients. He understands that a child's first dental experiences shape their attitude toward oral health for life, which is why every visit is designed to be comfortable, informed, and effective.
+            </p>
+
+            <h3>Comprehensive Dental Services at Incapremo Dental Care</h3>
+            <p>
+              As a top-rated <strong>dentist near me within 400m</strong> of central Purulia on Deshbandhu Road, Incapremo Dental Care offers a full spectrum of dental services for patients of all ages. Our five core specializations include Preventive Dentistry with sealants and fluoride treatments, Pediatric Endodontics for gentle pulp therapy and root canals, Dental Trauma Management for emergency care of broken or knocked-out teeth, Space Maintenance and Growth Modification using custom appliances, and Pediatric Periodontics for gum health in children. Each treatment is delivered using the latest dental technology in a calm, modern clinical environment.
+            </p>
+
+            <h3>Emergency Dentist Near Me — Same-Day Appointments When You Need Them Most</h3>
+            <p>
+              Dental emergencies do not follow a schedule. That is why Incapremo Dental Care provides same-day <strong>emergency dentist</strong> services for families in Purulia and surrounding areas. Whether your child has a severe toothache, a knocked-out tooth from a sports injury, a cracked or broken tooth, or a painful abscess, our team is ready to help. Call us at (+91) 7050576335 for immediate guidance. We also have an alternate emergency contact at (+91) 9334335872 for after-hours situations. When you search for an <strong>emergency dentist near me</strong>, you want a clinic that responds quickly and treats every case with urgency — that is exactly what we deliver at Incapremo Dental Care.
+            </p>
+
+            <h3>What Makes Us the Best Dentist Near Me in Purulia</h3>
+            <p>
+              Choosing the <strong>best dentist near me</strong> is about more than proximity. It is about trust, skill, and outcomes. At Incapremo Dental Care, Dr. Deepankar Bhattacharya has treated over 5,000 patients across Purulia, Kolkata, and surrounding communities. His specializations in pediatric endodontics, dental trauma management, and interceptive orthodontics mean your child receives care from a true specialist, not a generalist. Families who have searched for a <strong>good dentist near me</strong> and visited our clinic consistently leave five-star reviews on Google, praising our gentle approach, transparent communication, and modern facilities. Our clinic is conveniently located on Deshbandhu Road, behind Reliance Digital, making us one of the most accessible dental practices in the city — truly a <strong>dentist near me within 400m</strong> of the heart of Purulia.
+            </p>
+
+            <h3>Serving Purulia, Kolkata, and Beyond</h3>
+            <p>
+              While we are proudly rooted in Purulia, families travel from across West Bengal to see Dr. Deepankar Bhattacharya. Whether you are looking for a <strong>kolkata dentist</strong> for specialized pediatric care or need a reliable <strong>purulia dentist doctor</strong> for your family, Incapremo Dental Care is the answer. We speak Hindi, English, and Bengali, ensuring that we connect with families from diverse communities. Our clinic hours — Monday through Saturday from 10 AM to 2 PM and 5 PM to 8 PM — are designed to accommodate working parents and school schedules. Visit us at Deshbandhu Road, behind Reliance Digital, Purulia, West Bengal 723101, or call (+91) 7050576335 to book your appointment today.
+            </p>
           </div>
         </div>
       </section>

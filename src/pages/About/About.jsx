@@ -20,8 +20,11 @@ const values = [
 export default function About() {
   return (
     <>
-      <SEO title="About Us" description="Learn about Incapremo Dental Care — specialist pediatric dental practice led by Dr. Deepankar Bhattacharya." url="/about" />
-
+      <SEO
+        title="About Dr. Deepankar Bhattacharya"
+        description="Learn about Incapremo Dental Care — specialist pediatric dental practice led by Dr. Deepankar Bhattacharya, a Purulia dentist with 15+ years of experience."
+        url="/about"
+      />
       <section className={styles.pageHeader}>
         <div className="container">
           <h1 className={styles.pageTitle}>About Us</h1>

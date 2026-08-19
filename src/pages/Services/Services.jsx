@@ -51,10 +51,9 @@ export default function Services() {
     <>
       <SEO
         title="Specializations"
-        description="Expert pediatric dental specializations at Incapremo Dental Care — Preventive Dentistry, Pediatric Endodontics, Dental Trauma Management, Space Maintenance, and Pediatric Periodontics."
+        description="Expert pediatric dental specializations at Incapremo Dental Care — Preventive Dentistry, Pediatric Endodontics, Dental Trauma Management, Space Maintenance, and Pediatric Periodontics by Dr. Deepankar Bhattacharya."
         url="/services"
       />
-
       <section className={styles.pageHeader}>
         <div className="container">
           <h1 className={styles.pageTitle}>Our Specializations</h1>
