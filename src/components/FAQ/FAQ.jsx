@@ -29,13 +29,52 @@ const faqData = [
   },
   {
     question: 'Dr. Deepankar Bhattacharya dentist?',
-    answer: 'Dr. Deepankar Bhattacharya is a highly experienced pediatric dentist at Incapremo Dental Care in Purulia, West Bengal. With B.D.S. and M.D.S. qualifications and over 15 years of experience, he specializes in pediatric dentistry, endodontics, dental trauma management, and preventive dentistry. He is known for providing gentle, child-friendly dental care in a comfortable environment.',
+    answer: 'Dr. Deepankar Bhattacharya is a highly experienced pediatric dentist at Incapremo Dental Care in West Bengal. With B.D.S. and M.D.S. qualifications and over 15 years of experience, he specializes in pediatric dentistry, endodontics, dental trauma management, and preventive dentistry. He is known for providing gentle, child-friendly dental care in a comfortable environment.',
   },
   {
-    question: 'Incapremo Dental Care West Bengal Purulia?',
+    question: 'Incapremo Dental Care West Bengal?',
     answer: 'Incapremo Dental Care is a leading dental clinic located on Deshbandhu Road, behind Reliance Digital, in Purulia, West Bengal 723101. Led by Dr. Deepankar Bhattacharya, the clinic offers comprehensive dental services including pediatric dentistry, endodontics, emergency dental care, and preventive treatments. The clinic is open Monday to Saturday, 10 AM to 2 PM and 5 PM to 8 PM. Book your appointment by calling (+91) 7050576335.',
   },
+  {
+    question: 'Where can I find a dentist near me in Purulia?',
+    answer: 'Incapremo Dental Care is a dentist near me in Purulia at Deshbandhu Road, behind Reliance Digital, Purulia, West Bengal 723101. We are open Monday to Saturday, 10 AM to 2 PM and 5 PM to 8 PM, and we keep same-day slots available for emergencies. Call (+91) 7050576335 before travelling and we will confirm the earliest appointment for you.',
+  },
+  {
+    question: 'Do you have a pediatric dentist near me for my child?',
+    answer: 'Yes. Dr. Deepankar Bhattacharya holds a B.D.S. and an M.D.S. in Pediatric Dentistry and Preventive Dentistry, and is a former Ex-Associate Professor. If you are searching for a pediatric dentist near me in Purulia, Kolkata or across West Bengal, our clinic treats children from their first dental visit through pulp therapy, dental trauma management and interceptive orthodontics, in a calm, child-friendly environment.',
+  },
+  {
+    question: 'When should I take my child to a kids dentist near me?',
+    answer: 'The American Academy of Pediatric Dentistry recommends a first dental visit by age one, or within six months of the first tooth erupting. A kids dentist near me can spot early decay, tongue-tie, bite problems and thumb-sucking habits long before they cause pain. From age two onward, six-monthly check-ups and fluoride varnish help protect baby teeth until the adult teeth arrive.',
+  },
+  {
+    question: 'Do you provide orthodontics in Kolkata?',
+    answer: 'Yes. We provide interceptive orthodontics in Kolkata and across West Bengal, including custom space maintainers after early tooth loss, habit-breaking appliances for thumb sucking and pacifier use, and growth-guiding appliances for developing bite problems. A growth assessment around age seven can often prevent the need for lengthy braces treatment later. Call (+91) 7050576335 to book an orthodontic consultation in Purulia.',
+  },
+  {
+    question: 'What dental treatment do you offer in Purulia and Kolkata?',
+    answer: 'We offer dental treatment in Purulia for the whole family: preventive dentistry with sealants and fluoride, pediatric endodontics (pulpotomy, pulpectomy and root canal), dental trauma management including re-implantation and splinting, space maintenance and growth modification, pediatric periodontics, teeth whitening, scaling, crowns and emergency dental care. Patients also travel to us for dental treatment in Kolkata from nearby towns such as Bokaro, Dhanbad and Asansol.',
+  },
+  {
+    question: 'How do I choose the best dentist near me?',
+    answer: 'When comparing the best dentist near me, look at qualifications, whether the dentist holds a specialist degree in the area you need, how they explain your treatment plan, and whether they ever recommend unnecessary work. At Incapremo Dental Care you will get a clear diagnosis, a written estimate of options, and honest advice about whether you need to come in at all. Our 4.9-star Google rating reflects 5,000+ patients treated.',
+  },
+  {
+    question: 'Is there a dental clinic near me open on Saturdays?',
+    answer: 'Yes. Incapremo Dental Care, a dental clinic near me on Deshbandhu Road in Purulia, is open Monday through Saturday with two sessions: 10 AM to 2 PM and 5 PM to 8 PM. Sunday is closed, so plan routine check-ups and cleanings on a weekday or Saturday, and save the emergency line (+91) 7050576335 for urgent problems such as swelling, trauma or severe pain.',
+  },
 ];
+
+export const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  '@id': 'https://incapremodentalcare.com/#faq',
+  mainEntity: faqData.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+  })),
+};
 
 function FAQItem({ question, answer, isOpen, onToggle }) {
   return (
@@ -96,16 +135,3 @@ export default function FAQ() {
     </section>
   );
 }
-
-export const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqData.map((faq) => ({
-    '@type': 'Question',
-    name: faq.question,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: `<p>${faq.answer}</p>`,
-    },
-  })),
-};

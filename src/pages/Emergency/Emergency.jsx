@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import SEO from '../../components/SEO/SEO';
+import SEO, { NAP } from '../../components/SEO/SEO';
 import styles from './Emergency.module.css';
 
 const emergencies = [
@@ -16,14 +16,26 @@ export default function Emergency() {
   return (
     <>
       <SEO
-        title="Emergency Dentist Near Me"
-        description="24/7 emergency dentist near me in Purulia. Same-day emergency dental care at Incapremo Dental Care. Call Dr. Deepankar Bhattacharya now!"
         url="/emergency"
-        schema={{
-          '@type': 'EmergencyService',
-          name: 'Incapremo Dental Care Emergency',
-          telephone: '(+91) 7050576335',
-        }}
+        breadcrumb={[
+          { name: 'Home', path: '/' },
+          { name: 'Emergency', path: '/emergency' },
+        ]}
+        extraSchemas={[
+          {
+            '@context': 'https://schema.org',
+            '@type': 'EmergencyService',
+            '@id': 'https://incapremodentalcare.com/emergency/#emergency',
+            name: 'Incapremo Dental Care — Emergency Dental Care',
+            description:
+              'Same-day emergency dental treatment in Purulia, West Bengal for severe toothache, dental trauma, abscess and swelling.',
+            url: 'https://incapremodentalcare.com/emergency',
+            telephone: '(+91) 7050576335',
+            provider: { '@id': 'https://incapremodentalcare.com/#dentist' },
+            areaServed: { '@type': 'City', name: 'Purulia' },
+            availableOpeningHoursSpecification: NAP.openingHoursSpecification,
+          },
+        ]}
       />
       <section className={styles.pageHeader}>
         <div className="container">

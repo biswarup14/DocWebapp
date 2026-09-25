@@ -7,9 +7,11 @@ export default function NotFound() {
     <>
       <SEO
         title="Page Not Found"
-        description="The page you are looking for does not exist."
+        description="The page you were looking for could not be found."
         url="/404"
+        keywords={[]}
         noindex
+        schema={false}
       />
       <section className={styles.errorPage}>
         <div className="container">

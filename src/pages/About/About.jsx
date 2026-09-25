@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import SEO from '../../components/SEO/SEO';
 import PageHeader from '../../components/PageHeader/PageHeader';
+import SEO, { personSchema } from '../../components/SEO/SEO';
 import styles from './About.module.css';
 
 const stats = [
@@ -22,13 +22,16 @@ export default function About() {
   return (
     <>
       <SEO
-        title="About Dr. Deepankar Bhattacharya"
-        description="Learn about Incapremo Dental Care — specialist pediatric dental practice led by Dr. Deepankar Bhattacharya, a Purulia dentist with 15+ years of experience."
         url="/about"
+        breadcrumb={[
+          { name: 'Home', path: '/' },
+          { name: 'About', path: '/about' },
+        ]}
+        extraSchemas={[personSchema()]}
       />
       <PageHeader
         title="About Us"
-        subtitle="Expert pediatric dental care for your child."
+        subtitle="A specialist kids dentist in Purulia with 15+ years of pediatric dental experience."
       />
 
       <section className="section">

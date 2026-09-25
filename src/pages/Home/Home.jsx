@@ -43,12 +43,7 @@ function StatItem({ end, suffix, label }) {
 export default function Home() {
   return (
     <>
-      <SEO
-        title="Home"
-        description="Incapremo Dental Care — best dentist near me in Purulia. Dr. Deepankar Bhattacharya offers pediatric dental care, emergency dentist services, and more. Book your appointment today."
-        url="/"
-        extraSchemas={[faqSchema]}
-      />
+      <SEO url="/" extraSchemas={[faqSchema]} />
 
       <section className={styles.hero}>
         <div className={`container ${styles.heroInner}`}>

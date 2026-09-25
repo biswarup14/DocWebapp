@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
-import SEO from '../../components/SEO/SEO';
 import PageHeader from '../../components/PageHeader/PageHeader';
 import ContactForm from '../../components/ContactForm/ContactForm';
+import SEO from '../../components/SEO/SEO';
 import styles from './Contact.module.css';
 
 const contactInfo = [
@@ -15,13 +15,15 @@ export default function Contact() {
   return (
     <>
       <SEO
-        title="Contact Us"
-        description="Get in touch with Incapremo Dental Care — your trusted dentist near me in Purulia. Call (+91) 7050576335 or fill out our contact form."
         url="/contact"
+        breadcrumb={[
+          { name: 'Home', path: '/' },
+          { name: 'Contact', path: '/contact' },
+        ]}
       />
       <PageHeader
         title="Contact Us"
-        subtitle="We'd love to hear from you."
+        subtitle="Book with a dentist near you in Purulia — we reply the same day."
       />
 
       <section className="section">

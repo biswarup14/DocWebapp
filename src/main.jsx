@@ -11,12 +11,12 @@ initAnalytics();
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
-      <HelmetProvider>
+    <HelmetProvider>
+      <BrowserRouter>
         <ThemeProvider>
-            <App />
+          <App />
         </ThemeProvider>
-      </HelmetProvider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </HelmetProvider>
   </StrictMode>,
 );

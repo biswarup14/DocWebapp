@@ -6,9 +6,11 @@ export default function TermsAndConditions() {
     <>
       <SEO
         title="Terms & Conditions"
-        description="Terms and Conditions for Incapremo Dental Care. Read the terms governing the use of our services and website."
+        description="The terms that apply to appointments, payments and website use at Incapremo Dental Care, Purulia."
         url="/terms-and-conditions"
+        keywords={[]}
         noindex
+        schema={false}
       />
       <section className={styles.pageHeader}>
         <div className="container">

@@ -9,7 +9,9 @@ export default function ServerError() {
         title="Server Error"
         description="Something went wrong on our end. Please try again later."
         url="/500"
+        keywords={[]}
         noindex
+        schema={false}
       />
       <section className={styles.errorPage}>
         <div className="container">

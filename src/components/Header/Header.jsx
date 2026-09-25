@@ -38,8 +38,8 @@ export default function Header() {
     <header className={`${styles.header} ${hidden ? styles.headerHidden : ''}`}>
       <div className={`container ${styles.headerInner}`}>
         <Link to="/" className={styles.logo}>
-          <img src="/logo.png" alt="InCaPreMo Dental Care" className={styles.logoIcon} />
-          <span className={styles.logoText}>InCaPreMo Dental Care</span>
+          <img src="/logo.png" alt="Incapremo Dental Care" className={styles.logoIcon} />
+          <span className={styles.logoText}>Incapremo Dental Care</span>
         </Link>
 
         <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ''}`}>

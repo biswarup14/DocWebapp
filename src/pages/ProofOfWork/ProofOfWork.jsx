@@ -1,8 +1,8 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import SEO from '../../components/SEO/SEO';
 import PageHeader from '../../components/PageHeader/PageHeader';
 import SkeletonImage from '../../components/Skeleton/SkeletonImage';
+import SEO from '../../components/SEO/SEO';
 import styles from './ProofOfWork.module.css';
 
 const workItems = [
@@ -52,9 +52,26 @@ export default function ProofOfWork() {
   return (
     <>
       <SEO
-        title="Proof of Work"
-        description="See the results of our dental care — real work, real smiles. Incapremo Dental Care portfolio by Dr. Deepankar Bhattacharya."
         url="/proof-of-work"
+        breadcrumb={[
+          { name: 'Home', path: '/' },
+          { name: 'Proof of Work', path: '/proof-of-work' },
+        ]}
+        extraSchemas={[
+          {
+            '@context': 'https://schema.org',
+            '@type': 'ImageGallery',
+            '@id': 'https://incapremodentalcare.com/proof-of-work/#gallery',
+            name: 'Dental Treatment Results — Incapremo Dental Care',
+            url: 'https://incapremodentalcare.com/proof-of-work',
+            about: { '@id': 'https://incapremodentalcare.com/#dentist' },
+            image: workItems.map((item) => ({
+              '@type': 'ImageObject',
+              contentUrl: `https://incapremodentalcare.com${item.src}`,
+              caption: item.alt,
+            })),
+          },
+        ]}
       />
       <PageHeader
         title="Proof of Work"

@@ -6,9 +6,11 @@ export default function PrivacyPolicy() {
     <>
       <SEO
         title="Privacy Policy"
-        description="Privacy Policy for Incapremo Dental Care. Learn how we collect, use, and protect your personal information."
+        description="How Incapremo Dental Care collects, uses and protects your personal and health information."
         url="/privacy-policy"
+        keywords={[]}
         noindex
+        schema={false}
       />
       <section className={styles.pageHeader}>
         <div className="container">
