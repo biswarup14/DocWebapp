@@ -9,10 +9,13 @@
 
     <!-- Canonical + hreflang. This file is the SPA fallback served for every
          route, so these always describe the home page. Per-route canonicals
-         are written client-side by <SEO>. -->
-    <link rel="canonical" href="https://incapremodentalcare.com/" />
-    <link rel="alternate" hreflang="en-IN" href="https://incapremodentalcare.com/" />
-    <link rel="alternate" hreflang="x-default" href="https://incapremodentalcare.com/" />
+         are written client-side by <SEO>.
+
+         __SITE_URL__ is replaced at build time from src/config/site.js by the
+         SEO assets plugin. Do not hand-edit these URLs. -->
+    <link rel="canonical" href="__SITE_URL__/" />
+    <link rel="alternate" hreflang="en-IN" href="__SITE_URL__/" />
+    <link rel="alternate" hreflang="x-default" href="__SITE_URL__/" />
 
     <title>Dentist Near Me in Purulia &amp; Kolkata | Incapremo Dental Care</title>
     <meta
@@ -47,9 +50,9 @@
       property="og:description"
       content="Dentist near me in Purulia, West Bengal. Incapremo Dental Care is a kids dentist offering dental treatment in Purulia &amp; Kolkata. Call (+91) 7050576335."
     />
-    <meta property="og:url" content="https://incapremodentalcare.com/" />
-    <meta property="og:image" content="https://incapremodentalcare.com/oie_Xo2NfYNrbzXd.png" />
-    <meta property="og:image:secure_url" content="https://incapremodentalcare.com/oie_Xo2NfYNrbzXd.png" />
+    <meta property="og:url" content="__SITE_URL__/" />
+    <meta property="og:image" content="__SITE_URL__/oie_Xo2NfYNrbzXd.png" />
+    <meta property="og:image:secure_url" content="__SITE_URL__/oie_Xo2NfYNrbzXd.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -65,7 +68,7 @@
       name="twitter:description"
       content="Dentist near me in Purulia, West Bengal. Incapremo Dental Care is a kids dentist offering dental treatment in Purulia &amp; Kolkata. Call (+91) 7050576335."
     />
-    <meta name="twitter:image" content="https://incapremodentalcare.com/oie_Xo2NfYNrbzXd.png" />
+    <meta name="twitter:image" content="__SITE_URL__/oie_Xo2NfYNrbzXd.png" />
     <meta
       name="twitter:image:alt"
       content="Incapremo Dental Care — dentist near me in Purulia, West Bengal"
@@ -84,16 +87,16 @@
         "@graph": [
           {
             "@type": "Dentist",
-            "@id": "https://incapremodentalcare.com/#dentist",
+            "@id": "__SITE_URL__/#dentist",
             "name": "Incapremo Dental Care",
             "slogan": "Your smile is our priority",
             "alternateName": ["dentalcarewb", "Dental Care WB", "Incapremo Dental Care West Bengal"],
-            "url": "https://incapremodentalcare.com/",
+            "url": "__SITE_URL__/",
             "description": "Dentist near me in Purulia, West Bengal. Incapremo Dental Care is a kids dentist offering dental treatment in Purulia and Kolkata. Call (+91) 7050576335.",
             "telephone": "(+91) 7050576335",
             "email": "dr.deepankarbhattacharya@gmail.com",
-            "image": "https://incapremodentalcare.com/oie_Xo2NfYNrbzXd.png",
-            "logo": "https://incapremodentalcare.com/logo.png",
+            "image": "__SITE_URL__/oie_Xo2NfYNrbzXd.png",
+            "logo": "__SITE_URL__/logo.png",
             "priceRange": "$$",
             "currenciesAccepted": "INR",
             "address": {
@@ -150,35 +153,35 @@
               "@type": "OfferCatalog",
               "name": "Dental treatments in Purulia and Kolkata",
               "itemListElement": [
-                { "@type": "Offer", "position": 1, "itemOffered": { "@type": "MedicalProcedure", "name": "Preventive Dentistry", "provider": { "@id": "https://incapremodentalcare.com/#dentist" } } },
-                { "@type": "Offer", "position": 2, "itemOffered": { "@type": "MedicalProcedure", "name": "Pediatric Endodontics", "provider": { "@id": "https://incapremodentalcare.com/#dentist" } } },
-                { "@type": "Offer", "position": 3, "itemOffered": { "@type": "MedicalProcedure", "name": "Dental Trauma Management", "provider": { "@id": "https://incapremodentalcare.com/#dentist" } } },
-                { "@type": "Offer", "position": 4, "itemOffered": { "@type": "MedicalProcedure", "name": "Space Maintenance & Growth Modification", "provider": { "@id": "https://incapremodentalcare.com/#dentist" } } },
-                { "@type": "Offer", "position": 5, "itemOffered": { "@type": "MedicalProcedure", "name": "Pediatric Periodontics", "provider": { "@id": "https://incapremodentalcare.com/#dentist" } } },
-                { "@type": "Offer", "position": 6, "itemOffered": { "@type": "MedicalProcedure", "name": "Interceptive Orthodontics", "provider": { "@id": "https://incapremodentalcare.com/#dentist" } } },
-                { "@type": "Offer", "position": 7, "itemOffered": { "@type": "MedicalProcedure", "name": "Root Canal Treatment", "provider": { "@id": "https://incapremodentalcare.com/#dentist" } } },
-                { "@type": "Offer", "position": 8, "itemOffered": { "@type": "MedicalProcedure", "name": "Emergency Dental Care", "provider": { "@id": "https://incapremodentalcare.com/#dentist" } } }
+                { "@type": "Offer", "position": 1, "itemOffered": { "@type": "MedicalProcedure", "name": "Preventive Dentistry", "provider": { "@id": "__SITE_URL__/#dentist" } } },
+                { "@type": "Offer", "position": 2, "itemOffered": { "@type": "MedicalProcedure", "name": "Pediatric Endodontics", "provider": { "@id": "__SITE_URL__/#dentist" } } },
+                { "@type": "Offer", "position": 3, "itemOffered": { "@type": "MedicalProcedure", "name": "Dental Trauma Management", "provider": { "@id": "__SITE_URL__/#dentist" } } },
+                { "@type": "Offer", "position": 4, "itemOffered": { "@type": "MedicalProcedure", "name": "Space Maintenance & Growth Modification", "provider": { "@id": "__SITE_URL__/#dentist" } } },
+                { "@type": "Offer", "position": 5, "itemOffered": { "@type": "MedicalProcedure", "name": "Pediatric Periodontics", "provider": { "@id": "__SITE_URL__/#dentist" } } },
+                { "@type": "Offer", "position": 6, "itemOffered": { "@type": "MedicalProcedure", "name": "Interceptive Orthodontics", "provider": { "@id": "__SITE_URL__/#dentist" } } },
+                { "@type": "Offer", "position": 7, "itemOffered": { "@type": "MedicalProcedure", "name": "Root Canal Treatment", "provider": { "@id": "__SITE_URL__/#dentist" } } },
+                { "@type": "Offer", "position": 8, "itemOffered": { "@type": "MedicalProcedure", "name": "Emergency Dental Care", "provider": { "@id": "__SITE_URL__/#dentist" } } }
               ]
             }
           },
           {
             "@type": "WebSite",
-            "@id": "https://incapremodentalcare.com/#website",
-            "url": "https://incapremodentalcare.com/",
+            "@id": "__SITE_URL__/#website",
+            "url": "__SITE_URL__/",
             "name": "Incapremo Dental Care",
             "description": "Dentist near me in Purulia, West Bengal. Incapremo Dental Care is a kids dentist offering dental treatment in Purulia and Kolkata. Call (+91) 7050576335.",
             "inLanguage": "en-IN",
-            "publisher": { "@id": "https://incapremodentalcare.com/#dentist" }
+            "publisher": { "@id": "__SITE_URL__/#dentist" }
           },
           {
             "@type": "WebPage",
-            "@id": "https://incapremodentalcare.com/#webpage",
-            "url": "https://incapremodentalcare.com/",
+            "@id": "__SITE_URL__/#webpage",
+            "url": "__SITE_URL__/",
             "name": "Dentist Near Me in Purulia & Kolkata",
             "description": "Dentist near me in Purulia, West Bengal. Incapremo Dental Care is a kids dentist offering dental treatment in Purulia and Kolkata. Call (+91) 7050576335.",
             "inLanguage": "en-IN",
-            "isPartOf": { "@id": "https://incapremodentalcare.com/#website" },
-            "about": { "@id": "https://incapremodentalcare.com/#dentist" },
+            "isPartOf": { "@id": "__SITE_URL__/#website" },
+            "about": { "@id": "__SITE_URL__/#dentist" },
             "datePublished": "2026-01-01",
             "dateModified": "2026-09-26"
           }

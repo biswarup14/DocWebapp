@@ -5,7 +5,45 @@
   "observability": {
     "enabled": true
   },
+  // Custom domains must be declared here or `wrangler deploy` will not route
+  // them to this Worker. The apex is canonical (see SITE_URL in
+  // src/config/site.js) and every page emits rel="canonical" pointing at it.
+  //
+  // www is bound too so it gets a valid certificate instead of a cert error.
+  // Add a Cloudflare Redirect Rule (www.dentalcarebest.in/* -> apex, 301) to
+  // avoid serving the same content on two hostnames; drop the www entry if you
+  // would rather it not resolve at all.
+  //
+  // To confirm these survived into the deploy config (the Vite plugin rewrites
+  // wrangler.jsonc into dist/wrangler.json, so a stale dist/ will lie to you):
+  //   npm run build && python3 -c "import json;print(json.load(open('dist/wrangler.json'))['routes'])"
+  "routes": [
+    { "pattern": "dentalcarebest.in", "custom_domain": true },
+    { "pattern": "www.dentalcarebest.in", "custom_domain": true }
+  ],
   "assets": {
-    "not_found_handling": "single-page-application"
+    // Serve dist/404.html with a real HTTP 404 status.
+    //
+    // This used to be "single-page-application", which returned index.html
+    // with HTTP 200 for every unknown path. That is a soft 404: search engines
+    // treat a missing page that answers 200 as a duplicate to crawl forever,
+    // and it wastes crawl budget on URLs that do not exist.
+    //
+    // The prerendered per-route files (build/prerender.js) cover every real
+    // route, so nothing legitimate needs the catch-all fallback. 404.html is
+    // still the full SPA shell, so React boots and renders the styled NotFound
+    // page — the visitor sees the 404 page, the crawler gets a 404.
+    "not_found_handling": "404-page",
+
+    // Serve /services and redirect /services/ -> /services, matching the
+    // canonical URLs in src/config/seo.js exactly.
+    //
+    // The default "auto-trailing-slash" picks the redirect direction from the
+    // on-disk layout instead. Because build/prerender.js writes
+    // dist/<route>/index.html, that default issues a 307 from /services to
+    // /services/ — pointing every canonical URL at a non-canonical one, and
+    // colliding with the 301 in _redirects. "drop-trailing-slash" makes the
+    // declared canonical the served URL, so only one form is ever indexed.
+    "html_handling": "drop-trailing-slash"
   }
 }

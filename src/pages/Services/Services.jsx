@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import SEO, { serviceSchema } from '../../components/SEO/SEO';
+import SEO from '../../components/SEO/SEO';
+import { servicesSchema } from '../../config/seo.js';
 import PageHeader from '../../components/PageHeader/PageHeader';
 import SkeletonImage from '../../components/Skeleton/SkeletonImage';
 import styles from './Services.module.css';
@@ -57,13 +58,7 @@ export default function Services() {
           { name: 'Home', path: '/' },
           { name: 'Services', path: '/services' },
         ]}
-        extraSchemas={[
-          serviceSchema(
-            '/services',
-            'Dental Treatment in Purulia & Kolkata',
-            'Preventive dentistry, pediatric endodontics, dental trauma management, space maintenance and growth modification, pediatric periodontics, interceptive orthodontics, root canal treatment and emergency dental care in Purulia, West Bengal.',
-          ),
-        ]}
+        extraSchemas={[servicesSchema()]}
       />
       <PageHeader
         title="Our Specializations"

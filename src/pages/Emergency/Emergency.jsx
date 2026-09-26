@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import SEO, { NAP } from '../../components/SEO/SEO';
+import SEO from '../../components/SEO/SEO';
+import { emergencyServiceSchema } from '../../config/seo.js';
 import styles from './Emergency.module.css';
 
 const emergencies = [
@@ -21,21 +22,7 @@ export default function Emergency() {
           { name: 'Home', path: '/' },
           { name: 'Emergency', path: '/emergency' },
         ]}
-        extraSchemas={[
-          {
-            '@context': 'https://schema.org',
-            '@type': 'EmergencyService',
-            '@id': 'https://incapremodentalcare.com/emergency/#emergency',
-            name: 'Incapremo Dental Care — Emergency Dental Care',
-            description:
-              'Same-day emergency dental treatment in Purulia, West Bengal for severe toothache, dental trauma, abscess and swelling.',
-            url: 'https://incapremodentalcare.com/emergency',
-            telephone: '(+91) 7050576335',
-            provider: { '@id': 'https://incapremodentalcare.com/#dentist' },
-            areaServed: { '@type': 'City', name: 'Purulia' },
-            availableOpeningHoursSpecification: NAP.openingHoursSpecification,
-          },
-        ]}
+        extraSchemas={[emergencyServiceSchema()]}
       />
       <section className={styles.pageHeader}>
         <div className="container">

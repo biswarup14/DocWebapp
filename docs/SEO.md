@@ -1,8 +1,9 @@
 # SEO Tool — Architecture & Maintenance Guide
 
-**Site:** Incapremo Dental Care — https://incapremodentalcare.com
-**Owner files:** `src/components/SEO/SEO.jsx`, `index.html`, `public/sitemap.xml`, `public/robots.txt`
-**Test suite:** `src/components/SEO/SEO.test.jsx`
+**Site:** Incapremo Dental Care — the canonical origin is `SITE_URL` in `src/config/site.js`
+**Owner files:** `src/config/site.js` (domain + route inventory), `src/config/seo.js` (on-page plan, keywords, NAP + schema factories), `src/components/SEO/SEO.jsx` (the `<SEO>` component), `build/prerender.js` (static per-route head), `index.html` (base head, uses the `__SITE_URL__` token)
+**Generated files:** `sitemap.xml`, `robots.txt`, `_redirects` — emitted into `dist/` by `build/seo-assets.js`, never edited by hand
+**Test suites:** `src/components/SEO/SEO.test.jsx`, `src/config/site.test.jsx`
 
 ---
 
@@ -21,20 +22,47 @@ multi-page app.
 
 ## 2. How it fits the build
 
-This is a Vite + React single-page application deployed to Cloudflare, not a server-rendered framework.
-There are two layers of metadata, and understanding which is which explains most of the tool's design.
+This is a Vite + React app deployed to Cloudflare Workers Static Assets. The `<body>` is a single
+client-rendered shell, but the `<head>` is prerendered per route, so crawlers that never execute
+JavaScript still get correct metadata. There are two layers of metadata, and understanding which is
+which explains most of the tool's design.
 
-**Layer 1 — static `index.html`.** Cloudflare serves this file for every route because
-`wrangler.jsonc` sets `not_found_handling: "single-page-application"`. It contains a complete, correct
-set of head tags for the **home page only**. This is the only metadata a non-JS crawler (a social
-scraper, `curl`, some monitoring bots) will ever see, and it is identical for all nine routes.
+**Layer 1 — prerendered static head.** `build/prerender.js` runs after `vite build` and writes one
+HTML file per route (`dist/services/index.html`, `dist/privacy-policy/index.html`, …) plus
+`dist/404.html`. Each file's `<head>` is built from the same `src/config/seo.js` module the React
+component reads, so the two cannot drift. This is the only metadata a non-JS crawler (a social
+scraper, `curl`, some monitoring bots) will ever see, and it is **route-specific** — this is the
+point of the step.
 
-**Layer 2 — client-side `<SEO>`.** On hydration, `react-helmet-async` replaces the static tags with the
-correct per-route values, and repeats this on every client-side navigation. Googlebot executes
-JavaScript, so it reads the client-rendered values. This is where per-route keyword targeting lives.
+**Layer 2 — client-side `<SEO>`.** On hydration, `react-helmet-async` re-emits the same tags and
+repeats this on every client-side navigation. Googlebot executes JavaScript, so it reads these
+values too. This is where per-route keyword targeting lives.
 
-Both layers must agree for the home page. A mismatch produces two conflicting crawl views of the same
-URL, which is worse than either layer being merely suboptimal. The test suite asserts they match.
+Because both layers are generated from one config, they agree by construction rather than by
+convention. The test suite asserts it: `src/config/site.test.jsx` reads the built files in `dist/`
+and fails if a route's canonical, title, robots directive or JSON-LD disagrees with the sitemap or
+with `PAGE_SEO`.
+
+### Why the soft 404 mattered
+
+`not_found_handling` used to be `"single-page-application"`, which served the home page's
+`index.html` with **HTTP 200** for every path. Every URL on the site was therefore a byte-identical
+copy of `/` to any crawler that does not run JavaScript — a site-wide duplicate-content problem, and
+`/anything-typo` answered 200 instead of 404. It is now `"404-page"`, so `dist/404.html` is served
+with a real 404 status while still booting React and rendering the styled NotFound page.
+
+### Adding a route
+
+1. Add it to `INDEXABLE_ROUTES` in `src/config/site.js` (sitemap, prerender, canonical).
+2. Add a matching `PAGE_SEO` entry in `src/config/seo.js`, with its own `title` and `description`.
+   `seoFor()` **throws** for a path with no entry rather than falling back to the home page, so this
+   step cannot be skipped.
+3. Add the page's structured data to `EXTRA_SCHEMAS` in `build/prerender.js` if it has any, or the
+   prerendered head will be missing schema the client-side render produces.
+
+Step 2's throw is deliberate. The previous `PAGE_SEO[path] || PAGE_SEO['/']` fallback silently gave
+an undeclared route the home page's title and description, which pairs a foreign title with a
+self-referential canonical and reads as correct in review.
 
 ## 3. Keyword strategy
 
@@ -52,7 +80,7 @@ The site targets one commercial head term and eight supporting terms:
 | Supporting | `orthodontics in Kolkata` |
 | Supporting | `dentist clinic near me` |
 
-These are declared once as `MAIN_KEYWORD` and `SUPPORTING_KEYWORDS` in `SEO.jsx`. The rule the codebase
+These are declared once as `MAIN_KEYWORD` and `SUPPORTING_KEYWORDS` in `config/seo.js`. The rule the codebase
 enforces is that **no page may use a term outside this approved set.** Once a list drifts, pages start
 competing for the same query and each page's signal is diluted. A test asserts every keyword in
 `PAGE_SEO` is on the approved list, and that every approved keyword is used somewhere — so an orphan
@@ -132,10 +160,25 @@ exactly one place.
 
 ## 7. Crawler directives
 
-`public/robots.txt` allows the site, disallows `/500` and `/404`, and points at
-`https://incapremodentalcare.com/sitemap.xml`. The sitemap lists the six indexable routes with
-`lastmod`, `changefreq` and `priority`, and the `/proof-of-work` entry carries Google image-sitemap
-annotations for the six gallery images.
+`robots.txt` and `sitemap.xml` are build artifacts, generated from `src/config/site.js` by
+`build/seo-assets.js`. The generated robots allows the site, disallows `/500` and `/404` from
+`DISALLOWED_PATHS`, and points at `SITE_URL/sitemap.xml`. The sitemap lists every route in
+`INDEXABLE_ROUTES` with `lastmod`, `changefreq` and `priority`, and the `/proof-of-work` entry carries
+Google image-sitemap annotations for the six gallery images.
+
+`dist/_redirects` is generated by the same plugin, but it carries **no active rules**. Two things
+that used to live there moved, and the reason matters:
+
+- **Host-level 301s** (`PREVIOUS_SITE_URL`, `CANONICAL_ALIASES`) cannot live in `_redirects` at all —
+  Workers Static Assets silently ignores a rule whose source names another host. They belong in a
+  zone-level Cloudflare Redirect Rule, and `npm run build` fails until you confirm one exists. See
+  `docs/DOMAIN-MIGRATION.md`.
+- **Trailing-slash normalisation** is owned by `html_handling: "drop-trailing-slash"` in
+  `wrangler.jsonc`, which is the only place that redirect actually runs. The assets layer answers
+  `/services/` from disk before `_redirects` is consulted, so a 301 written here would be dead config
+  that looks like the real one. `drop-trailing-slash` also makes the served URL match the canonical
+  exactly; the default `auto-trailing-slash` derives its direction from the on-disk layout and would
+  307 `/services` to `/services/`, pointing every canonical URL at a non-canonical one.
 
 ## 8. Making a change
 
@@ -148,8 +191,15 @@ page — the keyword-coverage test fails if a term is declared but never targete
 **Change the business phone number or address.** Edit `NAP`. Check whether the value is duplicated in
 `index.html`'s JSON-LD, which is a separate static copy and must be updated by hand.
 
+**Change the domain.** Edit `SITE_URL` in `src/config/site.js`. That is the only edit required; the
+prerendered heads, sitemap and robots all follow. Set `PREVIOUS_SITE_URL` as well if the old
+domain is being retired, then work through `docs/DOMAIN-MIGRATION.md` — a domain move without a 301
+and a Search Console *Change of Address* will lose ranking.
+
 **Add a new page.** Create the route in `src/App.jsx`, add a `PAGE_SEO` entry, render
-`<SEO url="/new-route" breadcrumb={[…]} />`, and add a `<url>` entry to `public/sitemap.xml`.
+`<SEO url="/new-route" breadcrumb={[…]} />`, and add an entry to `INDEXABLE_ROUTES` in
+`src/config/site.js`. The sitemap entry is generated from that; do not create a `public/sitemap.xml`.
+`src/config/site.test.jsx` fails if the route and its canonical disagree.
 
 ## 9. Known constraint
 

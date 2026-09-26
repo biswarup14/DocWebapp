@@ -1,7 +1,0 @@
-User-agent: *
-Allow: /
-
-Disallow: /500
-Disallow: /404
-
-Sitemap: https://incapremodentalcare.com/sitemap.xml

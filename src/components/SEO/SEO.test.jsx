@@ -14,6 +14,7 @@ import SEO, {
   SUPPORTING_KEYWORDS,
   MAIN_KEYWORD,
   NAP,
+  SITE_URL,
 } from './SEO';
 import { faqSchema } from '../FAQ/FAQ';
 
@@ -90,7 +91,7 @@ describe('SEO output', () => {
     for (const kw of plan.keywords) {
       expect(head).toContain(kw);
     }
-    expect(head).toContain('rel="canonical" href="https://incapremodentalcare.com/services"');
+    expect(head).toContain(`rel="canonical" href="${SITE_URL}/services"`);
   });
 
   it('covers the full requested keyword set across the site', () => {
@@ -116,9 +117,17 @@ describe('SEO output', () => {
     const approved = new Set([MAIN_KEYWORD, ...SUPPORTING_KEYWORDS]);
 
     for (const [path, plan] of Object.entries(PAGE_SEO)) {
-      expect(approved.has(plan.primary), `${path} primary not approved`).toBe(true);
       expect(plan.title.length, `${path} title too long`).toBeLessThanOrEqual(65);
       expect(plan.description.length, `${path} description too long`).toBeLessThanOrEqual(160);
+
+      // Legal pages are marked noindex and target no terms on purpose; they
+      // still need a title and description, checked just above.
+      if (plan.noindex) {
+        expect(plan.keywords, `${path} should not target keywords`).toEqual([]);
+        continue;
+      }
+
+      expect(approved.has(plan.primary), `${path} primary not approved`).toBe(true);
       for (const kw of plan.keywords) {
         expect(approved.has(kw), `${path} uses unapproved keyword: ${kw}`).toBe(true);
       }
@@ -128,12 +137,14 @@ describe('SEO output', () => {
   it('omits the keywords tag when a route has no keyword set', () => {
     renderHead({ url: '/privacy-policy', keywords: [], noindex: true, schema: false });
     expect(document.head.innerHTML).not.toContain('name="keywords"');
-    expect(document.head.innerHTML).toContain('noindex, nofollow');
+    expect(document.head.innerHTML).toContain('noindex, follow');
   });
 
   it('suppresses every JSON-LD block when schema is false', () => {
     renderHead({
       url: '/404',
+      title: 'Page Not Found',
+      description: 'The page you were looking for could not be found.',
       keywords: [],
       noindex: true,
       schema: false,
@@ -143,9 +154,30 @@ describe('SEO output', () => {
     expect(document.querySelectorAll('script[type="application/ld+json"]').length).toBe(0);
   });
 
-  it('falls back to the home page plan for unmapped routes', () => {
-    expect(seoFor('/does-not-exist')).toBe(PAGE_SEO['/']);
+  it('refuses to invent SEO copy for an unmapped route', () => {
+    // The old `PAGE_SEO[path] || PAGE_SEO['/']` fallback handed an unmapped
+    // route the home page's title and description, which pairs a foreign title
+    // with a self-referential canonical — a duplicate-content bug that reads as
+    // correct in review. A new route now has to declare its own copy.
     expect(seoFor('/')).toBe(PAGE_SEO['/']);
+    expect(() => seoFor('/does-not-exist')).toThrow(/no PAGE_SEO entry/);
+  });
+
+  it('still renders a route that supplies its own copy and passes no config', () => {
+    // /404 has no PAGE_SEO entry by design, so this guards the lazy lookup:
+    // resolving seoFor() unconditionally would throw here.
+    renderHead({
+      url: '/404',
+      title: 'Page Not Found',
+      description: 'The page you were looking for could not be found.',
+      keywords: [],
+      noindex: true,
+      schema: false,
+    });
+    expect(document.head.innerHTML).toContain(
+      '<title>Page Not Found | Incapremo Dental Care</title>',
+    );
+    expect(document.head.innerHTML).toContain('noindex, follow');
   });
 
   it('keeps schema NAP consistent', () => {

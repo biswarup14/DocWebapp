@@ -5,14 +5,6 @@ import SkeletonImage from '../../components/Skeleton/SkeletonImage';
 import SEO from '../../components/SEO/SEO';
 import styles from './ProofOfWork.module.css';
 
-const workItems = [
-  { src: '/gall1.webp', alt: 'Restored smile after dental treatment' },
-  { src: '/gall2.webp', alt: 'Pediatric dental care in progress' },
-  { src: '/gall3.webp', alt: 'Preventive dental treatment result' },
-  { src: '/gall4.jpeg', alt: 'Modern dental clinical setup' },
-  { src: '/gall5.jpeg', alt: 'Advanced dental equipment and tools' },
-  { src: '/gall6.jpeg', alt: 'Happy patient after dental procedure' },
-];
 
 export default function ProofOfWork() {
   const [selectedIndex, setSelectedIndex] = useState(null);
@@ -23,8 +15,8 @@ export default function ProofOfWork() {
     if (selectedIndex === null) return;
     const handleKey = (e) => {
       if (e.key === 'Escape') close();
-      if (e.key === 'ArrowRight') setSelectedIndex((i) => (i + 1) % workItems.length);
-      if (e.key === 'ArrowLeft') setSelectedIndex((i) => (i - 1 + workItems.length) % workItems.length);
+      if (e.key === 'ArrowRight') setSelectedIndex((i) => (i + 1) % GALLERY_ITEMS.length);
+      if (e.key === 'ArrowLeft') setSelectedIndex((i) => (i - 1 + GALLERY_ITEMS.length) % GALLERY_ITEMS.length);
     };
     document.addEventListener('keydown', handleKey);
     document.body.style.overflow = 'hidden';
@@ -42,9 +34,9 @@ export default function ProofOfWork() {
     const diff = touchStartX.current - e.changedTouches[0].clientX;
     if (Math.abs(diff) > 50) {
       if (diff > 0) {
-        setSelectedIndex((i) => (i + 1) % workItems.length);
+        setSelectedIndex((i) => (i + 1) % GALLERY_ITEMS.length);
       } else {
-        setSelectedIndex((i) => (i - 1 + workItems.length) % workItems.length);
+        setSelectedIndex((i) => (i - 1 + GALLERY_ITEMS.length) % GALLERY_ITEMS.length);
       }
     }
   };
@@ -57,21 +49,7 @@ export default function ProofOfWork() {
           { name: 'Home', path: '/' },
           { name: 'Proof of Work', path: '/proof-of-work' },
         ]}
-        extraSchemas={[
-          {
-            '@context': 'https://schema.org',
-            '@type': 'ImageGallery',
-            '@id': 'https://incapremodentalcare.com/proof-of-work/#gallery',
-            name: 'Dental Treatment Results — Incapremo Dental Care',
-            url: 'https://incapremodentalcare.com/proof-of-work',
-            about: { '@id': 'https://incapremodentalcare.com/#dentist' },
-            image: workItems.map((item) => ({
-              '@type': 'ImageObject',
-              contentUrl: `https://incapremodentalcare.com${item.src}`,
-              caption: item.alt,
-            })),
-          },
-        ]}
+        extraSchemas={[imageGallerySchema()]}
       />
       <PageHeader
         title="Proof of Work"
@@ -81,7 +59,7 @@ export default function ProofOfWork() {
       <section className="section">
         <div className="container">
           <div className={styles.grid}>
-            {workItems.map((item, i) => (
+            {GALLERY_ITEMS.map((item, i) => (
               <button key={i} className={styles.card} onClick={() => setSelectedIndex(i)}>
                 <div className={styles.imageWrap}>
                   <SkeletonImage src={item.src} alt={item.alt} />
@@ -107,20 +85,20 @@ export default function ProofOfWork() {
             onTouchEnd={handleTouchEnd}
           >
             <button className={styles.lightboxClose} onClick={close} aria-label="Close">&times;</button>
-            <button className={styles.lightboxPrev} onClick={(e) => { e.stopPropagation(); setSelectedIndex((selectedIndex - 1 + workItems.length) % workItems.length); }} aria-label="Previous image">&#8249;</button>
+            <button className={styles.lightboxPrev} onClick={(e) => { e.stopPropagation(); setSelectedIndex((selectedIndex - 1 + GALLERY_ITEMS.length) % GALLERY_ITEMS.length); }} aria-label="Previous image">&#8249;</button>
             <motion.img
               key={selectedIndex}
               className={styles.lightboxImg}
-              src={workItems[selectedIndex].src}
-              alt={workItems[selectedIndex].alt}
+              src={GALLERY_ITEMS[selectedIndex].src}
+              alt={GALLERY_ITEMS[selectedIndex].alt}
               onClick={(e) => e.stopPropagation()}
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ duration: 0.25 }}
             />
-            <button className={styles.lightboxNext} onClick={(e) => { e.stopPropagation(); setSelectedIndex((selectedIndex + 1) % workItems.length); }} aria-label="Next image">&#8250;</button>
-            <span className={styles.lightboxCounter}>{selectedIndex + 1} / {workItems.length}</span>
+            <button className={styles.lightboxNext} onClick={(e) => { e.stopPropagation(); setSelectedIndex((selectedIndex + 1) % GALLERY_ITEMS.length); }} aria-label="Next image">&#8250;</button>
+            <span className={styles.lightboxCounter}>{selectedIndex + 1} / {GALLERY_ITEMS.length}</span>
           </motion.div>
         )}
       </AnimatePresence>
