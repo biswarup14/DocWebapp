@@ -2,7 +2,7 @@ import { useState, useCallback, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import PageHeader from '../../components/PageHeader/PageHeader';
 import SkeletonImage from '../../components/Skeleton/SkeletonImage';
-import SEO from '../../components/SEO/SEO';
+import SEO, { imageGallerySchema, GALLERY_ITEMS } from '../../components/SEO/SEO';
 import styles from './ProofOfWork.module.css';
 
 
