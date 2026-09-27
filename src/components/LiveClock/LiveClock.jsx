@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import useOpenStatus from '../../hooks/useOpenStatus';
 import styles from './LiveClock.module.css';
 
 export default function LiveClock() {
@@ -7,6 +8,7 @@ export default function LiveClock() {
   );
   const rafRef = useRef(null);
   const lastSecondRef = useRef(new Date().getSeconds());
+  const status = useOpenStatus();
 
   useEffect(() => {
     const tick = () => {
@@ -23,8 +25,16 @@ export default function LiveClock() {
   }, []);
 
   return (
-    <span className={styles.clock}>
-      {display}
+    <span className={styles.clockGroup}>
+      <span className={styles.clock}>
+        {display}
+      </span>
+      {status && (
+        <span className={styles.state} data-open={String(status.isOpen)}>
+          <span className={styles.stateDot} aria-hidden="true" />
+          {status.isOpen ? 'Open now' : 'Closed now'}
+        </span>
+      )}
     </span>
   );
 }

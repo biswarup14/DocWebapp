@@ -5,6 +5,7 @@ import LiveClock from '../../components/LiveClock/LiveClock';
 import FAQ, { faqSchema } from '../../components/FAQ/FAQ';
 import SkeletonImage from '../../components/Skeleton/SkeletonImage';
 import useCountUp from '../../hooks/useCountUp';
+import useOpenStatus from '../../hooks/useOpenStatus';
 import styles from './Home.module.css';
 
 const specializations = [
@@ -41,32 +42,65 @@ function StatItem({ end, suffix, label }) {
 }
 
 export default function Home() {
+  const openStatus = useOpenStatus();
+
   return (
     <>
       <SEO url="/" extraSchemas={[faqSchema]} />
 
       <section className={styles.hero}>
         <div className={`container ${styles.heroInner}`}>
-          <motion.div
-            className={styles.heroContent}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className={styles.heroBadge}>Pediatric & Family Dentistry</span>
-            <h1 className={styles.heroTitle}>
-              Your Smile Is Our<br /><span className={styles.highlight}>Priority</span>
-            </h1>
-            <p className={styles.heroSubtitle}>
-              Specialist dental care in a comfortable, modern environment.
-              Expert treatment for children and adults of all ages in Purulia.
-            </p>
-            <p className={styles.doctorName}>Led by <strong>Dr. Deepankar Bhattacharya</strong> — B.D.S., M.D.S.</p>
-            <div className={styles.heroActions}>
-              <Link to="/contact" className="btn btn-primary">Book Appointment</Link>
-              <Link to="/services" className="btn btn-secondary">Our Specializations</Link>
-            </div>
-          </motion.div>
+          <div className={styles.heroGrid}>
+            <motion.div
+              className={styles.heroContent}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <span className={styles.heroBadge}>Pediatric &amp; Family Dentistry</span>
+              <h1 className={styles.heroTitle}>
+                Healthy Smiles for<br /><span className={styles.highlight}>Every</span> Age and Stage
+              </h1>
+              <p className={styles.heroSubtitle}>
+                Specialist children&apos;s dental care led by Dr. Deepankar Bhattacharya &mdash; an
+                M.D.S. in Pediatric Dentistry and ex-Associate Professor with 15+ years of
+                experience. Gentle treatment from a child&apos;s first tooth through their teens.
+              </p>
+              <div className={styles.heroActions}>
+                <Link to="/contact" className="btn btn-primary">Book Appointment</Link>
+                <a href="tel:+917050576335" className="btn btn-secondary">Call (+91) 70505 76335</a>
+              </div>
+              <p className={styles.heroStatus}>
+                <span
+                  className={styles.statusDot}
+                  data-open={openStatus ? String(openStatus.isOpen) : undefined}
+                  aria-hidden="true"
+                />
+                {openStatus?.label ?? (
+                  <>
+                    Mon&ndash;Sat &bull; 10am&ndash;2pm &amp; 5pm&ndash;8pm
+                  </>
+                )}
+              </p>
+            </motion.div>
+            <motion.div
+              className={styles.heroVisual}
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+            >
+              <div className={styles.credentialCard}>
+                <span className={styles.credentialLabel}>Your Pediatric Dentist</span>
+                <h2 className={styles.credentialName}>Dr. Deepankar Bhattacharya</h2>
+                <p className={styles.credentialQual}>B.D.S., M.D.S. (Pediatric Dentistry)</p>
+                <ul className={styles.credentialList}>
+                  <li>Ex-Associate Professor, Mithila Minority Dental College</li>
+                  <li>Specialises in children with complex dental needs</li>
+                  <li>Speaks Hindi, English &amp; Bengali</li>
+                </ul>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

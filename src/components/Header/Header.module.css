@@ -5,9 +5,13 @@
   background-color: var(--header-bg);
   border-bottom: 1px solid var(--color-border);
   height: var(--header-height);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  transition: transform 0.3s ease;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: transform 0.3s ease, box-shadow var(--transition);
+}
+
+.header:hover {
+  box-shadow: var(--shadow-sm);
 }
 
 .headerHidden {
@@ -24,7 +28,7 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   text-decoration: none;
   color: var(--color-text);
 }
@@ -36,7 +40,7 @@
 
 .logoText {
   font-family: var(--font-heading);
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--color-text);
   letter-spacing: -0.02em;
@@ -45,45 +49,45 @@
 
 @media (max-width: 768px) {
   .logoText {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 }
 
 .nav {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
 }
 
 .navLink {
-  padding: 8px 12px;
+  padding: 10px 16px;
   border-radius: var(--radius);
   font-family: var(--font-heading);
   font-weight: 500;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   color: var(--color-text-secondary);
   transition: all var(--transition);
 }
 
 .navLink:hover {
   color: var(--color-primary);
-  background-color: var(--color-bg-secondary);
+  background-color: var(--color-primary-bg);
 }
 
 .navLinkActive {
   color: var(--color-primary) !important;
-  background-color: var(--color-bg-secondary);
+  background-color: var(--color-primary-bg);
 }
 
 .emergencyLink {
   display: flex;
   align-items: center;
-  gap: 4px;
-  padding: 8px 14px;
+  gap: 8px;
+  padding: 10px 18px;
   border-radius: var(--radius);
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   color: var(--color-danger);
   background-color: var(--emergency-bg);
   border: 2px solid var(--color-danger);
@@ -95,26 +99,27 @@
 
 .emergencyLink:hover {
   background-color: var(--color-danger);
-  color: white;
-  transform: scale(1.05);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
 }
 
 .emergencyLinkActive {
   background-color: var(--color-danger) !important;
-  color: white !important;
+  color: #ffffff !important;
 }
 
 .emergencyIcon {
-  font-size: 1rem;
+  font-size: 1.1rem;
   animation: flash 1s ease-in-out 3;
 }
 
 @keyframes pulse-emergency {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4);
+    box-shadow: 0 0 0 0 rgba(192, 57, 43, 0.4);
   }
   50% {
-    box-shadow: 0 0 0 8px rgba(220, 38, 38, 0);
+    box-shadow: 0 0 0 8px rgba(192, 57, 43, 0);
   }
 }
 
@@ -130,7 +135,7 @@
 .actions {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .themeToggle {
@@ -140,18 +145,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color var(--transition);
+  transition: background-color var(--transition), transform var(--transition);
   position: relative;
 }
 
 .themeToggle:hover {
   background-color: var(--color-bg-secondary);
+  transform: scale(1.05);
 }
 
 .sunIcon,
 .moonIcon {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   position: absolute;
   transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
 }
@@ -221,12 +227,13 @@
     right: 0;
     background-color: var(--color-bg);
     flex-direction: column;
-    padding: 20px;
+    padding: 24px 20px;
     border-bottom: 1px solid var(--color-border);
     transform: translateY(-100%);
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s ease;
+    gap: 8px;
   }
 
   .navOpen {
@@ -248,7 +255,9 @@
 
   .navLink {
     width: 100%;
-    padding: 12px 16px;
+    padding: 14px 16px;
+    font-size: 1rem;
+    text-align: center;
   }
 
   .emergencyLink {
@@ -256,7 +265,7 @@
     margin-top: 8px;
     width: 100%;
     justify-content: center;
-    padding: 14px 16px;
+    padding: 16px;
     font-size: 1rem;
   }
 }
