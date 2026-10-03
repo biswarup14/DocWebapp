@@ -203,18 +203,30 @@ and a Search Console *Change of Address* will lose ranking.
 
 ## 9. Known constraint
 
-Because there is no server rendering or prerendering, a crawler that does not execute JavaScript sees
-home-page metadata on every URL, including a canonical pointing at `/`. Googlebot handles this, but other
-crawlers may not. Fixing it properly means generating per-route static HTML at build time. Until then,
-treat the static head as an accurate description of the home page and nothing more.
+Prerendering covers the `<head>` only. The `<body>` in every generated file still
+ships an empty `#root` that React fills in on load, so a crawler that does not
+execute JavaScript reads correct per-route metadata but finds no body copy. This
+was a deliberate trade: rewriting the head is safe because there is nothing to
+hydrate, whereas shipping body copy would mean rendering the React tree to a
+string and reconciling it against the client render — a much larger change with
+real mismatch risk.
+
+Googlebot executes JavaScript and reads the full rendered page, so this affects
+social scrapers, `curl` and monitoring bots more than it affects indexing.
 
 ## 10. Verifying
 
 ```bash
-npx vitest run     # 14 tests: metadata, schemas, keyword coverage, length limits
 npx oxlint         # 0 errors
-npm run build      # production bundle
+npm test           # 31 tests: metadata, schemas, keyword coverage, length limits,
+                   # canonical/sitemap agreement, no hardcoded origins
+npm run build      # production bundle + prerender + sitemap/robots/_redirects
 ```
+
+Run `npm run build` **before** `npm test` to get full coverage. The suite in
+`src/config/site.test.jsx` that reads the real files in `dist/` skips itself when
+`dist/` is absent, so those assertions — the ones that catch a prerendered head
+disagreeing with the runtime config — are silently omitted on a clean checkout.
 
 To check a page by hand, view source on the deployed URL and confirm the title, description, canonical,
 `og:url` and JSON-LD all reference that route rather than `/`.

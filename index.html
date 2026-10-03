@@ -7,9 +7,11 @@
     <link rel="apple-touch-icon" href="/logo.png" />
     <meta name="theme-color" content="#0c6e8a" />
 
-    <!-- Canonical + hreflang. This file is the SPA fallback served for every
-         route, so these always describe the home page. Per-route canonicals
-         are written client-side by <SEO>.
+    <!-- Canonical + hreflang. The values here are the home page's and act as
+         the template for every route: build/prerender.js copies this file per
+         route and rewrites its <head> with that route's own canonical, title,
+         description and JSON-LD. So this file is what a crawler sees only for
+         `/` and for paths with no prerendered copy of their own.
 
          __SITE_URL__ is replaced at build time from src/config/site.js by the
          SEO assets plugin. Do not hand-edit these URLs. -->
